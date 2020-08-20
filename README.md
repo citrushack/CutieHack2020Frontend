@@ -4,7 +4,7 @@ This is a front-end written with React, Redux and Redux-saga. The backend [(repo
 
 ## Get started
 
-You must have node+npm or yarn installed.
+You must have node and yarn installed.
 
 Clone the repository 
 
@@ -19,12 +19,11 @@ cd CutieHack2020Frontend
 # Using yarn
 yarn install
 yarn develop
-
-# Using npm
-npm install
-npm start
 ```
 
 The server should launch at [http://localhost:3000](http://localhost:3000).
 Auth won't work unless you also run the [backend.](https://github.com/citrushack/CutieHack2020Backend/) 
 Currently the site just contains a registration form and a way to upload a resume.
+
+#### Tooling information
+This app was created with the [react-boilerplate-crea-template](https://github.com/react-boilerplate/react-boilerplate-cra-template). It gives us nice default settings for linting, prettification, and some useful generator scripts (```yarn run generate```). Docs [here](https://cansahin.gitbook.io/react-boilerplate-cra-template/)
