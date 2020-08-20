@@ -26,4 +26,4 @@ Auth won't work unless you also run the [backend.](https://github.com/citrushack
 Currently the site just contains a registration form and a way to upload a resume.
 
 #### Tooling information
-This app was created with the [react-boilerplate-crea-template](https://github.com/react-boilerplate/react-boilerplate-cra-template). It gives us nice default settings for linting, prettification, and super useful generator scripts (```yarn run generate```). Docs [here](https://cansahin.gitbook.io/react-boilerplate-cra-template/)
+This app was created with the [react-boilerplate-crea-template](https://github.com/react-boilerplate/react-boilerplate-cra-template). It gives us nice default settings for linting, prettification, and super useful generator scripts (```yarn run generate```). Docs [here](https://cansahin.gitbook.io/react-boilerplate-cra-template/). 
