@@ -1,25 +1,62 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { NavBar } from '../NavBar';
-import { Masthead } from './Masthead';
-import { Features } from './Features';
-import { PageWrapper } from 'app/components/PageWrapper';
+import auth from 'utils/auth';
+import { Button, CssBaseline, Typography } from '@material-ui/core';
 
-export function HomePage() {
-  return (
-    <>
-      <Helmet>
-        <title>Home Page</title>
-        <meta
-          name="description"
-          content="A React Boilerplate application homepage"
-        />
-      </Helmet>
-      <NavBar />
-      <PageWrapper>
-        <Masthead />
-        <Features />
-      </PageWrapper>
-    </>
-  );
+export class HomePage extends React.Component {
+  state = { showButton: false };
+
+  componentDidMount() {
+    if (auth.getToken()) {
+      this.setState({ showButton: true });
+    }
+  }
+
+  logout = e => {
+    e.preventDefault();
+    auth.clearAppStorage();
+    this.setState({ showButton: false });
+  };
+
+  render() {
+    return (
+      <>
+        <CssBaseline></CssBaseline>
+        <Helmet>
+          <title>Cutie Hack</title>
+          <meta name="description" content="Cutie Hack" />
+        </Helmet>
+        <Typography variant="h4" align="left" component="h1" gutterBottom>
+          HomePage container
+        </Typography>
+
+        {this.state.showButton ? (
+          <Button onClick={this.logout} color="primary" variant="contained">
+            Logout
+          </Button>
+        ) : (
+          <div>
+            <Button
+              onClick={e => {
+                window.open('/auth', '_self');
+              }}
+              color="primary"
+              variant="contained"
+            >
+              Login
+            </Button>
+            <Button
+              onClick={e => {
+                window.open('/register', '_self');
+              }}
+              color="primary"
+              variant="contained"
+            >
+              Apply
+            </Button>
+          </div>
+        )}
+      </>
+    );
+  }
 }
