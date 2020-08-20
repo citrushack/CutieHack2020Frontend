@@ -14,11 +14,13 @@ import { countries, unis, majors } from './data';
 
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { reducer, sliceKey } from './slice';
-import { selectRegisterForm } from './selectors';
+import { selectRegisterForm, selectError } from './selectors';
 import { registerFormSaga } from './saga';
 //import { makeStyles } from '@material-ui/core/styles';
 import { TextField, Autocomplete } from 'mui-rff';
 //import { Checkbox as MuiCheckbox } from '@material-ui/core';
+import { Alert, AlertTitle } from '@material-ui/lab';
+
 import {
   Typography,
   Paper,
@@ -33,6 +35,9 @@ import Dropzone from './Dropzone';
 interface Props {}
 type validationError = {
   email: string;
+  username: string;
+  firstname: string;
+  lastname: string;
   country: string;
 };
 
@@ -42,15 +47,24 @@ const genders = [
   { gender: 'Non-Binary' },
   { gender: 'Prefer Not to Say' },
 ];
-
+function validateEmail(email) {
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
 const validate = values => {
+  console.log(values);
   const errors = {} as validationError;
   if (!values.email) {
     errors.email = 'Required';
+  } else if (!validateEmail(values.email)) {
+    errors.email = 'Email not valid';
   }
-  if (!values.country) {
-    errors.country = 'Required';
-  }
+
+  if (!values.country) errors.country = 'Required';
+  if (!values.username) errors.username = 'Required';
+  if (!values.firstname) errors.firstname = 'Required';
+  if (!values.lastname) errors.lastname = 'Required';
+
   return errors;
 };
 interface Props {}
@@ -73,11 +87,6 @@ interface formType {
   field: React.ReactNode;
 }
 type formTypes = formType[];
-interface CountryType {
-  code: string;
-  label: string;
-  phone: string;
-}
 
 const checkIn: formTypes = [
   {
@@ -297,9 +306,7 @@ const hackerInfo: formTypes = [
   },
 ];
 
-const initialValues: any = {
-  country: countries, // <-- Needs to be an array
-};
+const initialValues: any = {};
 
 export function RegisterForm(props: Props) {
   useInjectReducer({ key: sliceKey, reducer: reducer });
@@ -312,6 +319,7 @@ export function RegisterForm(props: Props) {
   const onSubmit = (values: any) => {
     dispatch(actions.submit(values));
   };
+  const errormsg = useSelector(selectError);
 
   return (
     <div style={{ padding: 16, margin: 'auto', maxWidth: 600 }}>
@@ -334,6 +342,11 @@ export function RegisterForm(props: Props) {
         </Link>
       </Typography>
       <Paper style={{ padding: 16 }}>
+        {errormsg !== '' && (
+          <Alert severity="error">
+            <AlertTitle>{errormsg}</AlertTitle>
+          </Alert>
+        )}
         <Form
           onSubmit={onSubmit}
           validate={validate}

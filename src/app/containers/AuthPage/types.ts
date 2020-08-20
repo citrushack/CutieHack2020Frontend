@@ -15,11 +15,11 @@ export type postDataPayload = PayloadAction<
   },
   any
 >;
+
 export type postErrorPayload = PayloadAction<
   {
     message: string;
   },
   any
 >;
-
 export type ContainerState = AuthPageState;

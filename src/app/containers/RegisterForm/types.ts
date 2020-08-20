@@ -3,7 +3,7 @@ import { PayloadAction } from '@reduxjs/toolkit';
 /* --- STATE --- */
 export interface RegisterFormState {
   isFetching: boolean;
-  error: PayloadAction;
+  error: string;
   postData: registerPostData;
 }
 
@@ -57,6 +57,13 @@ export type initialsend = PayloadAction<
     linkedin?: string;
     github?: string;
     rememberMe?: boolean;
+  },
+  any
+>;
+
+export type postErrorPayload = PayloadAction<
+  {
+    message: string;
   },
   any
 >;

@@ -5,6 +5,7 @@ import request from 'utils/request';
 import auth from 'utils/auth';
 import { initialsend } from './types';
 import 'whatwg-fetch';
+
 export function* register() {
   //Select the form data
 
@@ -34,12 +35,15 @@ export function* register() {
           response.user.id,
           response.jwt,
         ),
-        put(actions.submitSuccess()),
         call(window.open, '/', '_self'),
       ]);
     }
   } catch (error) {
-    console.log(error.response.payload.message);
+    yield put(
+      actions.submitFailed({
+        message: error.response.payload.message[0].messages[0].message,
+      }),
+    );
   }
 }
 

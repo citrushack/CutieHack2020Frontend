@@ -1,10 +1,10 @@
-import { PayloadAction } from '@reduxjs/toolkit';
+//import { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from 'utils/@reduxjs/toolkit';
-import { ContainerState, registerPostData } from './types';
+import { ContainerState, registerPostData, postErrorPayload } from './types';
 // The initial state of the RegisterForm container
 export const initialState: ContainerState = {
   isFetching: false,
-  error: {} as PayloadAction,
+  error: '',
   postData: {} as registerPostData,
 };
 
@@ -16,8 +16,9 @@ const registerFormSlice = createSlice({
       state.postData.payload = action.payload;
       state.isFetching = true;
     },
-    submitSuccess(state) {
+    submitFailed(state, action: postErrorPayload) {
       state.isFetching = false;
+      state.error = action.payload.message;
     },
   },
 });

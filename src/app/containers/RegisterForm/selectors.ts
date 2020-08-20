@@ -12,5 +12,10 @@ export const selectRegisterForm = createSelector(
 
 export const selectFormData = createSelector(
   [selectDomain],
-  authPageState => authPageState.postData,
+  registerFormState => registerFormState.postData,
+);
+
+export const selectError = createSelector(
+  [selectDomain],
+  registerFormState => registerFormState.error,
 );
