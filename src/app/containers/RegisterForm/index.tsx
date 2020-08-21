@@ -39,6 +39,9 @@ type validationError = {
   firstname: string;
   lastname: string;
   country: string;
+  password: string;
+  passwordConfirm: string;
+  resume: string;
 };
 
 const genders = [
@@ -52,14 +55,24 @@ function validateEmail(email) {
   return re.test(email);
 }
 const validate = values => {
-  console.log(values);
   const errors = {} as validationError;
   if (!values.email) {
     errors.email = 'Required';
   } else if (!validateEmail(values.email)) {
     errors.email = 'Email not valid';
   }
-
+  if (!values.password) {
+    errors.password = 'Required';
+  }
+  if (!values.passwordConfirm) {
+    errors.passwordConfirm = 'Required';
+  }
+  if (values.password !== values.passwordConfirm) {
+    errors.passwordConfirm = 'Passwords must match';
+  }
+  if (!values.resume) {
+    errors.resume = 'Required';
+  }
   if (!values.country) errors.country = 'Required';
   if (!values.username) errors.username = 'Required';
   if (!values.firstname) errors.firstname = 'Required';
@@ -351,7 +364,15 @@ export function RegisterForm(props: Props) {
           onSubmit={onSubmit}
           validate={validate}
           initialValues={initialValues}
-          render={({ handleSubmit, form, submitting, pristine, values }) => (
+          render={({
+            handleSubmit,
+            form,
+            submitting,
+            pristine,
+            values,
+            errors,
+            submitFailed,
+          }) => (
             <form onSubmit={handleSubmit} noValidate>
               <Grid container alignItems="flex-start" spacing={2}>
                 <Grid item style={{ marginTop: 16 }}>
@@ -390,15 +411,22 @@ export function RegisterForm(props: Props) {
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
-                  <Card style={{ padding: 16 }}>
-                    <Field name="resume">
-                      {props => (
-                        <div>
-                          <Dropzone {...props.input} />
-                        </div>
-                      )}
+                  <Card
+                    raised={true}
+                    style={{ padding: 16, backgroundColor: '#f7f7f7' }}
+                  >
+                    <Field required={true} name="resume">
+                      {props => <Dropzone {...props.input} />}
                     </Field>
                   </Card>
+                  {submitFailed && errors.resume && (
+                    <>
+                      <br></br>
+                      <Alert severity="error">
+                        <AlertTitle>{errors.resume}</AlertTitle>
+                      </Alert>
+                    </>
+                  )}{' '}
                 </Grid>
                 {hackerInfo.map((item, idx) => (
                   <Grid item xs={item.size} key={idx}>

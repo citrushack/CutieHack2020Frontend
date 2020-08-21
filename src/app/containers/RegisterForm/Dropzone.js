@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Typography } from '@material-ui/core';
-
 const thumb = {
   display: 'inline-flex',
-  width: 100,
-  height: 100,
   boxSizing: 'border-box',
 };
 
@@ -60,12 +57,12 @@ function Dropzone(props) {
     },
     [files],
   );
-
+  const rootprops = getRootProps({ className: 'btn-dropzone' });
   return (
     <div>
-      <div {...getRootProps({ className: 'btn-dropzone' })}>
+      <div {...rootprops}>
         <input {...getInputProps()} />
-        <span>Click or drag resume here</span>
+        <span>Click to upload, or drag resume here</span>
         <br></br>
         {thumbs}
       </div>
