@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Typography } from '@material-ui/core';
 const thumb = {
-  display: 'inline-flex',
+  textAlign: 'center',
   boxSizing: 'border-box',
 };
 
 const thumbInner = {
-  display: 'flex',
-  minWidth: 0,
-  overflow: 'hidden',
+  textAlign: 'center',
+  marginTop: '1em',
 };
 
 function Dropzone(props) {
@@ -59,11 +58,16 @@ function Dropzone(props) {
   );
   const rootprops = getRootProps({ className: 'btn-dropzone' });
   return (
-    <div>
+    <div style={{ padding: 20 }}>
       <div {...rootprops}>
         <input {...getInputProps()} />
-        <span>Click to upload, or drag resume here</span>
-        <br></br>
+        <Typography
+          variant="button"
+          display="block"
+          style={{ textAlign: 'center' }}
+        >
+          <strong>Click to upload, or drag resume here</strong>
+        </Typography>
         {thumbs}
       </div>
     </div>
