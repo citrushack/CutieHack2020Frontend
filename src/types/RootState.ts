@@ -1,5 +1,6 @@
 import { RegisterFormState } from 'app/containers/RegisterForm/types';
 import { AuthPageState } from 'app/containers/AuthPage/types';
+import { AccountState } from 'app/containers/Account/types';
 // [IMPORT NEW CONTAINERSTATE ABOVE] < Needed for generating containers seamlessly
 
 /* 
@@ -9,5 +10,6 @@ import { AuthPageState } from 'app/containers/AuthPage/types';
 export interface RootState {
   registerForm?: RegisterFormState;
   authPage?: AuthPageState;
+  account?: AccountState;
   // [INSERT NEW REDUCER KEY ABOVE] < Needed for generating containers seamlessly
 }

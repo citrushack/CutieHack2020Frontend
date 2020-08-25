@@ -34,33 +34,6 @@ export type registerPostData = PayloadAction<
   any
 >;
 
-//Initally when we post we cant send the resume as the upload route is for protected
-//users only. This type is basically the same as the one above but without resume, so
-//we can use the 'as' keyword to slim the above type down on initial send.
-export type initialsend = PayloadAction<
-  {
-    username: string;
-    email: string;
-    password: string;
-    addr1?: string;
-    addr2: string;
-    country: string;
-    city: string;
-    state?: string;
-    zip?: string;
-    firstname: string;
-    lastname: string;
-    gender?: string;
-    school?: string;
-    major?: string;
-    extra?: string;
-    linkedin?: string;
-    github?: string;
-    rememberMe?: boolean;
-  },
-  any
->;
-
 export type postErrorPayload = PayloadAction<
   {
     message: string;

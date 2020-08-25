@@ -18,6 +18,7 @@ import ProtectedRoute from './containers/ProtectedRoute';
 import { AuthPage } from './containers/AuthPage';
 import { RegisterForm } from './containers/RegisterForm';
 import { SecurePage } from './containers/SecurePage';
+import { Account } from './containers/Account';
 
 export function App() {
   return (
@@ -32,6 +33,7 @@ export function App() {
         <Route exact path="/" component={HomePage} />
         <Route exact path="/auth" component={AuthPage} />
         <Route exact path="/register" component={RegisterForm} />
+        <ProtectedRoute exact path="/account" component={Account} />
         <ProtectedRoute exact path="/test" component={SecurePage} />
         <Route component={NotFoundPage} />
       </Switch>{' '}

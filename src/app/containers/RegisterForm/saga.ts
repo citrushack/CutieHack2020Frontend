@@ -3,7 +3,6 @@ import { actions } from './slice';
 import { selectFormData } from './selectors';
 import request from 'utils/request';
 import auth from 'utils/auth';
-import { initialsend } from './types';
 import 'whatwg-fetch';
 
 export function* register() {
@@ -13,8 +12,8 @@ export function* register() {
     //Get submit action payload
     const formData = yield select(selectFormData);
     console.log(formData);
-    //Generate request body from payload
-    const body = formData.payload as initialsend;
+    //Generate request bodies from payload
+    const { resume, ...body } = formData.payload;
 
     const requestURL = 'http://localhost:1337/auth/local/register';
     console.log(body);
@@ -29,12 +28,7 @@ export function* register() {
       yield all([
         call(auth.setToken, response.jwt, formData.payload.rememberMe),
         call(auth.setUserInfo, response.user, formData.payload.rememberMe),
-        call(
-          sendResume,
-          formData.payload.resume,
-          response.user.id,
-          response.jwt,
-        ),
+        call(sendResume, resume, response.user.id, response.jwt),
         call(window.open, '/', '_self'),
       ]);
     }
