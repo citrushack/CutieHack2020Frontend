@@ -10,7 +10,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { reducer, sliceKey } from './slice';
-import { selectAccount, selectAccountInfo } from './selectors';
+import { selectAccountInfo } from './selectors';
 import { accountSaga } from './saga';
 import { AccountDetails } from './types';
 import {
@@ -24,9 +24,6 @@ import {
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableFooter from '@material-ui/core/TableFooter';
-import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 interface Props {}
 const useStyles = makeStyles(theme => ({
@@ -65,19 +62,20 @@ export function Account(props: Props) {
   const classes = useStyles();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const account: AccountDetails = useSelector(selectAccountInfo);
-  //strip out extra things from account data
-  const {
-    blocked,
-    confirmed,
-    created_at,
-    id,
-    provider,
-    resume,
-    role,
-    updated_at,
-    year,
-    ...table
-  } = account;
+  console.log(account);
+  const table = Object.assign({}, account);
+  //Values to hide
+  [
+    'blocked',
+    'confirmed',
+    'created_at',
+    'id',
+    'provider',
+    'role',
+    'resume',
+    'updated_at',
+    'year',
+  ].forEach(elm => delete table[elm]);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const dispatch = useDispatch();
   //console.log(table);
@@ -102,9 +100,9 @@ export function Account(props: Props) {
           <Table style={{ marginBottom: '1em' }}>
             <TableBody>
               {Object.entries(table).map(
-                ([key, value], index) =>
+                ([key, value], idx) =>
                   value && (
-                    <TableRow key={index}>
+                    <TableRow key={idx}>
                       <TableCell>
                         <strong>{displayNames[key] || key}</strong>
                       </TableCell>
@@ -112,6 +110,16 @@ export function Account(props: Props) {
                     </TableRow>
                   ),
               )}
+              <TableRow>
+                <TableCell>
+                  <strong>Resume</strong>
+                </TableCell>
+                <TableCell>
+                  <Link href={'http://localhost:1337' + account.resume.url}>
+                    {account.resume.name}
+                  </Link>
+                </TableCell>
+              </TableRow>
             </TableBody>
           </Table>
           <Grid item xs={6}>

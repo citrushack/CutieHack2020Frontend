@@ -14,7 +14,7 @@ import { countries, unis, majors } from './data';
 
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { reducer, sliceKey } from './slice';
-import { selectRegisterForm, selectError } from './selectors';
+import { selectError, selectisFetching } from './selectors';
 import { registerFormSaga } from './saga';
 //import { makeStyles } from '@material-ui/core/styles';
 import { TextField, Autocomplete } from 'mui-rff';
@@ -326,13 +326,14 @@ export function RegisterForm(props: Props) {
   useInjectSaga({ key: sliceKey, saga: registerFormSaga });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const authPage = useSelector(selectRegisterForm);
+  //const authPage = useSelector(selectRegisterForm);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const dispatch = useDispatch();
   const onSubmit = (values: any) => {
     dispatch(actions.submit(values));
   };
   const errormsg = useSelector(selectError);
+  const isFetching = useSelector(selectisFetching);
 
   return (
     <div style={{ padding: 16, margin: 'auto', maxWidth: 600 }}>
@@ -438,7 +439,7 @@ export function RegisterForm(props: Props) {
                     variant="contained"
                     color="primary"
                     type="submit"
-                    disabled={authPage.isFetching}
+                    disabled={isFetching}
                   >
                     Submit
                   </Button>

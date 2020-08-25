@@ -19,3 +19,8 @@ export const selectError = createSelector(
   [selectDomain],
   registerFormState => registerFormState.error,
 );
+
+export const selectisFetching = createSelector(
+  [selectDomain],
+  registerFormState => registerFormState.isFetching,
+);

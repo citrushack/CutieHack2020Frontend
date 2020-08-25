@@ -21,13 +21,13 @@ export type AccountTable = {
 
 export type ExtraAccountDetails = {
   blocked?: boolean;
-  confirmed: boolean;
-  created_at: string;
-  id: number;
-  provider: string;
-  resume: Object;
-  role: Object;
-  updated_at: string;
+  confirmed?: boolean;
+  created_at?: string;
+  id?: number;
+  provider?: string;
+  resume: { url: string; name: string };
+  role?: Object;
+  updated_at?: string;
   year?: string;
 };
 //ignore extra types lol
