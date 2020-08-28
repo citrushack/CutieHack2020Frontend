@@ -19,3 +19,8 @@ export const selectError = createSelector(
   [selectDomain],
   authPageState => authPageState.error,
 );
+
+export const selectisFetching = createSelector(
+  [selectDomain],
+  authPageState => authPageState.isFetching,
+);

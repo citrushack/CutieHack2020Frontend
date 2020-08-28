@@ -29,7 +29,7 @@ export function* register() {
         call(auth.setToken, response.jwt, formData.payload.rememberMe),
         call(auth.setUserInfo, response.user, formData.payload.rememberMe),
         call(sendResume, resume, response.user.id, response.jwt),
-        call(window.open, '/', '_self'),
+        //call(window.open, '/', '_self'),
       ]);
     }
   } catch (error) {

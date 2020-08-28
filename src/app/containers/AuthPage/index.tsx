@@ -11,7 +11,7 @@ import { actions } from './slice';
 import { Form } from 'react-final-form';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { reducer, sliceKey } from './slice';
-import { selectAuthPage, selectError } from './selectors';
+import { selectisFetching, selectError } from './selectors';
 import { authPageSaga } from './saga';
 import { TextField, Checkboxes } from 'mui-rff';
 import {
@@ -94,8 +94,10 @@ export function AuthPage(props: Props) {
   useInjectSaga({ key: sliceKey, saga: authPageSaga });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const authPage = useSelector(selectAuthPage);
+  //const authPage = useSelector(selectAuthPage);
   const errormsg = useSelector(selectError);
+  const isFetching = useSelector(selectisFetching);
+
   console.log(errormsg);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const dispatch = useDispatch();
@@ -138,7 +140,7 @@ export function AuthPage(props: Props) {
                     variant="contained"
                     color="primary"
                     type="submit"
-                    disabled={authPage.isFetching}
+                    disabled={isFetching}
                   >
                     Submit
                   </Button>

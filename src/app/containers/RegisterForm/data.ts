@@ -256,7 +256,7 @@ export const countries = [
   { code: 'ZW', label: 'Zimbabwe' },
 ];
 
-export const unis = [
+export const unis : Record<string, string>[]= [
   { uni: 'Bethesda University of California' },
   { uni: 'California Institute of Integral Studies' },
   { uni: 'California Baptist University' },
@@ -358,535 +358,534 @@ export const unis = [
   { uni: 'DeVry University-California' },
 ];
 
-export const majors = [
+export const majors: Record<string, string>[] = [
   {
-    Major: 'Computer And Information Systems',
+    major: 'Computer Science',
+  },
+  {
+    major: 'Computer And Information Systems',
   },
 
   {
-    Major: 'Computer Programming And Data Processing',
+    major: 'Computer Programming And Data Processing',
   },
 
   {
-    Major: 'Computer Science',
+    major: 'Computer Administration Management And Security',
   },
 
   {
-    Major: 'Computer Administration Management And Security',
+    major: 'Computer Networking And Telecommunications',
   },
 
   {
-    Major: 'Computer Networking And Telecommunications',
+    major: 'Mathematics And Computer Science',
   },
 
   {
-    Major: 'Mathematics And Computer Science',
+    major: 'Science And Computer Teacher Education',
   },
 
   {
-    Major: 'Science And Computer Teacher Education',
+    major: 'Computer Engineering',
   },
 
   {
-    Major: 'Computer Engineering',
+    major: 'General Agriculture',
   },
-
   {
-    Major: 'General Agriculture',
+    major: 'Agriculture Production And Management',
   },
   {
-    Major: 'Agriculture Production And Management',
+    major: 'Agricultural Economics',
   },
   {
-    Major: 'Agricultural Economics',
+    major: 'Animal Sciences',
   },
   {
-    Major: 'Animal Sciences',
+    major: 'Food Science',
   },
   {
-    Major: 'Food Science',
+    major: 'Plant Science And Agronomy',
   },
   {
-    Major: 'Plant Science And Agronomy',
+    major: 'Soil Science',
   },
   {
-    Major: 'Soil Science',
+    major: 'Miscellaneous Agriculture',
   },
   {
-    Major: 'Miscellaneous Agriculture',
+    major: 'Forestry',
   },
   {
-    Major: 'Forestry',
+    major: 'Natural Resources Management',
   },
   {
-    Major: 'Natural Resources Management',
+    major: 'Fine Arts',
   },
   {
-    Major: 'Fine Arts',
+    major: 'Drama And Theater Arts',
   },
   {
-    Major: 'Drama And Theater Arts',
+    major: 'Music',
   },
   {
-    Major: 'Music',
+    major: 'Visual And Performing Arts',
   },
   {
-    Major: 'Visual And Performing Arts',
+    major: 'Commercial Art And Graphic Design',
   },
   {
-    Major: 'Commercial Art And Graphic Design',
+    major: 'Film Video And Photographic Arts',
   },
   {
-    Major: 'Film Video And Photographic Arts',
+    major: 'Studio Arts',
   },
   {
-    Major: 'Studio Arts',
+    major: 'Miscellaneous Fine Arts',
   },
   {
-    Major: 'Miscellaneous Fine Arts',
+    major: 'Environmental Science',
   },
   {
-    Major: 'Environmental Science',
+    major: 'Biology',
   },
   {
-    Major: 'Biology',
+    major: 'Biochemical Sciences',
   },
   {
-    Major: 'Biochemical Sciences',
+    major: 'Botany',
   },
   {
-    Major: 'Botany',
+    major: 'Molecular Biology',
   },
   {
-    Major: 'Molecular Biology',
+    major: 'Ecology',
   },
   {
-    Major: 'Ecology',
+    major: 'Genetics',
   },
   {
-    Major: 'Genetics',
+    major: 'Microbiology',
   },
   {
-    Major: 'Microbiology',
+    major: 'Pharmacology',
   },
   {
-    Major: 'Pharmacology',
+    major: 'Physiology',
   },
   {
-    Major: 'Physiology',
+    major: 'Zoology',
   },
   {
-    Major: 'Zoology',
+    major: 'Neuroscience',
   },
   {
-    Major: 'Neuroscience',
+    major: 'Miscellaneous Biology',
   },
   {
-    Major: 'Miscellaneous Biology',
+    major: 'Cognitive Science And Biopsychology',
   },
   {
-    Major: 'Cognitive Science And Biopsychology',
+    major: 'General Business',
   },
   {
-    Major: 'General Business',
+    major: 'Accounting',
   },
   {
-    Major: 'Accounting',
+    major: 'Actuarial Science',
   },
   {
-    Major: 'Actuarial Science',
+    major: 'Business Management And Administration',
   },
   {
-    Major: 'Business Management And Administration',
+    major: 'Operations Logistics And E-Commerce',
   },
   {
-    Major: 'Operations Logistics And E-Commerce',
+    major: 'Business Economics',
   },
   {
-    Major: 'Business Economics',
+    major: 'Marketing And Marketing Research',
   },
   {
-    Major: 'Marketing And Marketing Research',
+    major: 'Finance',
   },
   {
-    Major: 'Finance',
+    major: 'Human Resources And Personnel Management',
   },
   {
-    Major: 'Human Resources And Personnel Management',
+    major: 'International Business',
   },
   {
-    Major: 'International Business',
+    major: 'Hospitality Management',
   },
   {
-    Major: 'Hospitality Management',
+    major: 'Management Information Systems And Statistics',
   },
   {
-    Major: 'Management Information Systems And Statistics',
+    major: 'Miscellaneous Business & Medical Administration',
   },
   {
-    Major: 'Miscellaneous Business & Medical Administration',
+    major: 'Communications',
   },
   {
-    Major: 'Communications',
+    major: 'Journalism',
   },
   {
-    Major: 'Journalism',
+    major: 'Mass Media',
   },
   {
-    Major: 'Mass Media',
+    major: 'Advertising And Public Relations',
   },
   {
-    Major: 'Advertising And Public Relations',
+    major: 'Communication Technologies',
   },
   {
-    Major: 'Communication Technologies',
+    major: 'Information Sciences',
   },
   {
-    Major: 'Information Sciences',
+    major: 'Mathematics',
   },
   {
-    Major: 'Mathematics',
+    major: 'Applied Mathematics',
   },
   {
-    Major: 'Applied Mathematics',
+    major: 'Statistics And Decision Science',
   },
   {
-    Major: 'Statistics And Decision Science',
+    major: 'General Education',
   },
   {
-    Major: 'General Education',
+    major: 'Educational Administration And Supervision',
   },
   {
-    Major: 'Educational Administration And Supervision',
+    major: 'School Student Counseling',
   },
   {
-    Major: 'School Student Counseling',
+    major: 'Elementary Education',
   },
   {
-    Major: 'Elementary Education',
+    major: 'Mathematics Teacher Education',
   },
   {
-    Major: 'Mathematics Teacher Education',
+    major: 'Physical And Health Education Teaching',
   },
   {
-    Major: 'Physical And Health Education Teaching',
+    major: 'Early Childhood Education',
   },
   {
-    Major: 'Early Childhood Education',
+    major: 'Secondary Teacher Education',
   },
   {
-    Major: 'Secondary Teacher Education',
+    major: 'Special Needs Education',
   },
   {
-    Major: 'Special Needs Education',
+    major: 'Social Science Or History Teacher Education',
   },
   {
-    Major: 'Social Science Or History Teacher Education',
+    major: 'Teacher Education: Multiple Levels',
   },
   {
-    Major: 'Teacher Education: Multiple Levels',
+    major: 'Language And Drama Education',
   },
   {
-    Major: 'Language And Drama Education',
+    major: 'Art And Music Education',
   },
   {
-    Major: 'Art And Music Education',
+    major: 'Miscellaneous Education',
   },
   {
-    Major: 'Miscellaneous Education',
+    major: 'Library Science',
   },
   {
-    Major: 'Library Science',
+    major: 'Architecture',
   },
   {
-    Major: 'Architecture',
+    major: 'General Engineering',
   },
   {
-    Major: 'General Engineering',
+    major: 'Aerospace Engineering',
   },
   {
-    Major: 'Aerospace Engineering',
+    major: 'Biological Engineering',
   },
   {
-    Major: 'Biological Engineering',
+    major: 'Architectural Engineering',
   },
   {
-    Major: 'Architectural Engineering',
+    major: 'Biomedical Engineering',
   },
   {
-    Major: 'Biomedical Engineering',
+    major: 'Chemical Engineering',
   },
   {
-    Major: 'Chemical Engineering',
+    major: 'Civil Engineering',
   },
   {
-    Major: 'Civil Engineering',
+    major: 'Electrical Engineering',
   },
   {
-    Major: 'Electrical Engineering',
+    major: 'Engineering Mechanics Physics And Science',
   },
   {
-    Major: 'Engineering Mechanics Physics And Science',
+    major: 'Environmental Engineering',
   },
   {
-    Major: 'Environmental Engineering',
+    major: 'Geological And Geophysical Engineering',
   },
   {
-    Major: 'Geological And Geophysical Engineering',
+    major: 'Industrial And Manufacturing Engineering',
   },
   {
-    Major: 'Industrial And Manufacturing Engineering',
+    major: 'Materials Engineering And Materials Science',
   },
   {
-    Major: 'Materials Engineering And Materials Science',
+    major: 'Mechanical Engineering',
   },
   {
-    Major: 'Mechanical Engineering',
+    major: 'Metallurgical Engineering',
   },
   {
-    Major: 'Metallurgical Engineering',
+    major: 'Mining And Mineral Engineering',
   },
   {
-    Major: 'Mining And Mineral Engineering',
+    major: 'Naval Architecture And Marine Engineering',
   },
   {
-    Major: 'Naval Architecture And Marine Engineering',
+    major: 'Nuclear Engineering',
   },
   {
-    Major: 'Nuclear Engineering',
+    major: 'Petroleum Engineering',
   },
   {
-    Major: 'Petroleum Engineering',
+    major: 'Miscellaneous Engineering',
   },
   {
-    Major: 'Miscellaneous Engineering',
+    major: 'Engineering Technologies',
   },
   {
-    Major: 'Engineering Technologies',
+    major: 'Engineering And Industrial Management',
   },
   {
-    Major: 'Engineering And Industrial Management',
+    major: 'Electrical Engineering Technology',
   },
   {
-    Major: 'Electrical Engineering Technology',
+    major: 'Industrial Production Technologies',
   },
   {
-    Major: 'Industrial Production Technologies',
+    major: 'Mechanical Engineering Related Technologies',
   },
   {
-    Major: 'Mechanical Engineering Related Technologies',
+    major: 'Miscellaneous Engineering Technologies',
   },
   {
-    Major: 'Miscellaneous Engineering Technologies',
+    major: 'Materials Science',
   },
   {
-    Major: 'Materials Science',
+    major: 'Nutrition Sciences',
   },
   {
-    Major: 'Nutrition Sciences',
+    major: 'General Medical And Health Services',
   },
   {
-    Major: 'General Medical And Health Services',
+    major: 'Communication Disorders Sciences And Services',
   },
   {
-    Major: 'Communication Disorders Sciences And Services',
+    major: 'Health And Medical Administrative Services',
   },
   {
-    Major: 'Health And Medical Administrative Services',
+    major: 'Medical Assisting Services',
   },
   {
-    Major: 'Medical Assisting Services',
+    major: 'Medical Technologies Technicians',
   },
   {
-    Major: 'Medical Technologies Technicians',
+    major: 'Health And Medical Preparatory Programs',
   },
   {
-    Major: 'Health And Medical Preparatory Programs',
+    major: 'Nursing',
   },
   {
-    Major: 'Nursing',
+    major: 'Pharmacy Pharmaceutical Sciences And Administration',
   },
   {
-    Major: 'Pharmacy Pharmaceutical Sciences And Administration',
+    major: 'Treatment Therapy Professions',
   },
   {
-    Major: 'Treatment Therapy Professions',
+    major: 'Community And Public Health',
   },
   {
-    Major: 'Community And Public Health',
+    major: 'Miscellaneous Health Medical Professions',
   },
   {
-    Major: 'Miscellaneous Health Medical Professions',
+    major: 'Area Ethnic And Civilization Studies',
   },
   {
-    Major: 'Area Ethnic And Civilization Studies',
+    major: 'Linguistics And Comparative Language And Literature',
   },
   {
-    Major: 'Linguistics And Comparative Language And Literature',
+    major: 'French German Latin And Other Common Foreign Language Studies',
   },
   {
-    Major: 'French German Latin And Other Common Foreign Language Studies',
+    major: 'Other Foreign Languages',
   },
   {
-    Major: 'Other Foreign Languages',
+    major: 'English Language And Literature',
   },
   {
-    Major: 'English Language And Literature',
+    major: 'Composition And Rhetoric',
   },
   {
-    Major: 'Composition And Rhetoric',
+    major: 'Liberal Arts',
   },
   {
-    Major: 'Liberal Arts',
+    major: 'Humanities',
   },
   {
-    Major: 'Humanities',
+    major: 'Intercultural And International Studies',
   },
   {
-    Major: 'Intercultural And International Studies',
+    major: 'Philosophy And Religious Studies',
   },
   {
-    Major: 'Philosophy And Religious Studies',
+    major: 'Theology And Religious Vocations',
   },
   {
-    Major: 'Theology And Religious Vocations',
+    major: 'Anthropology And Archeology',
   },
   {
-    Major: 'Anthropology And Archeology',
+    major: 'Art History And Criticism',
   },
   {
-    Major: 'Art History And Criticism',
+    major: 'History',
   },
   {
-    Major: 'History',
+    major: 'United States History',
   },
   {
-    Major: 'United States History',
+    major: 'Cosmetology Services And Culinary Arts',
   },
   {
-    Major: 'Cosmetology Services And Culinary Arts',
+    major: 'Family And Consumer Sciences',
   },
   {
-    Major: 'Family And Consumer Sciences',
+    major: 'Military Technologies',
   },
   {
-    Major: 'Military Technologies',
+    major: 'Physical Fitness Parks Recreation And Leisure',
   },
   {
-    Major: 'Physical Fitness Parks Recreation And Leisure',
+    major: 'Construction Services',
   },
   {
-    Major: 'Construction Services',
+    major: 'Electrical, Mechanical, And Precision Technologies And Production',
   },
   {
-    Major: 'Electrical, Mechanical, And Precision Technologies And Production',
+    major: 'Transportation Sciences And Technologies',
   },
   {
-    Major: 'Transportation Sciences And Technologies',
+    major: 'Multi/Interdisciplinary Studies',
   },
   {
-    Major: 'Multi/Interdisciplinary Studies',
+    major: 'Court Reporting',
   },
   {
-    Major: 'Court Reporting',
+    major: 'Pre-Law And Legal Studies',
   },
   {
-    Major: 'Pre-Law And Legal Studies',
+    major: 'Criminal Justice And Fire Protection',
   },
   {
-    Major: 'Criminal Justice And Fire Protection',
+    major: 'Public Administration',
   },
   {
-    Major: 'Public Administration',
+    major: 'Public Policy',
   },
   {
-    Major: 'Public Policy',
+    major: "N/A (less than bachelor's degree)",
   },
   {
-    Major: "N/A (less than bachelor's degree)",
+    major: 'Physical Sciences',
   },
   {
-    Major: 'Physical Sciences',
+    major: 'Astronomy And Astrophysics',
   },
   {
-    Major: 'Astronomy And Astrophysics',
+    major: 'Atmospheric Sciences And Meteorology',
   },
   {
-    Major: 'Atmospheric Sciences And Meteorology',
+    major: 'Chemistry',
   },
   {
-    Major: 'Chemistry',
+    major: 'Geology And Earth Science',
   },
   {
-    Major: 'Geology And Earth Science',
+    major: 'Geosciences',
   },
   {
-    Major: 'Geosciences',
+    major: 'Oceanography',
   },
   {
-    Major: 'Oceanography',
+    major: 'Physics',
   },
   {
-    Major: 'Physics',
+    major: 'Multi-Disciplinary Or General Science',
   },
   {
-    Major: 'Multi-Disciplinary Or General Science',
+    major: 'Nuclear, Industrial Radiology, And Biological Technologies',
   },
   {
-    Major: 'Nuclear, Industrial Radiology, And Biological Technologies',
+    major: 'Psychology',
   },
   {
-    Major: 'Psychology',
+    major: 'Educational Psychology',
   },
   {
-    Major: 'Educational Psychology',
+    major: 'Clinical Psychology',
   },
   {
-    Major: 'Clinical Psychology',
+    major: 'Counseling Psychology',
   },
   {
-    Major: 'Counseling Psychology',
+    major: 'Industrial And Organizational Psychology',
   },
   {
-    Major: 'Industrial And Organizational Psychology',
+    major: 'Social Psychology',
   },
   {
-    Major: 'Social Psychology',
+    major: 'Miscellaneous Psychology',
   },
   {
-    Major: 'Miscellaneous Psychology',
+    major: 'Human Services And Community Organization',
   },
   {
-    Major: 'Human Services And Community Organization',
+    major: 'Social Work',
   },
   {
-    Major: 'Social Work',
+    major: 'Interdisciplinary Social Sciences',
   },
   {
-    Major: 'Interdisciplinary Social Sciences',
+    major: 'General Social Sciences',
   },
   {
-    Major: 'General Social Sciences',
+    major: 'Economics',
   },
   {
-    Major: 'Economics',
+    major: 'Criminology',
   },
   {
-    Major: 'Criminology',
+    major: 'Geography',
   },
   {
-    Major: 'Geography',
+    major: 'International Relations',
   },
   {
-    Major: 'International Relations',
+    major: 'Political Science And Government',
   },
   {
-    Major: 'Political Science And Government',
+    major: 'Sociology',
   },
   {
-    Major: 'Sociology',
-  },
-  {
-    Major: 'Miscellaneous Social Sciences',
+    major: 'Miscellaneous Social Sciences',
   },
 ];

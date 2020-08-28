@@ -14,22 +14,22 @@ export type registerPostData = PayloadAction<
     username: string;
     email: string;
     password: string;
-    addr1?: string;
+    addr1: string;
     addr2: string;
     country: string;
     city: string;
-    state?: string;
-    zip?: string;
+    state: string;
+    zip: string;
     firstname: string;
     lastname: string;
-    gender?: string;
-    school?: string;
-    major?: string;
-    extra?: string;
+    gender: string;
+    school: string;
+    major: string;
+    extra: string;
     resume: FormData;
-    linkedin?: string;
-    github?: string;
-    rememberMe?: boolean;
+    linkedin: string;
+    github: string;
+    rememberMe: boolean;
   },
   any
 >;
