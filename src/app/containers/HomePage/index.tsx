@@ -31,9 +31,20 @@ export class HomePage extends React.Component {
         </Typography>
 
         {this.state.showButton ? (
-          <Button onClick={this.logout} color="primary" variant="contained">
-            Logout
-          </Button>
+          <>
+            <Button onClick={this.logout} color="primary" variant="contained">
+              Logout
+            </Button>
+            <Button
+              onClick={e => {
+                window.open('/account', '_self');
+              }}
+              color="primary"
+              variant="contained"
+            >
+              My Account
+            </Button>
+          </>
         ) : (
           <div>
             <Button
