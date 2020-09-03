@@ -86,7 +86,7 @@ const displayNames = {
   state: 'State',
   zip: 'Zip',
   gender: 'Gender',
-  extra: 'Extra Info',
+  //extra: 'Extra Info',
 };
 
 export function Account(props: Props) {
@@ -101,6 +101,7 @@ export function Account(props: Props) {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const account: AccountDetails = useSelector(selectAccountInfo);
+  console.log(account);
   //console.log(account);
   const table = Object.assign({}, account);
   //Values to hide
@@ -119,6 +120,7 @@ export function Account(props: Props) {
     'updatedAt',
     'year',
     'updated_by',
+    'extra',
   ].forEach(elm => delete table[elm]);
   //console.log(table);
   //console.log(groupInfo);
@@ -160,18 +162,6 @@ export function Account(props: Props) {
                       <TableCell>{`${value}`}</TableCell>
                     </TableRow>
                   ),
-              )}
-              {account.resume && (
-                <TableRow>
-                  <TableCell>
-                    <strong>Resume</strong>
-                  </TableCell>
-                  <TableCell>
-                    <Link href={'http://localhost:1337' + account.resume.url}>
-                      {account.resume.name}
-                    </Link>
-                  </TableCell>
-                </TableRow>
               )}
             </TableBody>
           </Table>
@@ -333,7 +323,7 @@ export function Account(props: Props) {
                                 <TableCell>
                                   <strong>{parseInt(key) + 1}</strong>
                                 </TableCell>
-                                <TableCell>
+                                <TableCell style={{ maxWidth: '9em' }}>
                                   {`${(value as userDisplay).firstname} ${
                                     (value as userDisplay).lastname
                                   }`}{' '}
@@ -344,7 +334,7 @@ export function Account(props: Props) {
                                 Kick
                               </Button> */}
                                   {(value as userDisplay).id === account.id && (
-                                    <strong>(You)</strong>
+                                    <strong>You</strong>
                                   )}
                                 </TableCell>
                               </TableRow>

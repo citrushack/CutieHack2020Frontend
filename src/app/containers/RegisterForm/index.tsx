@@ -79,7 +79,7 @@ const validate = values => {
   if (!values.username) errors.username = 'Required';
   if (!values.firstname) errors.firstname = 'Required';
   if (!values.lastname) errors.lastname = 'Required';
-  console.log(values);
+  //console.log(values);
   return errors;
 };
 interface Props {}

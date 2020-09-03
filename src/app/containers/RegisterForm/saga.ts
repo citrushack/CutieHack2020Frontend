@@ -25,12 +25,23 @@ export function* register() {
 
     if (response.jwt) {
       // Set the user's credentials
+      const res = yield call(
+        sendResume,
+        resume,
+        response.user.id,
+        response.jwt,
+      );
+      console.log(res);
       yield all([
-        call(auth.setToken, response.jwt, formData.payload.rememberMe),
-        call(auth.setUserInfo, response.user, formData.payload.rememberMe),
-        call(sendResume, resume, response.user.id, response.jwt),
-        call(window.open, '/', '_self'),
+        call(auth.setToken, response.jwt, true),
+        call(
+          auth.setUserInfo,
+          Object.assign(response.user, { resume: res }),
+          true,
+        ),
       ]);
+      //yield call(window.open, '/account', '_self');
+      //console.log(response);
     }
   } catch (error) {
     yield put(
