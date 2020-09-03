@@ -10,7 +10,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { reducer, sliceKey } from './slice';
-import { selectAccountInfo, selectisFetching, selectError } from './selectors';
+import CopyToClipboard from './CopyToClipboard';
+import {
+  selectAccountInfo,
+  selectisFetching,
+  selectError,
+  selectGroup,
+} from './selectors';
 import { accountSaga } from './saga';
 import { AccountDetails } from './types';
 import { actions } from './slice';
@@ -32,6 +38,9 @@ import { TextField } from 'mui-rff';
 import { Alert, AlertTitle } from '@material-ui/lab';
 import { Form } from 'react-final-form';
 
+// @typescript-eslint-disable-next-line no-unused-vars
+import copy from 'clipboard-copy';
+
 interface Props {}
 const useStyles = makeStyles(theme => ({
   root: {
@@ -48,6 +57,11 @@ type validationError = {
   groupCode: string;
 };
 
+type userDisplay = {
+  firstname: string;
+  lastname: string;
+  id: string;
+};
 const validate = values => {
   const errors = {} as validationError;
   if (!values.groupCode) {
@@ -75,21 +89,19 @@ const displayNames = {
   extra: 'Extra Info',
 };
 
-const groupMembers = {
-  1: 'James',
-  2: 'Bobbeth',
-  3: 'Broseph',
-};
-
 export function Account(props: Props) {
   useInjectReducer({ key: sliceKey, reducer: reducer });
   useInjectSaga({ key: sliceKey, saga: accountSaga });
   const classes = useStyles();
   const errormsg = useSelector(selectError);
   const isFetching = useSelector(selectisFetching);
+
+  const groupInfo = useSelector(selectGroup);
+  const groupExists: boolean = !!groupInfo.payload;
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const account: AccountDetails = useSelector(selectAccountInfo);
-  console.log(account);
+  //console.log(account);
   const table = Object.assign({}, account);
   //Values to hide
   [
@@ -106,11 +118,12 @@ export function Account(props: Props) {
     'createdAt',
     'updatedAt',
     'year',
+    'updated_by',
   ].forEach(elm => delete table[elm]);
-  console.log(table);
-
+  //console.log(table);
+  //console.log(groupInfo);
   const onSubmit = (values: any) => {
-    dispatch(actions.submit(values));
+    dispatch(actions.joinGroup(values));
   };
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const dispatch = useDispatch();
@@ -144,7 +157,7 @@ export function Account(props: Props) {
                       <TableCell>
                         <strong>{displayNames[key] || key}</strong>
                       </TableCell>
-                      <TableCell>{value}</TableCell>
+                      <TableCell>{`${value}`}</TableCell>
                     </TableRow>
                   ),
               )}
@@ -197,106 +210,182 @@ export function Account(props: Props) {
         <Box textAlign="center">
           <Typography variant="body1" gutterBottom>
             Plan on hacking with a friend? Enter your group code below, or
-            generate a code to create one!
+            generate a code to share!
           </Typography>
         </Box>
-        <Form
-          onSubmit={onSubmit}
-          validate={validate}
-          render={({ handleSubmit, form, submitting, pristine, values }) => (
-            <form onSubmit={handleSubmit} noValidate>
-              <Paper style={{ padding: 16, margin: 32 }}>
-                <Typography variant="h6" component="h1" gutterBottom>
-                  Join a group
-                </Typography>
-                {errormsg !== '' && (
-                  <Alert severity="error">
-                    <AlertTitle>{errormsg}</AlertTitle>
-                  </Alert>
-                )}
-                <Grid container alignItems="flex-start" spacing={2}>
-                  <Grid item xs={12}>
-                    <TextField
-                      label="Group Code"
-                      name="groupCode"
-                      margin="none"
-                      required={true}
-                    />
-                  </Grid>
-                  <Grid item style={{ marginTop: 16 }}></Grid>
-                  <Grid item style={{ marginTop: 16 }}>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      type="submit"
-                      disabled={isFetching}
-                    >
-                      Submit
-                    </Button>
-                  </Grid>
-                </Grid>
-              </Paper>
-            </form>
-          )}
-        />
+        {errormsg !== '' && (
+          <Alert severity="error">
+            <AlertTitle>{errormsg}</AlertTitle>
+          </Alert>
+        )}
         <Paper style={{ padding: 16, margin: 32 }}>
           <Box textAlign="center">
             <Typography variant="h6" component="h1" gutterBottom>
-              Create a group code
+              {!groupExists
+                ? "Looks like you're not in a group"
+                : 'Your group code'}{' '}
             </Typography>
             <Typography variant="h3" align="center" component="h1" gutterBottom>
-              GBXL52A
+              {groupInfo && groupInfo.payload && groupInfo.payload.uid}
             </Typography>
-            <Button
-              variant="contained"
-              color="primary"
-              type="submit"
-              onClick={e => {
-                e.preventDefault();
-                dispatch(actions.generateCode());
-              }}
-              disabled={isFetching}
-            >
-              Get Code
-            </Button>
-          </Box>
-        </Paper>
-        <Paper style={{ padding: 16, margin: 32 }}>
-          <Box textAlign="left">
-            <Typography variant="h6" component="h1" gutterBottom>
-              Group members (max: 4)
-            </Typography>
-            <Table style={{ marginBottom: '1em' }}>
-              <TableBody>
-                {Object.entries(groupMembers).map(
-                  ([key, value], idx) =>
-                    value && (
-                      <TableRow key={idx}>
-                        <TableCell>
-                          <strong>{key}</strong>
-                        </TableCell>
-                        <TableCell>{value}</TableCell>
-                        <TableCell>
-                          {' '}
-                          <Button variant="contained" type="submit">
-                            Kick
-                          </Button>
-                        </TableCell>
-                      </TableRow>
-                    ),
+            {groupExists ? (
+              <CopyToClipboard>
+                {({ copy }) => (
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={() => copy(groupInfo?.payload?.uid)}
+                  >
+                    Copy
+                  </Button>
                 )}
-              </TableBody>
-            </Table>
-            <Button
-              variant="contained"
-              color="primary"
-              type="submit"
-              disabled={isFetching}
-            >
-              Leave Group
-            </Button>
+              </CopyToClipboard>
+            ) : (
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={e => {
+                  e.preventDefault();
+                  dispatch(actions.generateCode());
+                }}
+                disabled={isFetching}
+              >
+                Create Group
+              </Button>
+            )}
+            {!groupExists && (
+              <Typography
+                style={{ marginTop: '1em' }}
+                variant="h4"
+                component="h1"
+                gutterBottom
+              >
+                OR
+              </Typography>
+            )}
+            {!groupExists && (
+              <Form
+                onSubmit={onSubmit}
+                validate={validate}
+                render={({
+                  handleSubmit,
+                  form,
+                  submitting,
+                  pristine,
+                  values,
+                }) => (
+                  <form onSubmit={handleSubmit} noValidate>
+                    <Paper style={{ padding: 16, margin: 32 }}>
+                      <Typography variant="h6" component="h1" gutterBottom>
+                        Join an existing group
+                      </Typography>
+
+                      <Grid
+                        container
+                        alignItems="center"
+                        justify="center"
+                        spacing={2}
+                      >
+                        <Grid item xs={12}>
+                          <TextField
+                            label="Group Code"
+                            name="groupCode"
+                            margin="none"
+                            required={true}
+                          />
+                        </Grid>
+                        <Grid item style={{ marginTop: 16 }}></Grid>
+                        <Grid item style={{ marginTop: 16 }}>
+                          <Button
+                            variant="contained"
+                            color="primary"
+                            type="submit"
+                            disabled={isFetching}
+                          >
+                            Join
+                          </Button>
+                        </Grid>
+                      </Grid>
+                    </Paper>
+                  </form>
+                )}
+              />
+            )}
           </Box>
         </Paper>
+        {groupExists && (
+          <Paper style={{ padding: 16, margin: 32 }}>
+            <Grid container alignItems="center" justify="center" spacing={2}>
+              <Typography variant="h5" component="h1" gutterBottom>
+                Group members
+              </Typography>
+              <Grid item xs={12}>
+                <Box style={{ width: '70%', margin: 'auto' }}>
+                  <Table style={{ marginBottom: '2em' }}>
+                    <TableBody>
+                      {groupInfo &&
+                        groupInfo.payload &&
+                        groupInfo.payload.users &&
+                        Object.entries(groupInfo.payload.users).map(
+                          ([key, value], idx) =>
+                            value && (
+                              <TableRow key={idx}>
+                                <TableCell>
+                                  <strong>{parseInt(key) + 1}</strong>
+                                </TableCell>
+                                <TableCell>
+                                  {`${(value as userDisplay).firstname} ${
+                                    (value as userDisplay).lastname
+                                  }`}{' '}
+                                </TableCell>
+                                <TableCell>
+                                  {' '}
+                                  {/* <Button variant="contained" type="submit">
+                                Kick
+                              </Button> */}
+                                  {(value as userDisplay).id === account.id && (
+                                    <strong>(You)</strong>
+                                  )}
+                                </TableCell>
+                              </TableRow>
+                            ),
+                        )}
+                    </TableBody>
+                  </Table>
+                </Box>
+              </Grid>
+              <Grid item xs={6}>
+                <Box textAlign="center">
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={e => {
+                      e.preventDefault();
+                      dispatch(actions.leaveGroup());
+                    }}
+                    disabled={isFetching}
+                  >
+                    Leave Group
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid item xs={6}>
+                <Box textAlign="center">
+                  <Button
+                    variant="contained"
+                    onClick={e => {
+                      e.preventDefault();
+                      dispatch(actions.refreshGroup());
+                    }}
+                    disabled={isFetching}
+                  >
+                    Refresh
+                  </Button>
+                </Box>
+              </Grid>
+            </Grid>
+          </Paper>
+        )}
       </Paper>
     </div>
   );

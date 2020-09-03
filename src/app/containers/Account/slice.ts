@@ -2,8 +2,8 @@
 import { createSlice } from 'utils/@reduxjs/toolkit';
 import { ContainerState } from './types';
 import auth from 'utils/auth';
-import { postDataPayload, postErrorPayload } from './types';
-import { PayloadAction } from '@reduxjs/toolkit';
+import { postDataPayload, postErrorPayload, groupInfoPayload } from './types';
+// import { PayloadAction } from '@reduxjs/toolkit';
 
 // The initial state of the Account container
 export const initialState: ContainerState = {
@@ -11,30 +11,60 @@ export const initialState: ContainerState = {
   error: '',
   postData: {} as postDataPayload,
   isFetching: false,
+  groupInfo: { payload: auth.get('groupInfo') } as groupInfoPayload,
 };
 
 const accountSlice = createSlice({
   name: 'account',
   initialState,
   reducers: {
-    submit(state, action: postDataPayload) {
+    joinGroup(state, action: postDataPayload) {
       state.postData.payload = action.payload;
       state.isFetching = true;
     },
-    submitFailed(state, action: postErrorPayload) {
+    joinGroupFailed(state, action: postErrorPayload) {
       state.isFetching = false;
       state.error = action.payload.message;
     },
-    submitSucc(state) {
+    joinGroupSucc(state, action: groupInfoPayload) {
+      state.groupInfo.payload = action.payload;
+      state.isFetching = false;
+    },
+    leaveGroup(state) {
+      state.isFetching = true;
+    },
+    leaveGroupFail(state, action: postErrorPayload) {
+      state.isFetching = false;
+      state.error = action.payload.message;
+    },
+    leaveGroupSucc(state) {
+      state.groupInfo.payload = null;
       state.isFetching = false;
     },
     generateCode(state) {
       state.isFetching = true;
     },
-    generateCodeFail(state) {
+    generateCodeFail(state, action: postErrorPayload) {
+      state.isFetching = false;
+      state.error = action.payload.message;
+    },
+    generateCodeSucc(state, action: groupInfoPayload) {
+      state.groupInfo.payload = action.payload;
       state.isFetching = false;
     },
-    generateCodeSucc(state) {
+    refreshGroup(state) {
+      state.isFetching = true;
+    },
+    refreshGroupFail(state, action: postErrorPayload) {
+      state.isFetching = false;
+      state.error = action.payload.message;
+    },
+    refreshGroupSucc(state, action: groupInfoPayload) {
+      state.groupInfo.payload = action.payload;
+      state.isFetching = false;
+    },
+    clearGroupInfo(state) {
+      state.groupInfo.payload = null;
       state.isFetching = false;
     },
   },

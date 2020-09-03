@@ -28,3 +28,8 @@ export const selectisFetching = createSelector(
   [selectDomain],
   accountState => accountState.isFetching,
 );
+
+export const selectGroup = createSelector(
+  [selectDomain],
+  accountState => accountState.groupInfo,
+);
