@@ -72,6 +72,7 @@ const formFields: formTypes = [
       <TextField
         label="Password"
         name="password"
+        type="password"
         margin="none"
         required={true}
       />

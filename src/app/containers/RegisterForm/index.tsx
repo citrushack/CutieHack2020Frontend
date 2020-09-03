@@ -190,6 +190,9 @@ const loginInfo: formTypes = [
     size: 12,
     field: (
       <TextField
+        inputProps={{
+          autocomplete: 'new-password',
+        }}
         label="Password"
         name="password"
         type="password"
@@ -202,6 +205,9 @@ const loginInfo: formTypes = [
     size: 12,
     field: (
       <TextField
+        inputProps={{
+          autocomplete: 'new-password',
+        }}
         label="Confirm Password"
         name="passwordConfirm"
         type="password"

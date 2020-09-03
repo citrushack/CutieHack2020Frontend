@@ -19,19 +19,59 @@ export function* joinGroup() {
     };
 
     const requestURL = 'http://localhost:1337/users/updateme';
-    console.log(body);
+    //console.log(body);
     const response = yield call(request, requestURL, {
       method: 'PUT',
       body,
     });
-    console.log(response);
-    yield call(auth.setUserInfo, response.user, true);
-    yield put(actions.submitSucc());
+    //console.log(response);
+
+    yield all([
+      call(
+        auth.set,
+        response,
+        'groupInfo',
+        localStorage.getItem('userInfo') !== null,
+      ),
+      put(actions.joinGroupSucc(response)),
+    ]);
   } catch (error) {
     //console.log(error.response.payload.message[0].messages[0].message);
 
     yield put(
-      actions.submitFailed({
+      actions.joinGroupFailed({
+        message: JSON.stringify(error.response.payload),
+      }),
+    );
+  }
+}
+
+export function* leaveGroup() {
+  //Select the form data
+
+  try {
+    //Generate request body from payload
+    const body = {
+      group: 'none',
+    };
+
+    const requestURL = 'http://localhost:1337/users/updateme';
+    //console.log(body);
+    yield call(request, requestURL, {
+      method: 'PUT',
+      body,
+    });
+    //console.log(response);
+
+    yield all([
+      call(auth.clearToken, 'groupInfo'),
+      put(actions.leaveGroupSucc()),
+    ]);
+  } catch (error) {
+    //console.log(error.response.payload.message[0].messages[0].message);
+
+    yield put(
+      actions.leaveGroupFail({
         message: JSON.stringify(error.response.payload),
       }),
     );
@@ -47,16 +87,61 @@ export function* generateGroup() {
     const response = yield call(request, requestURL, {
       method: 'POST',
     });
-    console.log(response);
-    yield put(actions.generateCodeSucc());
+    //console.log(response);
+    yield all([
+      call(
+        auth.set,
+        response,
+        'groupInfo',
+        localStorage.getItem('userInfo') !== null,
+      ),
+      put(actions.generateCodeSucc(response)),
+    ]);
   } catch (error) {
     //console.log(error.response.payload.message[0].messages[0].message);
 
-    yield put(actions.generateCodeFail());
+    yield put(
+      actions.generateCodeFail({
+        message: JSON.stringify(error.response.payload),
+      }),
+    );
+  }
+}
+
+export function* refresh() {
+  try {
+    const requestURL = 'http://localhost:1337/users/getmygroup';
+    const response = yield call(request, requestURL, {
+      method: 'GET',
+    });
+    //console.log(response);
+
+    yield all([
+      call(
+        auth.set,
+        response,
+        'groupInfo',
+        localStorage.getItem('userInfo') !== null,
+      ),
+      put(actions.refreshGroupSucc(response)),
+    ]);
+  } catch (error) {
+    //console.log(error.response.payload.message[0].messages[0].message);
+    if (error.response.payload.message === 'UserNotInGroup') {
+      yield all([call(auth.clear, 'groupInfo'), put(actions.clearGroupInfo())]);
+    } else {
+      yield put(
+        actions.refreshGroupFail({
+          message: JSON.stringify(error.response.payload),
+        }),
+      );
+    }
   }
 }
 
 export function* accountSaga() {
-  yield takeLatest(actions.submit.type, joinGroup);
+  yield takeLatest(actions.joinGroup.type, joinGroup);
+  yield takeLatest(actions.leaveGroup.type, leaveGroup);
   yield takeLatest(actions.generateCode.type, generateGroup);
+  yield takeLatest(actions.refreshGroup.type, refresh);
 }

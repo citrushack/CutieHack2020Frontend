@@ -23,15 +23,12 @@ export type AccountTable = {
 export type ExtraAccountDetails = {
   blocked: boolean;
   confirmed: boolean;
-  createdAt: string;
-  _id: string;
-  __v: number;
   provider: string;
   resume: { url: string; name: string };
   role: Object;
-  updatedAt: string;
   year: string;
-};
+  group: Object;
+} & mongoEntry;
 //ignore extra types lol
 //i thought i could remove properties from downcasted items in typescript,
 //turns out thats now how it works..
@@ -49,6 +46,23 @@ export type postDataPayload = PayloadAction<
   any
 >;
 
+export type mongoEntry = {
+  __v: number;
+  _id: string;
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type groupInfoPayload = PayloadAction<
+  | ({
+      uid: string;
+      users: Array<Object>;
+    } & mongoEntry)
+  | null,
+  any
+>;
+
 export type AccountDetails = AccountTable & ExtraAccountDetails;
 
 export interface AccountState {
@@ -56,6 +70,7 @@ export interface AccountState {
   error: string;
   postData: postDataPayload;
   isFetching: boolean;
+  groupInfo: groupInfoPayload;
 }
 
 export type ContainerState = AccountState;
