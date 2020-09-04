@@ -500,7 +500,7 @@ export function RegisterForm(props: Props) {
                 ))}
                 <Grid item style={{ marginTop: 16 }}>
                   <Typography variant="h4" align="left" component="h1">
-                    3. Hacker app
+                    4. Hacker app
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
