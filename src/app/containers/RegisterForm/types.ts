@@ -9,30 +9,30 @@ export interface RegisterFormState {
 
 export type ContainerState = RegisterFormState;
 
-export type registerPostData = PayloadAction<
-  {
-    username: string;
-    email: string;
-    password: string;
-    addr1: string;
-    addr2: string;
-    country: string;
-    city: string;
-    state: string;
-    zip: string;
-    firstname: string;
-    lastname: string;
-    gender: string;
-    school: string;
-    major: string;
-    extra: string;
-    resume: FormData;
-    linkedin: string;
-    github: string;
-    rememberMe: boolean;
-  },
-  any
->;
+export type postDataPayload = {
+  username: string;
+  email: string;
+  password: string;
+  addr1: string;
+  addr2: string;
+  country: string;
+  city: string;
+  state: string;
+  zip: string;
+  firstname: string;
+  lastname: string;
+  gender: string;
+  school: string;
+  major: string;
+  extra: string;
+  resume: FormData | string;
+  linkedin: string;
+  github: string;
+  year: string;
+  rememberMe: boolean;
+};
+
+export type registerPostData = PayloadAction<postDataPayload, any>;
 
 export type postErrorPayload = PayloadAction<
   {

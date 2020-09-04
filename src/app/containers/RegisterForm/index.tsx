@@ -21,9 +21,10 @@ import { TextField, Autocomplete, AutocompleteData } from 'mui-rff';
 //import { Checkbox as MuiCheckbox } from '@material-ui/core';
 import { Alert, AlertTitle } from '@material-ui/lab';
 import { createFilterOptions } from '@material-ui/lab';
-
+import { postDataPayload } from './types';
 import {
   Typography,
+  Box,
   Paper,
   Link,
   Grid,
@@ -34,16 +35,8 @@ import {
 import Dropzone from './Dropzone';
 
 interface Props {}
-type validationError = {
-  email: string;
-  username: string;
-  firstname: string;
-  lastname: string;
-  country: string;
-  school: string;
-  password: string;
+type validationError = postDataPayload & {
   passwordConfirm: string;
-  resume: string;
 };
 
 const genders = [
@@ -56,6 +49,18 @@ function validateEmail(email) {
   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
 }
+function validateLinkedin(url) {
+  const re = /(https?:\/\/(.+?\.)?linkedin\.com(\/[A-Za-z0-9\-\._~:\/\?#\[\]@!$&'\(\)\*\+,;\=]*)?)/;
+  return re.test(url);
+}
+function validateGithub(url) {
+  const re = /(https?:\/\/(.+?\.)?github\.com(\/[A-Za-z0-9\-\._~:\/\?#\[\]@!$&'\(\)\*\+,;\=]*)?)/;
+  return re.test(url);
+}
+function validateYear(year) {
+  const re = /^(19|20)\d{2}$/;
+  return re.test(year);
+}
 const validate = values => {
   const errors = {} as validationError;
   if (!values.email) {
@@ -63,19 +68,35 @@ const validate = values => {
   } else if (!validateEmail(values.email)) {
     errors.email = 'Email not valid';
   }
-  if (!values.password) {
-    errors.password = 'Required';
+
+  if (!values.github) {
+    errors.github = 'Required';
+  } else if (!validateGithub(values.github)) {
+    errors.github = 'Invalid url';
   }
-  if (!values.passwordConfirm) {
-    errors.passwordConfirm = 'Required';
+
+  if (!values.linkedin) {
+    errors.linkedin = 'Required';
+  } else if (!validateLinkedin(values.linkedin)) {
+    errors.linkedin = 'Invalid url';
   }
-  if (values.password !== values.passwordConfirm) {
+
+  if (!values.year) {
+    errors.year = 'Required';
+  } else if (!validateYear(values.year)) {
+    errors.year = 'Invalid year';
+  }
+
+  if (!values.password) errors.password = 'Required';
+  if (!values.passwordConfirm) errors.passwordConfirm = 'Required';
+  if (values.password !== values.passwordConfirm)
     errors.passwordConfirm = 'Passwords must match';
-  }
-  if (!values.resume) {
-    errors.resume = 'Required';
-  }
+  if (!values.addr1) errors.addr1 = 'Required';
+  if (!values.resume) errors.resume = 'Required';
   if (!values.country) errors.country = 'Required';
+  if (!values.city) errors.city = 'Required';
+  if (!values.state) errors.state = 'Required';
+  if (!values.zip) errors.zip = 'Required';
   if (!values.username) errors.username = 'Required';
   if (!values.firstname) errors.firstname = 'Required';
   if (!values.lastname) errors.lastname = 'Required';
@@ -111,7 +132,7 @@ const checkIn: formTypes = [
         label="Address Line 1"
         name="addr1"
         margin="none"
-        required={false}
+        required={true}
       />
     ),
   },
@@ -153,12 +174,12 @@ const checkIn: formTypes = [
   {
     size: 12,
     field: (
-      <TextField label="State" name="State" margin="none" required={false} />
+      <TextField label="State" name="state" margin="none" required={true} />
     ),
   },
   {
     size: 12,
-    field: <TextField label="Zip" name="zip" margin="none" required={false} />,
+    field: <TextField label="Zip" name="zip" margin="none" required={true} />,
   },
 ];
 const loginInfo: formTypes = [
@@ -220,7 +241,7 @@ const loginInfo: formTypes = [
 
 const demoInfo: formTypes = [
   {
-    size: 12,
+    size: 6,
     field: (
       <TextField
         label="First name"
@@ -231,7 +252,7 @@ const demoInfo: formTypes = [
     ),
   },
   {
-    size: 12,
+    size: 6,
     field: (
       <TextField
         label="Last name"
@@ -247,7 +268,7 @@ const demoInfo: formTypes = [
       <Autocomplete
         label="Gender"
         name="gender"
-        required={false}
+        required={true}
         options={genders}
         getOptionValue={option => option.value}
         getOptionLabel={option => option.label}
@@ -265,7 +286,7 @@ const demoInfo: formTypes = [
       <Autocomplete
         label="School"
         name="school"
-        required={false}
+        required={true}
         options={unis}
         freeSolo
         getOptionValue={option => option.uni}
@@ -306,7 +327,7 @@ const demoInfo: formTypes = [
       <Autocomplete
         label="Major"
         name="major"
-        required={false}
+        required={true}
         options={majors}
         freeSolo
         getOptionValue={option => option?.major}
@@ -341,6 +362,10 @@ const demoInfo: formTypes = [
       />
     ),
   },
+  {
+    size: 12,
+    field: <TextField label="Year" name="year" margin="none" required={true} />,
+  },
 ];
 const filter = createFilterOptions<AutocompleteData>();
 const hackerInfo: formTypes = [
@@ -349,10 +374,9 @@ const hackerInfo: formTypes = [
     field: (
       <TextField
         label="Github profile link"
-        multiline
         name="github"
         margin="none"
-        required={false}
+        required={true}
       />
     ),
   },
@@ -361,10 +385,9 @@ const hackerInfo: formTypes = [
     field: (
       <TextField
         label="Linkedin profile link"
-        multiline
         name="linkedin"
         margin="none"
-        required={false}
+        required={true}
       />
     ),
   },
@@ -449,10 +472,16 @@ export function RegisterForm(props: Props) {
                     {item.field}
                   </Grid>
                 ))}
-                <Grid item style={{ marginTop: 16 }}>
-                  <Typography variant="h4" align="left" component="h1">
-                    2. Check-in
-                  </Typography>
+                <Grid item>
+                  <Box style={{ marginTop: 16 }}>
+                    <Typography variant="h4" align="left" component="h1">
+                      2. Check-in
+                    </Typography>
+                    <Typography style={{ marginTop: 16 }} align="left">
+                      We only need this to distribute prizes, we won't share
+                      your address with anyone.
+                    </Typography>
+                  </Box>
                 </Grid>
                 {checkIn.map((item, idx) => (
                   <Grid item xs={item.size} key={idx}>
