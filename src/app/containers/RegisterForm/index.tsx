@@ -92,7 +92,7 @@ const validate = values => {
   if (values.password !== values.passwordConfirm)
     errors.passwordConfirm = 'Passwords must match';
   if (!values.addr1) errors.addr1 = 'Required';
-  if (!values.resume) errors.resume = 'Required';
+  if (!values.resume) errors.resume = 'Resume upload required';
   if (!values.country) errors.country = 'Required';
   if (!values.city) errors.city = 'Required';
   if (!values.state) errors.state = 'Required';
@@ -100,6 +100,10 @@ const validate = values => {
   if (!values.username) errors.username = 'Required';
   if (!values.firstname) errors.firstname = 'Required';
   if (!values.lastname) errors.lastname = 'Required';
+  if (!values.school) errors.school = 'Required';
+  if (!values.major) errors.major = 'Required';
+  if (!values.gender) errors.gender = 'Required';
+
   //console.log(values);
   return errors;
 };
