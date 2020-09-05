@@ -2,7 +2,8 @@ import { all, call, select, takeLatest, put } from 'redux-saga/effects';
 import { actions } from './slice';
 import request from 'utils/request';
 import auth from 'utils/auth';
-
+//import { useHistory } from 'react-router-dom';
+//import React from "react";
 import { selectFormData } from './selectors';
 //import {  postDataPayload } from './types';
 //import { format } from 'url';
@@ -33,6 +34,7 @@ export function* login() {
         call(auth.setToken, response.jwt, formData.payload.rememberMe),
         call(auth.setUserInfo, response.user, formData.payload.rememberMe),
         call(window.open, '/', '_self'),
+        //call(nextPage, '/'),
       ]);
     }
   } catch (error) {

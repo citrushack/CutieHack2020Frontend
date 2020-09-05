@@ -1,4 +1,4 @@
-import { all, call, select, takeLatest, put } from 'redux-saga/effects';
+import { all, call, select, takeLatest, put, fork } from 'redux-saga/effects';
 import { actions } from './slice';
 import request from 'utils/request';
 import auth from 'utils/auth';
@@ -139,7 +139,8 @@ export function* refresh() {
   }
 }
 
-export function* accountSaga() {
+export default function* accountSaga() {
+  yield fork(refresh);
   yield takeLatest(actions.joinGroup.type, joinGroup);
   yield takeLatest(actions.leaveGroup.type, leaveGroup);
   yield takeLatest(actions.generateCode.type, generateGroup);

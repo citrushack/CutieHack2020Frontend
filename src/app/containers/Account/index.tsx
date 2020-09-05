@@ -17,7 +17,7 @@ import {
   selectError,
   selectGroup,
 } from './selectors';
-import { accountSaga } from './saga';
+import accountSaga from './saga';
 import { AccountDetails } from './types';
 import { actions } from './slice';
 
