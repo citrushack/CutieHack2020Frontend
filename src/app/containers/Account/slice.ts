@@ -67,6 +67,11 @@ const accountSlice = createSlice({
       state.groupInfo.payload = null;
       state.isFetching = false;
     },
+    refreshState(state) {
+      state.info = auth.getUserInfo();
+      state.groupInfo = { payload: auth.get('groupInfo') } as groupInfoPayload;
+      state.isFetching = false;
+    },
   },
 });
 

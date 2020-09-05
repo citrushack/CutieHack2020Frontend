@@ -137,10 +137,11 @@ export function* refresh() {
       );
     }
   }
+  yield put(actions.refreshState());
 }
 
 export default function* accountSaga() {
-  yield fork(refresh);
+  yield call(refresh);
   yield takeLatest(actions.joinGroup.type, joinGroup);
   yield takeLatest(actions.leaveGroup.type, leaveGroup);
   yield takeLatest(actions.generateCode.type, generateGroup);

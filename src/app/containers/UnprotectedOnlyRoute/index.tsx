@@ -15,13 +15,13 @@ const MotionRedirect: React.FC<RedirectProps> = ({ children, ...props }) => (
   </motion.div>
 );
 
-function ProtectedOnlyRoute({ component: Component, ...rest }) {
+function UnprotectedOnlyRoute({ component: Component, ...rest }) {
   console.log('rerender');
-  if (!!!auth.getToken()) {
-    return <MotionRedirect push to="/auth" />;
+  if (!!auth.getToken()) {
+    return <MotionRedirect push to="/account" />;
   } else {
     return <Route {...rest} render={props => <Component {...props} />} />;
   }
 }
 
-export default ProtectedOnlyRoute;
+export default UnprotectedOnlyRoute;
