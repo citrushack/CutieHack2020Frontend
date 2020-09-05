@@ -9,19 +9,18 @@ import { selectFormData } from './selectors';
 //import { format } from 'url';
 export function* login() {
   //Select the form data
+  const formData = yield select(selectFormData);
 
   try {
     //Get submit action payload
-    const formData = yield select(selectFormData);
 
     //Generate request body from payload
     const body = {
       identifier: formData.payload.username,
       password: formData.payload.password,
     };
-
     const requestURL = 'http://localhost:1337/auth/local';
-    console.log(body);
+    //console.log(body);
     //Request auth
     const response = yield call(request, requestURL, {
       method: 'POST',
@@ -33,18 +32,19 @@ export function* login() {
       yield all([
         call(auth.setToken, response.jwt, formData.payload.rememberMe),
         call(auth.setUserInfo, response.user, formData.payload.rememberMe),
-        call(window.open, '/', '_self'),
-        //call(nextPage, '/'),
       ]);
+      yield call(formData.payload.history, '/account');
     }
   } catch (error) {
-    console.log(error.response.payload.message[0].messages[0].message);
+    if (error && error.response) {
+      console.log(error.response.payload.message[0].messages[0].message);
 
-    yield put(
-      actions.submitFailed({
-        message: error.response.payload.message[0].messages[0].message,
-      }),
-    );
+      yield put(
+        actions.submitFailed({
+          message: error.response.payload.message[0].messages[0].message,
+        }),
+      );
+    }
   }
 }
 

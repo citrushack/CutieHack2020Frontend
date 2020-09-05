@@ -33,6 +33,9 @@ import {
   CssBaseline,
 } from '@material-ui/core';
 import Dropzone from './Dropzone';
+import { useHistory } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { pageVariants } from '../../animations';
 
 interface Props {}
 type validationError = postDataPayload & {
@@ -50,11 +53,11 @@ function validateEmail(email) {
   return re.test(email);
 }
 function validateLinkedin(url) {
-  const re = /(https?:\/\/(.+?\.)?linkedin\.com(\/[A-Za-z0-9\-\._~:\/\?#\[\]@!$&'\(\)\*\+,;\=]*)?)/;
+  const re = /(https?:\/\/(.+?\.)?linkedin\.com(\/[A-Za-z0-9\-._~:/?#[\]@!$&'()*+,;=]*)?)/;
   return re.test(url);
 }
 function validateGithub(url) {
-  const re = /(https?:\/\/(.+?\.)?github\.com(\/[A-Za-z0-9\-\._~:\/\?#\[\]@!$&'\(\)\*\+,;\=]*)?)/;
+  const re = /(https?:\/\/(.+?\.)?github\.com(\/[A-Za-z0-9\-._~:/?#[\]@!$&'()*+,;=]*)?)/;
   return re.test(url);
 }
 function validateYear(year) {
@@ -100,8 +103,8 @@ const validate = values => {
   if (!values.username) errors.username = 'Required';
   if (!values.firstname) errors.firstname = 'Required';
   if (!values.lastname) errors.lastname = 'Required';
-  if (!values.school) errors.school = 'Required';
-  if (!values.major) errors.major = 'Required';
+  // if (!values.school) errors.school = 'Required';
+  // if (!!!values.major) errors.major = 'Required';
   if (!values.gender) errors.gender = 'Required';
 
   //console.log(values);
@@ -216,7 +219,7 @@ const loginInfo: formTypes = [
     field: (
       <TextField
         inputProps={{
-          autocomplete: 'new-password',
+          autoComplete: 'new-password',
         }}
         label="Password"
         name="password"
@@ -231,7 +234,7 @@ const loginInfo: formTypes = [
     field: (
       <TextField
         inputProps={{
-          autocomplete: 'new-password',
+          autoComplete: 'new-password',
         }}
         label="Confirm Password"
         name="passwordConfirm"
@@ -418,15 +421,23 @@ export function RegisterForm(props: Props) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   //const authPage = useSelector(selectRegisterForm);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  let history = useHistory();
   const dispatch = useDispatch();
   const onSubmit = (values: any) => {
-    dispatch(actions.submit(values));
+    dispatch(actions.submit({ ...values, history: history }));
   };
   const errormsg = useSelector(selectError);
   const isFetching = useSelector(selectisFetching);
 
   return (
-    <div style={{ padding: 16, margin: 'auto', maxWidth: 600 }}>
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+      style={{ padding: 16, margin: 'auto', maxWidth: 600 }}
+    >
       <CssBaseline />
       <Typography variant="h4" align="center" component="h1" gutterBottom>
         <span role="img" aria-label="flag">
@@ -545,6 +556,6 @@ export function RegisterForm(props: Props) {
           )}
         />
       </Paper>
-    </div>
+    </motion.div>
   );
 }

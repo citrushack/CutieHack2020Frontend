@@ -1,4 +1,5 @@
 import { PayloadAction } from '@reduxjs/toolkit';
+import { History } from 'history';
 
 /* --- STATE --- */
 export interface AuthPageState {
@@ -12,6 +13,7 @@ export type postDataPayload = PayloadAction<
     username: string;
     password: string;
     rememberMe?: boolean;
+    history: History<any>;
   },
   any
 >;

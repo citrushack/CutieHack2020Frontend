@@ -7,16 +7,16 @@ import 'whatwg-fetch';
 
 export function* register() {
   //Select the form data
+  const formData = yield select(selectFormData);
 
   try {
     //Get submit action payload
-    const formData = yield select(selectFormData);
-    console.log(formData);
+    //console.log(formData);
     //Generate request bodies from payload
-    const { resume, ...body } = formData.payload;
+    const { resume, history, ...body } = formData.payload;
 
     const requestURL = 'http://localhost:1337/auth/local/register';
-    console.log(body);
+    //console.log(body);
     //Request auth
     const response = yield call(request, requestURL, {
       method: 'POST',
@@ -30,15 +30,18 @@ export function* register() {
         call(auth.setToken, response.jwt, true),
         call(auth.setUserInfo, response.user, true),
       ]);
-      yield call(window.open, '/account', '_self');
-      //console.log(response);
+      yield call(history.push, '/account');
+      //console.log(JSON.stringify(response));
     }
   } catch (error) {
-    yield put(
-      actions.submitFailed({
-        message: error.response.payload.message[0].messages[0].message,
-      }),
-    );
+    if (error) {
+      console.log(JSON.stringify(error));
+      yield put(
+        actions.submitFailed({
+          message: error.response.payload.message[0].messages[0].message,
+        }),
+      );
+    }
   }
 }
 

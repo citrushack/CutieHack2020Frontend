@@ -5,25 +5,22 @@
  */
 
 import React from 'react';
-import { Redirect, Route } from 'react-router-dom';
+import { Route, Redirect, RedirectProps } from 'react-router-dom';
 import auth from 'utils/auth';
+import { motion } from 'framer-motion';
 
-const ProtectedRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={props =>
-      auth.getToken() !== null ? (
-        <Component {...props} />
-      ) : (
-        <Redirect
-          to={{
-            pathname: 'auth',
-            state: { from: props.location },
-          }}
-        />
-      )
-    }
-  />
+const MotionRedirect: React.FC<RedirectProps> = ({ children, ...props }) => (
+  <motion.div exit="undefined">
+    <Redirect {...props} />
+  </motion.div>
 );
 
-export default ProtectedRoute;
+function ProtectedOnlyRoute({ component: Component, ...rest }) {
+  if (!!!auth.getToken()) {
+    return <MotionRedirect to="/auth" />;
+  } else {
+    return <Route {...rest} render={props => <Component {...props} />} />;
+  }
+}
+
+export default ProtectedOnlyRoute;

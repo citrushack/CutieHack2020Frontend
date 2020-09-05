@@ -1,5 +1,5 @@
 import { PayloadAction } from '@reduxjs/toolkit';
-
+import { History } from 'history';
 /* --- STATE --- */
 export interface RegisterFormState {
   isFetching: boolean;
@@ -32,7 +32,10 @@ export type postDataPayload = {
   rememberMe: boolean;
 };
 
-export type registerPostData = PayloadAction<postDataPayload, any>;
+export type registerPostData = PayloadAction<
+  postDataPayload & { history: History<any> },
+  any
+>;
 
 export type postErrorPayload = PayloadAction<
   {

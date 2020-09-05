@@ -24,7 +24,6 @@ import { actions } from './slice';
 import {
   Typography,
   Paper,
-  Link,
   Grid,
   Button,
   CssBaseline,
@@ -37,6 +36,8 @@ import TableRow from '@material-ui/core/TableRow';
 import { TextField } from 'mui-rff';
 import { Alert, AlertTitle } from '@material-ui/lab';
 import { Form } from 'react-final-form';
+import { motion } from 'framer-motion';
+import { pageVariants } from '../../animations';
 
 // @typescript-eslint-disable-next-line no-unused-vars
 import copy from 'clipboard-copy';
@@ -88,7 +89,6 @@ const displayNames = {
   gender: 'Gender',
   //extra: 'Extra Info',
 };
-
 export function Account(props: Props) {
   useInjectReducer({ key: sliceKey, reducer: reducer });
   useInjectSaga({ key: sliceKey, saga: accountSaga });
@@ -101,7 +101,7 @@ export function Account(props: Props) {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const account: AccountDetails = useSelector(selectAccountInfo);
-  console.log(account);
+  //console.log(account);
   //console.log(account);
   const table = Object.assign({}, account);
   //Values to hide
@@ -131,7 +131,12 @@ export function Account(props: Props) {
   const dispatch = useDispatch();
   //console.log(table);
   return (
-    <div
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
       style={{ padding: 16, margin: 'auto', maxWidth: 600, marginTop: '1.5em' }}
     >
       <Typography variant="h4" align="center" component="h1" gutterBottom>
@@ -377,7 +382,7 @@ export function Account(props: Props) {
           </Paper>
         )}
       </Paper>
-    </div>
+    </motion.div>
   );
 }
 //Edit -> username, firstname, lastname

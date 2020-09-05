@@ -23,6 +23,9 @@ import {
   CssBaseline,
 } from '@material-ui/core';
 import { Alert, AlertTitle } from '@material-ui/lab';
+import { motion } from 'framer-motion';
+import { pageVariants } from '../../animations';
+import { useHistory } from 'react-router-dom';
 
 type validationError = {
   username: string;
@@ -98,16 +101,23 @@ export function AuthPage(props: Props) {
   //const authPage = useSelector(selectAuthPage);
   const errormsg = useSelector(selectError);
   const isFetching = useSelector(selectisFetching);
-
-  console.log(errormsg);
+  let history = useHistory().push;
+  //console.log(errormsg);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const dispatch = useDispatch();
   const onSubmit = (values: any) => {
-    dispatch(actions.submit(values));
+    dispatch(actions.submit({ ...values, history: history }));
   };
 
   return (
-    <div style={{ padding: 16, margin: 'auto', maxWidth: 600 }}>
+    <motion.div
+      initial="initial"
+      animate="in"
+      exit="out"
+      variants={pageVariants}
+      transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+      style={{ padding: 16, margin: 'auto', maxWidth: 600 }}
+    >
       <CssBaseline />
       <Typography variant="h4" align="center" component="h1" gutterBottom>
         <span role="img" aria-label="flag">
@@ -151,7 +161,7 @@ export function AuthPage(props: Props) {
           </form>
         )}
       />
-    </div>
+    </motion.div>
   );
 }
 
