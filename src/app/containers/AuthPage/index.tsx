@@ -111,13 +111,12 @@ export function AuthPage(props: Props) {
 
   return (
     <motion.div
-      className="mainCard"
+      className="mainCard authCard"
       initial="initial"
       animate="in"
       exit="out"
       variants={pageVariants}
       transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
-      style={{ padding: 16, margin: 'auto', maxWidth: 600 }}
     >
       <CssBaseline />
       <Typography variant="h4" align="center" component="h1" gutterBottom>

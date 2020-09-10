@@ -25,6 +25,7 @@ import { Account } from './containers/Account';
 import Navigation from 'react-sticky-nav';
 import { css } from 'styled-components';
 import './styles.css';
+import InputBase from '@material-ui/core/InputBase';
 
 const Navstyles = css`
   background-color: white;
@@ -38,6 +39,35 @@ function getTheme(theme) {
       type: theme.paletteType,
       background: {
         default: theme.paletteType === 'light' ? '#00000' : '#fffff',
+      },
+      primary: {
+        main: '#212121',
+      },
+    },
+    overrides: {
+      MuiOutlinedInput: {
+        root: {
+          position: 'relative',
+          '& $notchedOutline': {
+            borderColor: '#212121',
+          },
+          '&:hover:not($disabled):not($focused):not($error) $notchedOutline': {
+            borderColor: '#212121',
+            // Reset on touch devices, it doesn't add specificity
+            '@media (hover: none)': {
+              borderColor: '#212121',
+            },
+          },
+          '&$focused $notchedOutline': {
+            borderColor: '#212121',
+            borderWidth: 1,
+          },
+        },
+      },
+      MuiFormLabel: {
+        root: {
+          color: '#404040',
+        },
       },
     },
   });

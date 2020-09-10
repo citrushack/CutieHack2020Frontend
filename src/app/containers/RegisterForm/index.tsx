@@ -136,6 +136,7 @@ const checkIn: formTypes = [
     size: 12,
     field: (
       <TextField
+        variant="outlined"
         label="Address Line 1"
         name="addr1"
         margin="none"
@@ -147,6 +148,7 @@ const checkIn: formTypes = [
     size: 12,
     field: (
       <TextField
+        variant="outlined"
         label="Address Line 2"
         name="addr2"
         margin="none"
@@ -176,17 +178,39 @@ const checkIn: formTypes = [
   },
   {
     size: 12,
-    field: <TextField label="City" name="city" margin="none" required={true} />,
-  },
-  {
-    size: 12,
     field: (
-      <TextField label="State" name="state" margin="none" required={true} />
+      <TextField
+        variant="outlined"
+        label="City"
+        name="city"
+        margin="none"
+        required={true}
+      />
     ),
   },
   {
     size: 12,
-    field: <TextField label="Zip" name="zip" margin="none" required={true} />,
+    field: (
+      <TextField
+        variant="outlined"
+        label="State"
+        name="state"
+        margin="none"
+        required={true}
+      />
+    ),
+  },
+  {
+    size: 12,
+    field: (
+      <TextField
+        variant="outlined"
+        label="Zip"
+        name="zip"
+        margin="none"
+        required={true}
+      />
+    ),
   },
 ];
 const loginInfo: formTypes = [
@@ -194,6 +218,7 @@ const loginInfo: formTypes = [
     size: 12,
     field: (
       <TextField
+        variant="outlined"
         label="Username"
         name="username"
         margin="none"
@@ -205,6 +230,7 @@ const loginInfo: formTypes = [
     size: 12,
     field: (
       <TextField
+        variant="outlined"
         label="Email"
         name="email"
         margin="none"
@@ -218,6 +244,7 @@ const loginInfo: formTypes = [
     size: 12,
     field: (
       <TextField
+        variant="outlined"
         inputProps={{
           autoComplete: 'new-password',
         }}
@@ -233,6 +260,7 @@ const loginInfo: formTypes = [
     size: 12,
     field: (
       <TextField
+        variant="outlined"
         inputProps={{
           autoComplete: 'new-password',
         }}
@@ -251,6 +279,7 @@ const demoInfo: formTypes = [
     size: 6,
     field: (
       <TextField
+        variant="outlined"
         label="First name"
         name="firstname"
         margin="none"
@@ -262,6 +291,7 @@ const demoInfo: formTypes = [
     size: 6,
     field: (
       <TextField
+        variant="outlined"
         label="Last name"
         name="lastname"
         margin="none"
@@ -371,7 +401,15 @@ const demoInfo: formTypes = [
   },
   {
     size: 12,
-    field: <TextField label="Year" name="year" margin="none" required={true} />,
+    field: (
+      <TextField
+        variant="outlined"
+        label="Year"
+        name="year"
+        margin="none"
+        required={true}
+      />
+    ),
   },
 ];
 const filter = createFilterOptions<AutocompleteData>();
@@ -380,6 +418,7 @@ const hackerInfo: formTypes = [
     size: 12,
     field: (
       <TextField
+        variant="outlined"
         label="Github profile link"
         name="github"
         margin="none"
@@ -391,6 +430,7 @@ const hackerInfo: formTypes = [
     size: 12,
     field: (
       <TextField
+        variant="outlined"
         label="Linkedin profile link"
         name="linkedin"
         margin="none"
@@ -402,6 +442,7 @@ const hackerInfo: formTypes = [
     size: 12,
     field: (
       <TextField
+        variant="outlined"
         label="Anything you'd like to add?"
         multiline
         name="extra"
@@ -431,137 +472,132 @@ export function RegisterForm(props: Props) {
 
   return (
     <motion.div
-      className="mainCard"
       initial="initial"
       animate="in"
       exit="out"
       variants={pageVariants}
       transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
     >
-      <div className="applyBody">
+      <h1 className="title">
+        <span role="img" aria-label="flag">
+          🍊
+        </span>{' '}
+        Apply for Cutie Hack{' '}
+        <span role="img" aria-label="flag">
+          🍊
+        </span>{' '}
+      </h1>
+      <Typography align="center" paragraph>
+        <Link
+          align="center"
+          onClick={() => {
+            history.push('/auth');
+          }}
+        >
+          If you've already applied, login here{' '}
+          <span role="img" aria-label="flag">
+            ➡️
+          </span>
+        </Link>
+      </Typography>
+      <div className="mainCard applyBody">
         <CssBaseline />
-        <Typography variant="h4" align="center" component="h1" gutterBottom>
-          <span role="img" aria-label="flag">
-            🍊
-          </span>{' '}
-          Apply for Cutie Hack{' '}
-          <span role="img" aria-label="flag">
-            🍊
-          </span>{' '}
-        </Typography>
-        <Typography align="center" paragraph>
-          <Link
-            align="center"
-            onClick={() => {
-              history.push('/auth');
-            }}
-          >
-            If you've already applied, login here{' '}
-            <span role="img" aria-label="flag">
-              ➡️
-            </span>
-          </Link>
-        </Typography>
-        <Paper style={{ padding: 16 }}>
-          {errormsg !== '' && (
-            <Alert severity="error">
-              <AlertTitle>{errormsg}</AlertTitle>
-            </Alert>
-          )}
-          <Form
-            onSubmit={onSubmit}
-            validate={validate}
-            initialValues={initialValues}
-            render={({
-              handleSubmit,
-              form,
-              submitting,
-              pristine,
-              values,
-              errors,
-              submitFailed,
-            }) => (
-              <form onSubmit={handleSubmit} noValidate>
-                <Grid container alignItems="flex-start" spacing={2}>
-                  <Grid item style={{ marginTop: 16 }}>
-                    <Typography variant="h4" align="left" component="h1">
-                      1. Login info
-                    </Typography>
-                  </Grid>
-                  {loginInfo.map((item, idx) => (
-                    <Grid item xs={item.size} key={idx}>
-                      {item.field}
-                    </Grid>
-                  ))}
-                  <Grid item>
-                    <Box style={{ marginTop: 16 }}>
-                      <Typography variant="h4" align="left" component="h1">
-                        2. Check-in
-                      </Typography>
-                      <Typography style={{ marginTop: 16 }} align="left">
-                        We only need this to distribute prizes, we won't share
-                        your address with anyone.
-                      </Typography>
-                    </Box>
-                  </Grid>
-                  {checkIn.map((item, idx) => (
-                    <Grid item xs={item.size} key={idx}>
-                      {item.field}
-                    </Grid>
-                  ))}
-                  <Grid item xs={12} style={{ marginTop: 16 }}>
-                    <Typography variant="h4" align="left" component="h1">
-                      3. Demographics
-                    </Typography>
-                  </Grid>
-                  {demoInfo.map((item, idx) => (
-                    <Grid item xs={item.size} key={idx}>
-                      {item.field}
-                    </Grid>
-                  ))}
-                  <Grid item style={{ marginTop: 16 }}>
-                    <Typography variant="h4" align="left" component="h1">
-                      4. Hacker app
-                    </Typography>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <Card
-                      raised={true}
-                      style={{ padding: 16, backgroundColor: '#f7f7f7' }}
-                    >
-                      <Field required={true} name="resume">
-                        {props => <Dropzone {...props.input} />}
-                      </Field>
-                    </Card>
-                    {submitFailed && errors.resume && (
-                      <>
-                        <br></br>
-                        <Alert severity="error">
-                          <AlertTitle>{errors.resume}</AlertTitle>
-                        </Alert>
-                      </>
-                    )}{' '}
-                  </Grid>
-                  {hackerInfo.map((item, idx) => (
-                    <Grid item xs={item.size} key={idx}>
-                      {item.field}
-                    </Grid>
-                  ))}
-                  <Grid item style={{ marginTop: 16 }}>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      type="submit"
-                      disabled={isFetching}
-                    >
-                      Submit
-                    </Button>
-                  </Grid>
+        {errormsg !== '' && (
+          <Alert severity="error">
+            <AlertTitle>{errormsg}</AlertTitle>
+          </Alert>
+        )}
+        <Form
+          onSubmit={onSubmit}
+          validate={validate}
+          initialValues={initialValues}
+          render={({
+            handleSubmit,
+            form,
+            submitting,
+            pristine,
+            values,
+            errors,
+            submitFailed,
+          }) => (
+            <form onSubmit={handleSubmit} noValidate>
+              <Grid container alignItems="flex-start" spacing={2}>
+                <Grid item>
+                  <Box>
+                    <h2>Login info</h2>
+                    <Typography> Enter some basic account details.</Typography>
+                  </Box>
                 </Grid>
-              </form>
-            )}
-          />
-        </Paper>
+                {loginInfo.map((item, idx) => (
+                  <Grid item xs={item.size} key={idx}>
+                    {item.field}
+                  </Grid>
+                ))}
+                <Grid item>
+                  <Box style={{ marginTop: 16 }}>
+                    <h2>Check-in</h2>
+                    <Typography>
+                      {' '}
+                      We only need this to distribute prizes, we won't share
+                      your address with anyone.
+                    </Typography>
+                  </Box>
+                </Grid>
+                {checkIn.map((item, idx) => (
+                  <Grid item xs={item.size} key={idx}>
+                    {item.field}
+                  </Grid>
+                ))}
+                <Grid item xs={12} style={{ marginTop: 16 }}>
+                  <h2>Demographics</h2>
+                  <Typography> Tell us more about yourself.</Typography>
+                </Grid>
+                {demoInfo.map((item, idx) => (
+                  <Grid item xs={item.size} key={idx}>
+                    {item.field}
+                  </Grid>
+                ))}
+                <Grid item style={{ marginTop: 16, marginBottom: 20 }}>
+                  <h2>Hacker app</h2>
+                  <Typography> Are you a worthy opponent? </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Card
+                    raised={true}
+                    style={{ padding: 16, backgroundColor: '#f7f7f7' }}
+                  >
+                    <Field required={true} name="resume">
+                      {props => <Dropzone {...props.input} />}
+                    </Field>
+                  </Card>
+                  {submitFailed && errors.resume && (
+                    <>
+                      <br></br>
+                      <Alert severity="error">
+                        <AlertTitle>{errors.resume}</AlertTitle>
+                      </Alert>
+                    </>
+                  )}{' '}
+                </Grid>
+                {hackerInfo.map((item, idx) => (
+                  <Grid item xs={item.size} key={idx}>
+                    {item.field}
+                  </Grid>
+                ))}
+                <Grid item style={{ marginTop: 16 }}>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    type="submit"
+                    disabled={isFetching}
+                  >
+                    Submit
+                  </Button>
+                </Grid>
+              </Grid>
+            </form>
+          )}
+        />
       </div>
     </motion.div>
   );
