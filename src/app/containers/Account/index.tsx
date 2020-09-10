@@ -89,6 +89,7 @@ const displayNames = {
   gender: 'Gender',
   //extra: 'Extra Info',
 };
+
 export function Account(props: Props) {
   useInjectReducer({ key: sliceKey, reducer: reducer });
   useInjectSaga({ key: sliceKey, saga: accountSaga });
@@ -98,7 +99,6 @@ export function Account(props: Props) {
 
   const groupInfo = useSelector(selectGroup);
   const groupExists: boolean = !!groupInfo.payload;
-
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const account: AccountDetails = useSelector(selectAccountInfo);
   //console.log(account);
@@ -138,7 +138,7 @@ export function Account(props: Props) {
       exit="out"
       variants={pageVariants}
       transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
-      style={{ padding: 16, margin: 'auto', maxWidth: 600, marginTop: '1.5em' }}
+      style={{ padding: '15vw', marginTop: '1.5em' }}
     >
       <Typography variant="h4" align="center" component="h1" gutterBottom>
         <span role="img" aria-label="flag">

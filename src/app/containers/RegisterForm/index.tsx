@@ -437,126 +437,132 @@ export function RegisterForm(props: Props) {
       exit="out"
       variants={pageVariants}
       transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
-      style={{ padding: 16, margin: 'auto', maxWidth: 600 }}
     >
-      <CssBaseline />
-      <Typography variant="h4" align="center" component="h1" gutterBottom>
-        <span role="img" aria-label="flag">
-          🍊
-        </span>{' '}
-        Apply for Cutie Hack{' '}
-        <span role="img" aria-label="flag">
-          🍊
-        </span>{' '}
-      </Typography>
-      <Typography align="center" paragraph>
-        <Link align="center" href="/auth">
-          If you've already applied, login here{' '}
+      <div className="applyBody">
+        <CssBaseline />
+        <Typography variant="h4" align="center" component="h1" gutterBottom>
           <span role="img" aria-label="flag">
-            ➡️
-          </span>
-        </Link>
-      </Typography>
-      <Paper style={{ padding: 16 }}>
-        {errormsg !== '' && (
-          <Alert severity="error">
-            <AlertTitle>{errormsg}</AlertTitle>
-          </Alert>
-        )}
-        <Form
-          onSubmit={onSubmit}
-          validate={validate}
-          initialValues={initialValues}
-          render={({
-            handleSubmit,
-            form,
-            submitting,
-            pristine,
-            values,
-            errors,
-            submitFailed,
-          }) => (
-            <form onSubmit={handleSubmit} noValidate>
-              <Grid container alignItems="flex-start" spacing={2}>
-                <Grid item style={{ marginTop: 16 }}>
-                  <Typography variant="h4" align="left" component="h1">
-                    1. Login info
-                  </Typography>
-                </Grid>
-                {loginInfo.map((item, idx) => (
-                  <Grid item xs={item.size} key={idx}>
-                    {item.field}
-                  </Grid>
-                ))}
-                <Grid item>
-                  <Box style={{ marginTop: 16 }}>
-                    <Typography variant="h4" align="left" component="h1">
-                      2. Check-in
-                    </Typography>
-                    <Typography style={{ marginTop: 16 }} align="left">
-                      We only need this to distribute prizes, we won't share
-                      your address with anyone.
-                    </Typography>
-                  </Box>
-                </Grid>
-                {checkIn.map((item, idx) => (
-                  <Grid item xs={item.size} key={idx}>
-                    {item.field}
-                  </Grid>
-                ))}
-                <Grid item style={{ marginTop: 16 }}>
-                  <Typography variant="h4" align="left" component="h1">
-                    3. Demographics
-                  </Typography>
-                </Grid>
-                {demoInfo.map((item, idx) => (
-                  <Grid item xs={item.size} key={idx}>
-                    {item.field}
-                  </Grid>
-                ))}
-                <Grid item style={{ marginTop: 16 }}>
-                  <Typography variant="h4" align="left" component="h1">
-                    4. Hacker app
-                  </Typography>
-                </Grid>
-                <Grid item xs={12}>
-                  <Card
-                    raised={true}
-                    style={{ padding: 16, backgroundColor: '#f7f7f7' }}
-                  >
-                    <Field required={true} name="resume">
-                      {props => <Dropzone {...props.input} />}
-                    </Field>
-                  </Card>
-                  {submitFailed && errors.resume && (
-                    <>
-                      <br></br>
-                      <Alert severity="error">
-                        <AlertTitle>{errors.resume}</AlertTitle>
-                      </Alert>
-                    </>
-                  )}{' '}
-                </Grid>
-                {hackerInfo.map((item, idx) => (
-                  <Grid item xs={item.size} key={idx}>
-                    {item.field}
-                  </Grid>
-                ))}
-                <Grid item style={{ marginTop: 16 }}>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    type="submit"
-                    disabled={isFetching}
-                  >
-                    Submit
-                  </Button>
-                </Grid>
-              </Grid>
-            </form>
+            🍊
+          </span>{' '}
+          Apply for Cutie Hack{' '}
+          <span role="img" aria-label="flag">
+            🍊
+          </span>{' '}
+        </Typography>
+        <Typography align="center" paragraph>
+          <Link
+            align="center"
+            onClick={() => {
+              history.push('/auth');
+            }}
+          >
+            If you've already applied, login here{' '}
+            <span role="img" aria-label="flag">
+              ➡️
+            </span>
+          </Link>
+        </Typography>
+        <Paper style={{ padding: 16 }}>
+          {errormsg !== '' && (
+            <Alert severity="error">
+              <AlertTitle>{errormsg}</AlertTitle>
+            </Alert>
           )}
-        />
-      </Paper>
+          <Form
+            onSubmit={onSubmit}
+            validate={validate}
+            initialValues={initialValues}
+            render={({
+              handleSubmit,
+              form,
+              submitting,
+              pristine,
+              values,
+              errors,
+              submitFailed,
+            }) => (
+              <form onSubmit={handleSubmit} noValidate>
+                <Grid container alignItems="flex-start" spacing={2}>
+                  <Grid item style={{ marginTop: 16 }}>
+                    <Typography variant="h4" align="left" component="h1">
+                      1. Login info
+                    </Typography>
+                  </Grid>
+                  {loginInfo.map((item, idx) => (
+                    <Grid item xs={item.size} key={idx}>
+                      {item.field}
+                    </Grid>
+                  ))}
+                  <Grid item>
+                    <Box style={{ marginTop: 16 }}>
+                      <Typography variant="h4" align="left" component="h1">
+                        2. Check-in
+                      </Typography>
+                      <Typography style={{ marginTop: 16 }} align="left">
+                        We only need this to distribute prizes, we won't share
+                        your address with anyone.
+                      </Typography>
+                    </Box>
+                  </Grid>
+                  {checkIn.map((item, idx) => (
+                    <Grid item xs={item.size} key={idx}>
+                      {item.field}
+                    </Grid>
+                  ))}
+                  <Grid item xs={12} style={{ marginTop: 16 }}>
+                    <Typography variant="h4" align="left" component="h1">
+                      3. Demographics
+                    </Typography>
+                  </Grid>
+                  {demoInfo.map((item, idx) => (
+                    <Grid item xs={item.size} key={idx}>
+                      {item.field}
+                    </Grid>
+                  ))}
+                  <Grid item style={{ marginTop: 16 }}>
+                    <Typography variant="h4" align="left" component="h1">
+                      4. Hacker app
+                    </Typography>
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Card
+                      raised={true}
+                      style={{ padding: 16, backgroundColor: '#f7f7f7' }}
+                    >
+                      <Field required={true} name="resume">
+                        {props => <Dropzone {...props.input} />}
+                      </Field>
+                    </Card>
+                    {submitFailed && errors.resume && (
+                      <>
+                        <br></br>
+                        <Alert severity="error">
+                          <AlertTitle>{errors.resume}</AlertTitle>
+                        </Alert>
+                      </>
+                    )}{' '}
+                  </Grid>
+                  {hackerInfo.map((item, idx) => (
+                    <Grid item xs={item.size} key={idx}>
+                      {item.field}
+                    </Grid>
+                  ))}
+                  <Grid item style={{ marginTop: 16 }}>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      type="submit"
+                      disabled={isFetching}
+                    >
+                      Submit
+                    </Button>
+                  </Grid>
+                </Grid>
+              </form>
+            )}
+          />
+        </Paper>
+      </div>
     </motion.div>
   );
 }

@@ -7,12 +7,20 @@ body {
   
 
 .mainCard{
-  background: url("/images/asfalt-dark.png"), #FFFFDD;
+  background: url("/images/asfalt-dark.png"), #F7DAB5;
   box-shadow: 23px 23px 0px -8px rgba(0, 0, 0, 0.45);
   border-radius: 59px;
-  padding:10rem;
-  min-width:80vw;
-  /* max-width:90vw; */
+  /* width:80vw; */
+  max-width:80em;
   display:block;
   margin:auto;
+  padding: 4em;
 }
+
+/* .applyBody{
+  display:block;
+  margin:auto;
+  max-width:600px;
+  padding-top: 3em;
+  padding-bottom: 3em;
+} */

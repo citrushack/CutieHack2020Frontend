@@ -126,9 +126,13 @@ export function AuthPage(props: Props) {
         </span>{' '}
         Login
       </Typography>
-      <Typography paragraph>
-        <Link href="/register">.. or Register here!</Link>
-      </Typography>
+      <Link
+        onClick={() => {
+          history('/register');
+        }}
+      >
+        <Typography paragraph>.. or Register here!</Typography>
+      </Link>
       <Form
         onSubmit={onSubmit}
         validate={validate}
