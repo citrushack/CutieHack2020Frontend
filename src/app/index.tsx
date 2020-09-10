@@ -17,15 +17,15 @@ import { HomePage } from './containers/HomePage/Loadable';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import ProtectedRoute from './containers/ProtectedRoute';
 import UnprotectedOnlyRoute from './containers/UnprotectedOnlyRoute';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/core/styles';
 import { AuthPage } from './containers/AuthPage';
 import { RegisterForm } from './containers/RegisterForm';
 import { SecurePage } from './containers/SecurePage';
 import { Account } from './containers/Account';
 import Navigation from 'react-sticky-nav';
 import { css } from 'styled-components';
+import getTheme from './theme';
 import './styles.css';
-import InputBase from '@material-ui/core/InputBase';
 
 const Navstyles = css`
   background-color: white;
@@ -33,45 +33,6 @@ const Navstyles = css`
   height: 64px;
   position: -webkit-sticky; /* This is needed for Safari support */
 `;
-function getTheme(theme) {
-  return createMuiTheme({
-    palette: {
-      type: theme.paletteType,
-      background: {
-        default: theme.paletteType === 'light' ? '#00000' : '#fffff',
-      },
-      primary: {
-        main: '#212121',
-      },
-    },
-    overrides: {
-      MuiOutlinedInput: {
-        root: {
-          position: 'relative',
-          '& $notchedOutline': {
-            borderColor: '#212121',
-          },
-          '&:hover:not($disabled):not($focused):not($error) $notchedOutline': {
-            borderColor: '#212121',
-            // Reset on touch devices, it doesn't add specificity
-            '@media (hover: none)': {
-              borderColor: '#212121',
-            },
-          },
-          '&$focused $notchedOutline': {
-            borderColor: '#212121',
-            borderWidth: 1,
-          },
-        },
-      },
-      MuiFormLabel: {
-        root: {
-          color: '#404040',
-        },
-      },
-    },
-  });
-}
 
 const theme = getTheme({
   paletteType: 'light',

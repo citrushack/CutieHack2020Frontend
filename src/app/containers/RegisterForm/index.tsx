@@ -25,7 +25,6 @@ import { postDataPayload } from './types';
 import {
   Typography,
   Box,
-  Paper,
   Link,
   Grid,
   Card,
@@ -94,7 +93,7 @@ const validate = values => {
   if (!values.passwordConfirm) errors.passwordConfirm = 'Required';
   if (values.password !== values.passwordConfirm)
     errors.passwordConfirm = 'Passwords must match';
-  if (!values.addr1) errors.addr1 = 'Required';
+  if (!values['addr1']) errors['addr1'] = 'Required';
   if (!values.resume) errors.resume = 'Resume upload required';
   if (!values.country) errors.country = 'Required';
   if (!values.city) errors.city = 'Required';
