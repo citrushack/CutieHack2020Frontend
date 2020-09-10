@@ -27,6 +27,7 @@ export function HomePage() {
   let history = useHistory();
   return (
     <motion.div
+      className="mainCard"
       initial="initial"
       animate="in"
       exit="out"

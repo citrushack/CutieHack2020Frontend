@@ -7,7 +7,9 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
   }
 
-  body {
+`;
+
+/* body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 
@@ -25,5 +27,4 @@ export const GlobalStyle = createGlobalStyle`
   input, select {
     font-family: inherit;
     font-size: inherit;
-  }
-`;
+  } */

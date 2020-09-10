@@ -133,6 +133,7 @@ export function Account(props: Props) {
   return (
     <motion.div
       initial="initial"
+      className="mainCard"
       animate="in"
       exit="out"
       variants={pageVariants}

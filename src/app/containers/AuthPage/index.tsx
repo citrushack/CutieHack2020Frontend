@@ -111,6 +111,7 @@ export function AuthPage(props: Props) {
 
   return (
     <motion.div
+      className="mainCard"
       initial="initial"
       animate="in"
       exit="out"
