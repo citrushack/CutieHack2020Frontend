@@ -16,7 +16,7 @@ import { authPageSaga } from './saga';
 import { TextField, Checkboxes } from 'mui-rff';
 import {
   Typography,
-  Paper,
+  Box,
   Link,
   Grid,
   Button,
@@ -63,6 +63,7 @@ const formFields: formTypes = [
     field: (
       <TextField
         label="Username or email"
+        variant="outlined"
         name="username"
         margin="none"
         required={true}
@@ -75,6 +76,7 @@ const formFields: formTypes = [
       <TextField
         label="Password"
         name="password"
+        variant="outlined"
         type="password"
         margin="none"
         required={true}
@@ -111,33 +113,36 @@ export function AuthPage(props: Props) {
 
   return (
     <motion.div
-      className="mainCard authCard"
       initial="initial"
       animate="in"
       exit="out"
       variants={pageVariants}
       transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
     >
-      <CssBaseline />
-      <Typography variant="h4" align="center" component="h1" gutterBottom>
+      <h1 className="title">
         <span role="img" aria-label="flag">
           🍊
         </span>{' '}
         Login
-      </Typography>
+      </h1>
       <Link
         onClick={() => {
-          history('/register');
+          history('/apply');
         }}
       >
-        <Typography paragraph>.. or Register here!</Typography>
+        {' '}
+        <Typography align="center" paragraph>
+          .. or Register here!
+        </Typography>
       </Link>
-      <Form
-        onSubmit={onSubmit}
-        validate={validate}
-        render={({ handleSubmit, form, submitting, pristine, values }) => (
-          <form onSubmit={handleSubmit} noValidate>
-            <Paper style={{ padding: 16 }}>
+      <div className="mainCard authCard">
+        <CssBaseline />
+
+        <Form
+          onSubmit={onSubmit}
+          validate={validate}
+          render={({ handleSubmit, form, submitting, pristine, values }) => (
+            <form onSubmit={handleSubmit} noValidate>
               {errormsg !== '' && (
                 <Alert severity="error">
                   <AlertTitle>{errormsg}</AlertTitle>
@@ -149,9 +154,9 @@ export function AuthPage(props: Props) {
                     {item.field}
                   </Grid>
                 ))}
-                <Grid item style={{ marginTop: 16 }}></Grid>
-                <Grid item style={{ marginTop: 16 }}>
+                <Box width="100%" style={{ marginTop: 16 }}>
                   <Button
+                    style={{ width: '100%' }}
                     variant="contained"
                     color="primary"
                     type="submit"
@@ -159,12 +164,12 @@ export function AuthPage(props: Props) {
                   >
                     Submit
                   </Button>
-                </Grid>
+                </Box>
               </Grid>
-            </Paper>
-          </form>
-        )}
-      />
+            </form>
+          )}
+        />
+      </div>
     </motion.div>
   );
 }

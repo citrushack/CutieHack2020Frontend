@@ -71,7 +71,7 @@ export function HomePage() {
           </Button>
           <Button
             onClick={e => {
-              history.push('/register');
+              history.push('/apply');
             }}
             color="primary"
             variant="contained"

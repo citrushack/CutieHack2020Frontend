@@ -14,7 +14,7 @@ export function* register() {
     //console.log(formData);
     //Generate request bodies from payload
     const { resume, history, ...body } = formData.payload;
-    const requestURL = 'http://localhost:1337/auth/local/register';
+    const requestURL = 'http://localhost:1337/auth/local/apply';
     //console.log(body);
     //Request auth
     const response = yield call(request, requestURL, {

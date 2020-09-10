@@ -56,7 +56,7 @@ export function App() {
                 <UnprotectedOnlyRoute exact path="/auth" component={AuthPage} />
                 <UnprotectedOnlyRoute
                   exact
-                  path="/register"
+                  path="/apply"
                   component={RegisterForm}
                 />
                 <ProtectedRoute exact path="/account" component={Account} />
