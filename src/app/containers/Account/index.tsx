@@ -133,14 +133,12 @@ export function Account(props: Props) {
   return (
     <motion.div
       initial="initial"
-      className="mainCard"
       animate="in"
       exit="out"
       variants={pageVariants}
       transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
-      style={{ padding: '15vw', marginTop: '1.5em' }}
     >
-      <Typography variant="h4" align="center" component="h1" gutterBottom>
+      <h1 className="title">
         <span role="img" aria-label="flag">
           🍊
         </span>{' '}
@@ -148,52 +146,54 @@ export function Account(props: Props) {
         <span role="img" aria-label="flag">
           🍊
         </span>{' '}
-      </Typography>
-      <Helmet>
-        <title>My Application</title>
-        <meta name="description" content=" My Application" />
-      </Helmet>
-      <CssBaseline />
-      <Paper style={{ padding: 16, marginBottom: '3em' }}>
-        <Grid container alignItems="center" justify="center">
-          <Table style={{ marginBottom: '1em' }}>
-            <TableBody>
-              {Object.entries(table).map(
-                ([key, value], idx) =>
-                  value && (
-                    <TableRow key={idx}>
-                      <TableCell>
-                        <strong>{displayNames[key] || key}</strong>
-                      </TableCell>
-                      <TableCell>{`${value}`}</TableCell>
-                    </TableRow>
-                  ),
-              )}
-            </TableBody>
-          </Table>
-          <Grid item xs={6}>
-            <Button
-              variant="contained"
-              color="primary"
-              type="submit"
-              className={classes.editButton}
-            >
-              Change Email
-            </Button>
+      </h1>
+      <div className="mainCard">
+        <Helmet>
+          <title>My Application</title>
+          <meta name="description" content=" My Application" />
+        </Helmet>
+        <CssBaseline />
+        <Paper style={{ padding: 16, marginBottom: '3em' }}>
+          <Grid container alignItems="center" justify="center">
+            <Table style={{ marginBottom: '1em' }}>
+              <TableBody>
+                {Object.entries(table).map(
+                  ([key, value], idx) =>
+                    value && (
+                      <TableRow key={idx}>
+                        <TableCell>
+                          <strong>{displayNames[key] || key}</strong>
+                        </TableCell>
+                        <TableCell>{`${value}`}</TableCell>
+                      </TableRow>
+                    ),
+                )}
+              </TableBody>
+            </Table>
+            <Grid item xs={6}>
+              <Button
+                variant="contained"
+                color="primary"
+                type="submit"
+                className={classes.editButton}
+              >
+                Change Email
+              </Button>
+            </Grid>
+            <Grid item xs={6}>
+              <Button
+                variant="contained"
+                color="primary"
+                type="submit"
+                className={classes.editButton}
+              >
+                Change Password
+              </Button>
+            </Grid>
           </Grid>
-          <Grid item xs={6}>
-            <Button
-              variant="contained"
-              color="primary"
-              type="submit"
-              className={classes.editButton}
-            >
-              Change Password
-            </Button>
-          </Grid>
-        </Grid>
-      </Paper>
-      <Typography variant="h4" align="center" component="h1" gutterBottom>
+        </Paper>
+      </div>
+      <h1 style={{ marginTop: '2.5em' }} className="title">
         <span role="img" aria-label="flag">
           🧑‍🤝‍🧑
         </span>{' '}
@@ -201,8 +201,8 @@ export function Account(props: Props) {
         <span role="img" aria-label="flag">
           🧑‍🤝‍🧑
         </span>{' '}
-      </Typography>
-      <Paper style={{ padding: 16 }}>
+      </h1>
+      <div className="mainCard">
         <Box textAlign="center">
           <Typography variant="body1" gutterBottom>
             Plan on hacking with a friend? Enter your group code below, or
@@ -382,7 +382,7 @@ export function Account(props: Props) {
             </Grid>
           </Paper>
         )}
-      </Paper>
+      </div>
     </motion.div>
   );
 }
