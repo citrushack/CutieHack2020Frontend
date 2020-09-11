@@ -10859,11 +10859,6 @@ react-scripts@3.4.3:
   optionalDependencies:
     fsevents "2.1.2"
 
-react-sticky-nav@4.0.6:
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/react-sticky-nav/-/react-sticky-nav-4.0.6.tgz#3d0613388e4f9a00a783e308f3d0f17fa08a3cde"
-  integrity sha512-1HWHPUQR5/dSqPSF/4aIzirqU2tEtXtMY1DM1IL0UbqwZY2883Qon2s0/tYiAzU7gbAlI+Acbp5hRbp5KgJNkg==
-
 react-test-renderer@16.13.0:
   version "16.13.0"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.13.0.tgz#39ba3bf72cedc8210c3f81983f0bb061b14a3014"

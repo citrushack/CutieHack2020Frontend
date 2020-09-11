@@ -22,18 +22,31 @@ import { AuthPage } from './containers/AuthPage';
 import { RegisterForm } from './containers/RegisterForm';
 import { SecurePage } from './containers/SecurePage';
 import { Account } from './containers/Account';
-import Navigation from 'react-sticky-nav';
-import { css } from 'styled-components';
+import Base, { styles as stickyNavStyles } from './containers/StickyNav';
+// import { css } from 'styled-components';
+import styled from 'styled-components';
 import getTheme from './theme';
+
 import './styles.css';
 
-const Navstyles = css`
-  background-color: white;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+const StickyNav = styled(Base)`
+  background: url(/images/asfalt-dark.png), #b0e7e8;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 49px;
   height: 64px;
-  position: -webkit-sticky; /* This is needed for Safari support */
+  padding: 20px 32px;
+  margin: 2rem 2rem;
+  margin-bottom: 3rem;
+  position: -webkit-sticky;
+  line-height: 24px;
+  position: sticky;
+  transition: all 125ms;
+  top: 0;
 `;
-
+const Nav = styled.nav`
+  ${stickyNavStyles};
+  background: papayagreen;
+`;
 const theme = getTheme({
   paletteType: 'light',
 });
@@ -46,7 +59,9 @@ export function App() {
       >
         <meta name="description" content="A React Boilerplate application" />
       </Helmet>
-      <Navigation css={Navstyles}>Nav</Navigation>,
+      <StickyNav>
+        <Nav>My custom navbar is</Nav>
+      </StickyNav>
       <ThemeProvider theme={theme}>
         <Route
           render={({ location }) => (
