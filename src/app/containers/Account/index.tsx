@@ -96,11 +96,40 @@ export function Account(props: Props) {
   const classes = useStyles();
   const errormsg = useSelector(selectError);
   const isFetching = useSelector(selectisFetching);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const dispatch = useDispatch();
 
   const groupInfo = useSelector(selectGroup);
   const groupExists: boolean = !!groupInfo.payload;
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const account: AccountDetails = useSelector(selectAccountInfo);
+  if (!account) {
+    dispatch(actions.refreshState());
+    return (
+      <motion.div
+        initial="initial"
+        animate="in"
+        exit="out"
+        style={{ marginBottom: '2em' }}
+        variants={pageVariants}
+        transition={{
+          duration: 0.5,
+          ease: [0.43, 0.13, 0.23, 0.96],
+          staggerChildren: 0.5,
+        }}
+      >
+        <h1 className="title">
+          <span role="img" aria-label="flag">
+            🍊
+          </span>{' '}
+          Loading... &nbsp;
+          <span role="img" aria-label="flag">
+            🍊
+          </span>{' '}
+        </h1>
+      </motion.div>
+    );
+  }
   //console.log(account);
   //console.log(account);
   const table = Object.assign({}, account);
@@ -127,14 +156,13 @@ export function Account(props: Props) {
   const onSubmit = (values: any) => {
     dispatch(actions.joinGroup(values));
   };
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const dispatch = useDispatch();
   //console.log(table);
   return (
     <motion.div
       initial="initial"
       animate="in"
       exit="out"
+      style={{ marginBottom: '2em' }}
       variants={pageVariants}
       transition={{
         duration: 0.5,

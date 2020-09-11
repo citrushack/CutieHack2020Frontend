@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import auth from 'utils/auth';
+
 import { Button, CssBaseline, Typography } from '@material-ui/core';
 import { pageVariants } from '../../animations';
 import { motion } from 'framer-motion';
@@ -21,8 +22,7 @@ export function HomePage() {
   const [showButton, setshowButton] = useState(!!auth.getToken());
   const logout = e => {
     e.preventDefault();
-    auth.clearAppStorage();
-    setshowButton(false);
+    history.push('/logout');
   };
   let history = useHistory();
   return (

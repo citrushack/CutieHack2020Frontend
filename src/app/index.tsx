@@ -8,7 +8,7 @@
 
 import * as React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { Switch, Route, BrowserRouter, Link } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 import { GlobalStyle } from 'styles/global-styles';
@@ -22,10 +22,13 @@ import { AuthPage } from './containers/AuthPage';
 import { RegisterForm } from './containers/RegisterForm';
 import { SecurePage } from './containers/SecurePage';
 import { Account } from './containers/Account';
+import { LogOut } from './containers/LogOut';
+
 import Base, { styles as stickyNavStyles } from './containers/StickyNav';
 // import { css } from 'styled-components';
 import styled from 'styled-components';
 import getTheme from './theme';
+import auth from 'utils/auth';
 
 import './styles.css';
 
@@ -33,8 +36,8 @@ const StickyNav = styled(Base)`
   background: url(/images/asfalt-dark.png), #b0e7e8;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.4);
   border-radius: 49px;
-  height: 64px;
-  padding: 20px 32px;
+  height: auto;
+  padding: 0;
   margin: 2rem 2rem;
   margin-bottom: 3rem;
   position: -webkit-sticky;
@@ -43,13 +46,47 @@ const StickyNav = styled(Base)`
   transition: all 125ms;
   top: 0;
 `;
+const Logo = styled.img`
+  float: left;
+  width: 4em;
+  transform: translate(50%, 38%);
+`;
 const Nav = styled.nav`
   ${stickyNavStyles};
-  background: papayagreen;
+  overflow: auto;
+  padding: 0;
+  margin: 0;
+  ul {
+    float: right;
+    transform: translate(-5%, -4%);
+  }
+  ul li {
+    display: inline-block;
+    margin-right: 0.1rem;
+    padding: 10px;
+  }
+  ul li .navLink {
+    font-size: 1em;
+    background: #ffffcc;
+    padding: 0.75rem;
+    box-shadow: 4px 5px 0px rgba(0, 0, 0, 0.3);
+    border-radius: 22px;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 600;
+    transition: background 0.5s;
+    color: #212121;
+  }
+  ul li a {
+    text-decoration: none;
+  }
+  ul li .navLink:hover {
+    background: orange;
+  }
 `;
 const theme = getTheme({
   paletteType: 'light',
 });
+
 export function App() {
   return (
     <BrowserRouter>
@@ -60,7 +97,34 @@ export function App() {
         <meta name="description" content="A React Boilerplate application" />
       </Helmet>
       <StickyNav>
-        <Nav>My custom navbar is</Nav>
+        <Nav>
+          <Logo
+            alt="logo"
+            src="https://cdn.pixabay.com/photo/2016/02/23/17/42/orange-1218158_960_720.png"
+          ></Logo>
+          <ul>
+            <li>
+              <Link to="/">
+                <div className="navLink">Home</div>
+              </Link>
+            </li>
+            <li>
+              <Link to="/auth">
+                <div className="navLink">Login</div>
+              </Link>
+            </li>
+            <li>
+              <Link to="/logout">
+                <div className="navLink">Logout</div>
+              </Link>
+            </li>
+            <li>
+              <Link to="/account">
+                <div className="navLink">My App</div>
+              </Link>
+            </li>
+          </ul>
+        </Nav>
       </StickyNav>
       <ThemeProvider theme={theme}>
         <Route
@@ -76,6 +140,7 @@ export function App() {
                 />
                 <ProtectedRoute exact path="/account" component={Account} />
                 <ProtectedRoute exact path="/test" component={SecurePage} />
+                <ProtectedRoute exact path="/logout" component={LogOut} />
                 <Route component={NotFoundPage} />
               </Switch>
             </AnimatePresence>

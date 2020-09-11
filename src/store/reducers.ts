@@ -5,6 +5,7 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
 import { InjectedReducersType } from 'utils/types/injector-typings';
+import { actions } from 'app/containers/LogOut/slice';
 
 /**
  * Merges the main reducer with the router state and dynamically injected reducers
@@ -14,8 +15,13 @@ export function createReducer(injectedReducers: InjectedReducersType = {}) {
   if (Object.keys(injectedReducers).length === 0) {
     return state => state;
   } else {
-    return combineReducers({
-      ...injectedReducers,
-    });
+    return (state, action) => {
+      if (action && action.type === actions.resetState.type) {
+        state = undefined;
+      }
+      return combineReducers({
+        ...injectedReducers,
+      })(state, action);
+    };
   }
 }
