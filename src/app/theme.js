@@ -30,7 +30,7 @@ export default function getTheme(theme) {
             marginRight: '10px',
           },
           '.MuiAutocomplete-root .MuiInputLabel-shrink': {
-            transform: 'translate(0, -8.5px) scale(0.75)',
+            transform: 'translate(-13px, -10px) scale(0.75)',
           },
           '.MuiAutocomplete-root .MuiInputLabel-root': {
             paddingTop: '9px',
@@ -56,6 +56,16 @@ export default function getTheme(theme) {
             borderColor: '#212121',
             borderWidth: 1,
           },
+        },
+      },
+      MuiTableCell: {
+        root: {
+          borderBottom: '1px solid #0000005e',
+        },
+      },
+      MuiTableRow: {
+        root: {
+          backgroundColor: '#rgba(0, 0, 0, 0.04)',
         },
       },
       MuiFormLabel: {

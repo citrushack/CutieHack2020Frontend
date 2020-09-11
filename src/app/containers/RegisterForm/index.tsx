@@ -172,6 +172,8 @@ const checkIn: formTypes = [
             &nbsp; {option.label} ({option.code})
           </React.Fragment>
         )}
+        selectOnFocus
+        autoHighlight
       />
     ),
   },

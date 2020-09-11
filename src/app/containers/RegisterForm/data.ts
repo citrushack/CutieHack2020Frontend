@@ -256,7 +256,16 @@ export const countries = [
   { code: 'ZW', label: 'Zimbabwe' },
 ];
 
-export const unis : Record<string, string>[]= [
+export const unis: Record<string, string>[] = [
+  { uni: 'University of California-Riverside' },
+  { uni: 'University of California-Berkeley' },
+  { uni: 'University of California-Davis' },
+  { uni: 'University of California-Irvine' },
+  { uni: 'University of California-Los Angeles' },
+  { uni: 'University of California-San Diego' },
+  { uni: 'University of California-San Francisco' },
+  { uni: 'University of California-Santa Barbara' },
+  { uni: 'University of California-Santa Cruz' },
   { uni: 'Bethesda University of California' },
   { uni: 'California Institute of Integral Studies' },
   { uni: 'California Baptist University' },
@@ -279,15 +288,6 @@ export const unis : Record<string, string>[]= [
   { uni: 'California State University-Los Angeles' },
   { uni: 'California State University-Northridge' },
   { uni: 'California State University-Sacramento' },
-  { uni: 'University of California-Berkeley' },
-  { uni: 'University of California-Davis' },
-  { uni: 'University of California-Irvine' },
-  { uni: 'University of California-Los Angeles' },
-  { uni: 'University of California-Riverside' },
-  { uni: 'University of California-San Diego' },
-  { uni: 'University of California-San Francisco' },
-  { uni: 'University of California-Santa Barbara' },
-  { uni: 'University of California-Santa Cruz' },
   { uni: 'California Beauty School' },
   { uni: 'California Christian College' },
   { uni: 'California College San Diego' },

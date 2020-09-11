@@ -136,7 +136,11 @@ export function Account(props: Props) {
       animate="in"
       exit="out"
       variants={pageVariants}
-      transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+      transition={{
+        duration: 0.5,
+        ease: [0.43, 0.13, 0.23, 0.96],
+        staggerChildren: 0.5,
+      }}
     >
       <h1 className="title">
         <span role="img" aria-label="flag">
@@ -147,52 +151,57 @@ export function Account(props: Props) {
           🍊
         </span>{' '}
       </h1>
-      <div className="mainCard">
+      <motion.div
+        initial="initial"
+        animate="in"
+        exit="out"
+        variants={pageVariants}
+        transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+        className="mainCard accTable"
+      >
         <Helmet>
           <title>My Application</title>
           <meta name="description" content=" My Application" />
         </Helmet>
         <CssBaseline />
-        <Paper style={{ padding: 16, marginBottom: '3em' }}>
-          <Grid container alignItems="center" justify="center">
-            <Table style={{ marginBottom: '1em' }}>
-              <TableBody>
-                {Object.entries(table).map(
-                  ([key, value], idx) =>
-                    value && (
-                      <TableRow key={idx}>
-                        <TableCell>
-                          <strong>{displayNames[key] || key}</strong>
-                        </TableCell>
-                        <TableCell>{`${value}`}</TableCell>
-                      </TableRow>
-                    ),
-                )}
-              </TableBody>
-            </Table>
-            <Grid item xs={6}>
-              <Button
-                variant="contained"
-                color="primary"
-                type="submit"
-                className={classes.editButton}
-              >
-                Change Email
-              </Button>
-            </Grid>
-            <Grid item xs={6}>
-              <Button
-                variant="contained"
-                color="primary"
-                type="submit"
-                className={classes.editButton}
-              >
-                Change Password
-              </Button>
-            </Grid>
+        <Grid container alignItems="center" justify="center">
+          <Table style={{ marginBottom: '1em' }}>
+            <TableBody>
+              {Object.entries(table).map(
+                ([key, value], idx) =>
+                  value && (
+                    <TableRow key={idx}>
+                      <TableCell>
+                        <strong>{displayNames[key] || key}</strong>
+                      </TableCell>
+                      <TableCell align="right">{`${value}`}</TableCell>
+                    </TableRow>
+                  ),
+              )}
+            </TableBody>
+          </Table>
+          <Grid item xs={6}>
+            <Button
+              variant="contained"
+              color="primary"
+              type="submit"
+              className={classes.editButton}
+            >
+              Change Email
+            </Button>
           </Grid>
-        </Paper>
-      </div>
+          <Grid item xs={6}>
+            <Button
+              variant="contained"
+              color="primary"
+              type="submit"
+              className={classes.editButton}
+            >
+              Change Password
+            </Button>
+          </Grid>
+        </Grid>
+      </motion.div>
       <h1 style={{ marginTop: '2.5em' }} className="title">
         <span role="img" aria-label="flag">
           🧑‍🤝‍🧑
@@ -202,7 +211,14 @@ export function Account(props: Props) {
           🧑‍🤝‍🧑
         </span>{' '}
       </h1>
-      <div className="mainCard">
+      <motion.div
+        initial="initial"
+        animate="in"
+        exit="out"
+        variants={pageVariants}
+        transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+        className="mainCard"
+      >
         <Box textAlign="center">
           <Typography variant="body1" gutterBottom>
             Plan on hacking with a friend? Enter your group code below, or
@@ -214,7 +230,15 @@ export function Account(props: Props) {
             <AlertTitle>{errormsg}</AlertTitle>
           </Alert>
         )}
-        <Paper style={{ padding: 16, margin: 32 }}>
+        <motion.div
+          initial="initial"
+          animate="in"
+          exit="out"
+          variants={pageVariants}
+          transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+          className="groupCard"
+          style={{ padding: 16, margin: 32 }}
+        >
           <Box textAlign="center">
             <Typography variant="h6" component="h1" gutterBottom>
               {!groupExists
@@ -239,6 +263,12 @@ export function Account(props: Props) {
             ) : (
               <Button
                 variant="contained"
+                style={{
+                  background: 'url("/images/asfalt-dark-light.png"), #ADDE8E',
+                  color: 'black',
+                  // boxShadow: '3px 3px 0px -1px rgba(0, 0, 0, 0.45)',
+                  border: '1px solid black',
+                }}
                 color="primary"
                 onClick={e => {
                   e.preventDefault();
@@ -271,8 +301,23 @@ export function Account(props: Props) {
                   values,
                 }) => (
                   <form onSubmit={handleSubmit} noValidate>
-                    <Paper style={{ padding: 16, margin: 32 }}>
-                      <Typography variant="h6" component="h1" gutterBottom>
+                    <motion.div
+                      initial="initial"
+                      animate="in"
+                      exit="out"
+                      variants={pageVariants}
+                      transition={{
+                        duration: 0.5,
+                        ease: [0.43, 0.13, 0.23, 0.96],
+                      }}
+                      className="joinGroup"
+                    >
+                      <Typography
+                        variant="h6"
+                        component="h1"
+                        style={{ marginBottom: '1.5em' }}
+                        gutterBottom
+                      >
                         Join an existing group
                       </Typography>
 
@@ -288,29 +333,38 @@ export function Account(props: Props) {
                             name="groupCode"
                             margin="none"
                             required={true}
+                            variant="outlined"
                           />
                         </Grid>
                         <Grid item style={{ marginTop: 16 }}></Grid>
-                        <Grid item style={{ marginTop: 16 }}>
+                        <Grid item xs={3} style={{ marginTop: 16 }}>
                           <Button
                             variant="contained"
                             color="primary"
                             type="submit"
+                            style={{ width: '100%' }}
                             disabled={isFetching}
                           >
                             Join
                           </Button>
                         </Grid>
                       </Grid>
-                    </Paper>
+                    </motion.div>
                   </form>
                 )}
               />
             )}
           </Box>
-        </Paper>
+        </motion.div>
         {groupExists && (
-          <Paper style={{ padding: 16, margin: 32 }}>
+          <motion.div
+            initial="initial"
+            animate="in"
+            exit="out"
+            variants={pageVariants}
+            transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+            className="joinGroup"
+          >
             <Grid container alignItems="center" justify="center" spacing={2}>
               <Typography variant="h5" component="h1" gutterBottom>
                 Group members
@@ -380,9 +434,9 @@ export function Account(props: Props) {
                 </Box>
               </Grid>
             </Grid>
-          </Paper>
+          </motion.div>
         )}
-      </div>
+      </motion.div>
     </motion.div>
   );
 }
