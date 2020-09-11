@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+//Modified from https://www.npmjs.com/package/react-sticky-nav
+
 /**
  * ReactStickyNav assumes that its container has `position: sticky;`
  */
