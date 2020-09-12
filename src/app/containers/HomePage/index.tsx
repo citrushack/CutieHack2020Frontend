@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import auth from 'utils/auth';
 
-import { Button, CssBaseline, Typography } from '@material-ui/core';
+import { CssBaseline, Typography } from '@material-ui/core';
 import { pageVariants } from '../../animations';
 import { motion } from 'framer-motion';
-import { useHistory } from 'react-router-dom';
 
 // export class HomePage extends React.Component {
 // state = { showButton: false };
@@ -19,12 +17,6 @@ import { useHistory } from 'react-router-dom';
 // render() {
 
 export function HomePage() {
-  const [showButton, setshowButton] = useState(!!auth.getToken());
-  const logout = e => {
-    e.preventDefault();
-    history.push('/logout');
-  };
-  let history = useHistory();
   return (
     <motion.div
       className="mainCard"
@@ -42,44 +34,6 @@ export function HomePage() {
       <Typography variant="h4" align="left" component="h1" gutterBottom>
         HomePage container
       </Typography>
-
-      {showButton ? (
-        <>
-          <Button onClick={logout} color="primary" variant="contained">
-            Logout
-          </Button>
-          <Button
-            onClick={e => {
-              history.push('/account');
-            }}
-            color="primary"
-            variant="contained"
-          >
-            My Account
-          </Button>
-        </>
-      ) : (
-        <div>
-          <Button
-            onClick={e => {
-              history.push('/auth');
-            }}
-            color="primary"
-            variant="contained"
-          >
-            Login
-          </Button>
-          <Button
-            onClick={e => {
-              history.push('/apply');
-            }}
-            color="primary"
-            variant="contained"
-          >
-            Apply
-          </Button>
-        </div>
-      )}
     </motion.div>
   );
 }

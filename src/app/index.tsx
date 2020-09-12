@@ -23,7 +23,6 @@ import { RegisterForm } from './containers/RegisterForm';
 import { SecurePage } from './containers/SecurePage';
 import { Account } from './containers/Account';
 import { LogOut } from './containers/LogOut';
-
 import Base, { styles as stickyNavStyles } from './containers/StickyNav';
 // import { css } from 'styled-components';
 import styled from 'styled-components';
@@ -67,25 +66,63 @@ const Nav = styled.nav`
   }
   ul li .navLink {
     font-size: 1em;
-    background: #ffffcc;
+    background: url('/images/asfalt-dark-light.png'), #f5bb32;
     padding: 0.75rem;
     box-shadow: 4px 5px 0px rgba(0, 0, 0, 0.3);
     border-radius: 22px;
-    font-family: 'Libre Baskerville', serif;
-    font-weight: 600;
+    font-family: 'Fugaz One', cursive;
+    text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
+      -1px 1px 0 #000, 2px 2px 0 #000;
+
+    font-weight: 400;
     transition: background 0.5s;
-    color: #212121;
+    transition: color 0.3s;
+    color: white;
   }
   ul li a {
     text-decoration: none;
   }
   ul li .navLink:hover {
     background: orange;
+    color: white;
   }
 `;
 const theme = getTheme({
   paletteType: 'light',
 });
+function getNav(loggedIn, location) {
+  if (location === '/logout') loggedIn = false;
+  return (
+    <ul>
+      <li>
+        <Link to="/">
+          <div className="navLink">Home</div>
+        </Link>
+      </li>
+      {!loggedIn && (
+        <li>
+          <Link to="/auth">
+            <div className="navLink">Login</div>
+          </Link>
+        </li>
+      )}
+      {loggedIn && (
+        <li>
+          <Link to="/logout">
+            <div className="navLink">Logout</div>
+          </Link>
+        </li>
+      )}
+      {loggedIn && (
+        <li>
+          <Link to="/account">
+            <div className="navLink">My App</div>
+          </Link>
+        </li>
+      )}
+    </ul>
+  );
+}
 
 export function App() {
   return (
@@ -96,54 +133,39 @@ export function App() {
       >
         <meta name="description" content="A React Boilerplate application" />
       </Helmet>
-      <StickyNav>
-        <Nav>
-          <Logo
-            alt="logo"
-            src="https://cdn.pixabay.com/photo/2016/02/23/17/42/orange-1218158_960_720.png"
-          ></Logo>
-          <ul>
-            <li>
-              <Link to="/">
-                <div className="navLink">Home</div>
-              </Link>
-            </li>
-            <li>
-              <Link to="/auth">
-                <div className="navLink">Login</div>
-              </Link>
-            </li>
-            <li>
-              <Link to="/logout">
-                <div className="navLink">Logout</div>
-              </Link>
-            </li>
-            <li>
-              <Link to="/account">
-                <div className="navLink">My App</div>
-              </Link>
-            </li>
-          </ul>
-        </Nav>
-      </StickyNav>
       <ThemeProvider theme={theme}>
         <Route
           render={({ location }) => (
-            <AnimatePresence exitBeforeEnter>
-              <Switch location={location} key={location.pathname}>
-                <Route exact path="/" component={HomePage} />
-                <UnprotectedOnlyRoute exact path="/auth" component={AuthPage} />
-                <UnprotectedOnlyRoute
-                  exact
-                  path="/apply"
-                  component={RegisterForm}
-                />
-                <ProtectedRoute exact path="/account" component={Account} />
-                <ProtectedRoute exact path="/test" component={SecurePage} />
-                <ProtectedRoute exact path="/logout" component={LogOut} />
-                <Route component={NotFoundPage} />
-              </Switch>
-            </AnimatePresence>
+            <>
+              <StickyNav>
+                <Nav>
+                  <Logo
+                    alt="logo"
+                    src="https://cdn.pixabay.com/photo/2016/02/23/17/42/orange-1218158_960_720.png"
+                  ></Logo>
+                  {getNav(!!auth.getToken(), location.pathname)}
+                </Nav>
+              </StickyNav>
+              <AnimatePresence exitBeforeEnter>
+                <Switch location={location} key={location.pathname}>
+                  <Route exact path="/" component={HomePage} />
+                  <UnprotectedOnlyRoute
+                    exact
+                    path="/auth"
+                    component={AuthPage}
+                  />
+                  <UnprotectedOnlyRoute
+                    exact
+                    path="/apply"
+                    component={RegisterForm}
+                  />
+                  <ProtectedRoute exact path="/account" component={Account} />
+                  <ProtectedRoute exact path="/test" component={SecurePage} />
+                  <ProtectedRoute exact path="/logout" component={LogOut} />
+                  <Route component={NotFoundPage} />
+                </Switch>
+              </AnimatePresence>
+            </>
           )}
         />
       </ThemeProvider>

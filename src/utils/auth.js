@@ -66,6 +66,7 @@ const auth = {
   },
 
   getUserInfo(userInfo = USER_INFO) {
+    console.log('authCalled');
     return auth.get(userInfo);
   },
 
