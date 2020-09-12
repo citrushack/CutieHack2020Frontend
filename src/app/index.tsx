@@ -106,6 +106,13 @@ function getNav(loggedIn, location) {
           </Link>
         </li>
       )}
+      {!loggedIn && (
+        <li>
+          <Link to="/apply">
+            <div className="navLink">Apply</div>
+          </Link>
+        </li>
+      )}
       {loggedIn && (
         <li>
           <Link to="/logout">
