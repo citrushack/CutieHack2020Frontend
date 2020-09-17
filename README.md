@@ -18,7 +18,7 @@ cd CutieHack2020Frontend
 ```bash
 # Using yarn
 yarn install
-yarn develop
+yarn start
 ```
 
 The server should launch at [http://localhost:3000](http://localhost:3000).
