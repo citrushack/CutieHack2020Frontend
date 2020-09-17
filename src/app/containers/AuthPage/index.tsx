@@ -14,18 +14,11 @@ import { reducer, sliceKey } from './slice';
 import { selectisFetching, selectError } from './selectors';
 import { authPageSaga } from './saga';
 import { TextField, Checkboxes } from 'mui-rff';
-import {
-  Typography,
-  Box,
-  Link,
-  Grid,
-  Button,
-  CssBaseline,
-} from '@material-ui/core';
+import { Typography, Box, Grid, Button, CssBaseline } from '@material-ui/core';
 import { Alert, AlertTitle } from '@material-ui/lab';
 import { motion } from 'framer-motion';
 import { pageVariants } from '../../animations';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 type validationError = {
   username: string;
@@ -112,65 +105,101 @@ export function AuthPage(props: Props) {
   };
 
   return (
-    <motion.div
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
-    >
-      <h1 className="title">
-        <span role="img" aria-label="flag">
-          🍊
-        </span>{' '}
-        Login
-      </h1>
-      <Link
-        onClick={() => {
-          history('/apply');
-        }}
+    <>
+      <motion.div
+        initial="initial"
+        exit="out"
+        variants={pageVariants}
+        animate={'in'}
+        transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+        className="titleDiv"
       >
-        {' '}
-        <Typography align="center" paragraph>
-          .. or Register here!
-        </Typography>
-      </Link>
-      <div className="mainCard authCard">
-        <CssBaseline />
+        <motion.div
+          whileHover={
+            {
+              x: 5,
+              boxShadow: '20px 20px 0px -7px rgba(0, 0, 0, 0.45)',
+            } as any
+          }
+          transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+          className="scaleDiv"
+        >
+          <h1 className="title">
+            <span role="img" aria-label="flag">
+              🍊
+            </span>{' '}
+            Login{' '}
+            <span role="img" aria-label="flag">
+              🍊
+            </span>{' '}
+          </h1>
+          <p style={{ textAlign: 'center' }}>
+            <Link
+              style={{ color: '#212121', textDecoration: 'none' }}
+              to="/apply"
+            >
+              Or register an account here{' '}
+              <span role="img" aria-label="flag">
+                ➡️
+              </span>
+            </Link>
+          </p>
+        </motion.div>
+      </motion.div>
+      <motion.div
+        initial="initial"
+        exit="out"
+        variants={pageVariants}
+        animate={'in'}
+        transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+        className="titleDiv"
+      >
+        <motion.div
+          whileHover={
+            {
+              x: 5,
+              boxShadow: '20px 20px 0px -7px rgba(0, 0, 0, 0.45)',
+            } as any
+          }
+          transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+          className="mainCard authCard"
+        >
+          <CssBaseline />
 
-        <Form
-          onSubmit={onSubmit}
-          validate={validate}
-          render={({ handleSubmit, form, submitting, pristine, values }) => (
-            <form onSubmit={handleSubmit} noValidate>
-              {errormsg !== '' && (
-                <Alert severity="error">
-                  <AlertTitle>{errormsg}</AlertTitle>
-                </Alert>
-              )}
-              <Grid container alignItems="flex-start" spacing={2}>
-                {formFields.map((item, idx) => (
-                  <Grid item xs={item.size} key={idx}>
-                    {item.field}
-                  </Grid>
-                ))}
-                <Box width="100%" style={{ marginTop: 16 }}>
-                  <Button
-                    style={{ width: '100%' }}
-                    variant="contained"
-                    color="primary"
-                    type="submit"
-                    disabled={isFetching}
-                  >
-                    Submit
-                  </Button>
-                </Box>
-              </Grid>
-            </form>
-          )}
-        />
-      </div>
-    </motion.div>
+          <Form
+            onSubmit={onSubmit}
+            validate={validate}
+            render={({ handleSubmit, form, submitting, pristine, values }) => (
+              <form onSubmit={handleSubmit} noValidate>
+                {errormsg !== '' && (
+                  <Alert severity="error">
+                    <AlertTitle>{errormsg}</AlertTitle>
+                  </Alert>
+                )}
+                <Grid container alignItems="flex-start" spacing={2}>
+                  {formFields.map((item, idx) => (
+                    <Grid item xs={item.size} key={idx}>
+                      {item.field}
+                    </Grid>
+                  ))}
+                  <Box width="100%" style={{ marginTop: 16 }}>
+                    <Button
+                      style={{ width: '100%' }}
+                      variant="contained"
+                      color="primary"
+                      type="submit"
+                      disabled={isFetching}
+                    >
+                      Submit
+                    </Button>
+                  </Box>
+                </Grid>
+              </form>
+            )}
+          />
+        </motion.div>
+      </motion.div>
+    </>
   );
 }
 

@@ -6,10 +6,11 @@
  * contain code that should be seen on all pages. (e.g. navigation bar)
  */
 
-import * as React from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Switch, Route, BrowserRouter, Link } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { pageVariants } from './animations';
 
 import { GlobalStyle } from 'styles/global-styles';
 
@@ -23,35 +24,40 @@ import { RegisterForm } from './containers/RegisterForm';
 import { SecurePage } from './containers/SecurePage';
 import { Account } from './containers/Account';
 import { LogOut } from './containers/LogOut';
-import Base, { styles as stickyNavStyles } from './containers/StickyNav';
+//import Base, { styles as stickyNavStyles } from './containers/StickyNav';
 // import { css } from 'styled-components';
 import styled from 'styled-components';
 import getTheme from './theme';
 import auth from 'utils/auth';
+import { motion, useAnimation } from 'framer-motion';
 
 import './styles.css';
 
-const StickyNav = styled(Base)`
-  background: url(/images/asfalt-dark.png), #b0e7e8;
-  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.4);
+const DivNav = styled(motion.div)`
+  background: url(/images/asfalt-dark-light.png), #b0e7e8;
+  /* box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.4); */
+  box-shadow: 23px 23px 0 -8px rgba(0, 0, 0, 0.45);
   border-radius: 49px;
   height: auto;
+  max-width: 75em;
   padding: 0;
-  margin: 2rem 2rem;
+  margin: auto;
+  margin-top: 1.9rem;
   margin-bottom: 3rem;
-  position: -webkit-sticky;
   line-height: 24px;
-  position: sticky;
-  transition: all 125ms;
   top: 0;
 `;
+
+// const StickyNav = styled(Base)`
+//   padding: 0;
+//   margin: 0;
+// `;
 const Logo = styled.img`
   float: left;
   width: 4em;
   transform: translate(50%, 38%);
 `;
 const Nav = styled.nav`
-  ${stickyNavStyles};
   overflow: auto;
   padding: 0;
   margin: 0;
@@ -68,7 +74,7 @@ const Nav = styled.nav`
     font-size: 1em;
     background: url('/images/asfalt-dark-light.png'), #f5bb32;
     padding: 0.75rem;
-    box-shadow: 4px 5px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 8px 8px 0 -8px rgba(0, 0, 0, 0.45);
     border-radius: 22px;
     font-family: 'Fugaz One', cursive;
     text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
@@ -144,7 +150,13 @@ export function App() {
         <Route
           render={({ location }) => (
             <>
-              <StickyNav>
+              <DivNav
+                whileHover={{
+                  boxShadow: '16px 16px 0px -5px rgba(0, 0, 0, 0.45)',
+                  x: 5,
+                }}
+                transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+              >
                 <Nav>
                   <Logo
                     alt="logo"
@@ -152,7 +164,7 @@ export function App() {
                   ></Logo>
                   {getNav(!!auth.getToken(), location.pathname)}
                 </Nav>
-              </StickyNav>
+              </DivNav>
               <AnimatePresence exitBeforeEnter>
                 <Switch location={location} key={location.pathname}>
                   <Route exact path="/" component={HomePage} />

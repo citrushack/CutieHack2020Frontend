@@ -1,10 +1,9 @@
 body {
     padding: 0;
     margin: 0;
-    /* background: #FAFAFA; */
     background: url("/images/batthern.png"), url("/images/asfalt-dark.png"), #FFBBBB;
+    /* background: #FAFAFA; */
   }
-
 
 
   @import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
@@ -21,6 +20,30 @@ body {
   padding: 4em;
   margin-top: 4em;
 }
+
+
+
+.titleDiv{
+
+  display: flex;
+  flex-flow: column;
+}
+.scaleDiv {
+  padding:0;
+  margin: 0;
+  background: url(/images/always-grey.png), #ADDE8E;;
+  box-shadow: 23px 23px 0px -8px rgba(0, 0, 0, 0.45);
+  border-radius: 59px;
+  /* width:80vw; */
+  max-width:80em;
+  display:block;
+  margin:auto;
+  margin-bottom: 1rem;
+  padding:1rem 3rem;
+  flex-grow:1;
+
+}
+
 
 .groupCard{
   background: url(/images/always-grey.png), #A4E6E8;
@@ -39,9 +62,14 @@ padding: 3rem;
 
 .authCard{
   max-width: 600px;
-  padding: 4em;
+  padding: 4rem;
+  margin-bottom: 1rem;
 }
-
+#root{
+  overflow: hidden;
+  height: max(calc(100vh + 10px), auto);
+  padding-bottom: 2em;
+}
 .title{
   -webkit-text-stroke: 1px black;
   color: white;

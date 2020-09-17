@@ -4,7 +4,7 @@
  *
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 //import styled from 'styled-components/macro';
 import { Form, Field } from 'react-final-form';
@@ -32,8 +32,8 @@ import {
   CssBaseline,
 } from '@material-ui/core';
 import Dropzone from './Dropzone';
-import { useHistory } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { useHistory, useLocation } from 'react-router-dom';
+import { motion, useAnimation } from 'framer-motion';
 import { pageVariants } from '../../animations';
 
 interface Props {}
@@ -472,36 +472,58 @@ export function RegisterForm(props: Props) {
   const isFetching = useSelector(selectisFetching);
 
   return (
-    <motion.div
-      initial="initial"
-      animate="in"
-      exit="out"
-      variants={pageVariants}
-      transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
-    >
-      <h1 className="title">
-        <span role="img" aria-label="flag">
-          🍊
-        </span>{' '}
-        Apply for Cutie Hack{' '}
-        <span role="img" aria-label="flag">
-          🍊
-        </span>{' '}
-      </h1>
-      <Typography align="center" paragraph>
-        <Link
-          align="center"
-          onClick={() => {
-            history.push('/auth');
-          }}
+    <div>
+      <motion.div
+        initial="initial"
+        exit="out"
+        variants={pageVariants}
+        animate={'in'}
+        transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+        className="titleDiv"
+      >
+        <motion.div
+          whileHover={
+            {
+              x: 5,
+              boxShadow: '20px 20px 0px -7px rgba(0, 0, 0, 0.45)',
+            } as any
+          }
+          transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+          className="scaleDiv"
         >
-          If you've already applied, login here{' '}
-          <span role="img" aria-label="flag">
-            ➡️
-          </span>
-        </Link>
-      </Typography>
-      <div className="mainCard applyBody">
+          <h1 className="title">
+            <span role="img" aria-label="flag">
+              🍊
+            </span>{' '}
+            Apply for Cutie Hack{' '}
+            <span role="img" aria-label="flag">
+              🍊
+            </span>{' '}
+          </h1>
+          <Typography align="center" paragraph>
+            <Link
+              align="center"
+              onClick={() => {
+                history.push('/auth');
+              }}
+            >
+              If you've already applied, login here{' '}
+              <span role="img" aria-label="flag">
+                ➡️
+              </span>
+            </Link>
+          </Typography>
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        initial="initial"
+        animate="in"
+        exit="out"
+        variants={pageVariants}
+        transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+        className="mainCard applyBody"
+      >
         <CssBaseline />
         {errormsg !== '' && (
           <Alert severity="error">
@@ -599,7 +621,7 @@ export function RegisterForm(props: Props) {
             </form>
           )}
         />
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }

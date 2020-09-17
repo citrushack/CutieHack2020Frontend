@@ -21,6 +21,10 @@ export function HomePage() {
     <motion.div
       className="mainCard"
       initial="initial"
+      whileHover={{
+        boxShadow: '20px 20px 0px -7px rgba(0, 0, 0, 0.45)',
+        x: 5,
+      }}
       animate="in"
       exit="out"
       variants={pageVariants}

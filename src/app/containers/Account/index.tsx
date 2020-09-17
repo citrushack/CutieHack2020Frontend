@@ -118,15 +118,17 @@ export function Account(props: Props) {
           staggerChildren: 0.5,
         }}
       >
-        <h1 className="title">
-          <span role="img" aria-label="flag">
-            🍊
-          </span>{' '}
-          Loading... &nbsp;
-          <span role="img" aria-label="flag">
-            🍊
-          </span>{' '}
-        </h1>
+        <div className="titleDiv">
+          <h1 className="title">
+            <span role="img" aria-label="flag">
+              🍊
+            </span>{' '}
+            Loading... &nbsp;
+            <span role="img" aria-label="flag">
+              🍊
+            </span>{' '}
+          </h1>
+        </div>
       </motion.div>
     );
   }

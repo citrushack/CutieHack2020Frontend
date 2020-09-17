@@ -17,6 +17,9 @@ export default function getTheme(theme) {
     overrides: {
       MuiCssBaseline: {
         '@global': {
+          '.MuiAutocomplete-popper > *': {
+            background: '#d5eec6',
+          },
           '.MuiAutocomplete-inputRoot[class*="MuiInput-root"] .MuiAutocomplete-input:first-child': {
             paddingLeft: '20px',
             paddingBottom: '15px',
