@@ -35,6 +35,7 @@ import Dropzone from './Dropzone';
 import { useHistory, useLocation } from 'react-router-dom';
 import { motion, useAnimation } from 'framer-motion';
 import { pageVariants } from '../../animations';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 interface Props {}
 type validationError = postDataPayload & {
@@ -470,7 +471,7 @@ export function RegisterForm(props: Props) {
   };
   const errormsg = useSelector(selectError);
   const isFetching = useSelector(selectisFetching);
-
+  const matches = useMediaQuery('(min-width:600px)');
   return (
     <div>
       <motion.div
@@ -607,15 +608,35 @@ export function RegisterForm(props: Props) {
                     {item.field}
                   </Grid>
                 ))}
-                <Grid item style={{ marginTop: 16 }}>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    type="submit"
-                    disabled={isFetching}
+                <Grid
+                  container
+                  direction="row"
+                  justify="flex-end"
+                  alignItems="center"
+                >
+                  <Grid
+                    item
+                    xs={matches ? 12 : 12}
+                    style={{
+                      marginTop: 16,
+                    }}
                   >
-                    Submit
-                  </Button>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      type="submit"
+                      size="large"
+                      disabled={isFetching}
+                      style={{
+                        width: '100%',
+                        background:
+                          'url("/images/asfalt-dark-light.png"), #9be36d',
+                        color: 'black',
+                      }}
+                    >
+                      Submit
+                    </Button>
+                  </Grid>
                 </Grid>
               </Grid>
             </form>

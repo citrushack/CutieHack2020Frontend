@@ -38,7 +38,7 @@ import { Alert, AlertTitle } from '@material-ui/lab';
 import { Form } from 'react-final-form';
 import { motion } from 'framer-motion';
 import { pageVariants } from '../../animations';
-
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 // @typescript-eslint-disable-next-line no-unused-vars
 import copy from 'clipboard-copy';
 
@@ -98,6 +98,7 @@ export function Account(props: Props) {
   const isFetching = useSelector(selectisFetching);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const dispatch = useDispatch();
+  const matches = useMediaQuery('(min-width:600px)');
 
   const groupInfo = useSelector(selectGroup);
   const groupExists: boolean = !!groupInfo.payload;
@@ -267,7 +268,6 @@ export function Account(props: Props) {
           variants={pageVariants}
           transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
           className="groupCard"
-          style={{ padding: 16, margin: 32 }}
         >
           <Box textAlign="center">
             <Typography variant="h6" component="h1" gutterBottom>
@@ -367,7 +367,11 @@ export function Account(props: Props) {
                           />
                         </Grid>
                         <Grid item style={{ marginTop: 16 }}></Grid>
-                        <Grid item xs={3} style={{ marginTop: 16 }}>
+                        <Grid
+                          item
+                          xs={matches ? 3 : 12}
+                          style={{ marginTop: 16 }}
+                        >
                           <Button
                             variant="contained"
                             color="primary"
