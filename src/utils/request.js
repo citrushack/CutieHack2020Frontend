@@ -1,5 +1,4 @@
 import 'whatwg-fetch';
-import auth from './auth';
 /**
  * Parses the JSON returned by a network request
  *
@@ -65,8 +64,8 @@ export default function request(
     {},
   );
 
-  const token = auth.getToken();
-
+  const token = window.localStorage.getItem('_auth_t');
+  console.log(token);
   if (token) {
     options.headers = Object.assign(
       {

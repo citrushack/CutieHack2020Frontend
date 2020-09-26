@@ -4,7 +4,8 @@
  *
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Redirect } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import { useSelector, useDispatch } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
@@ -12,14 +13,15 @@ import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { reducer, sliceKey } from './slice';
 import CopyToClipboard from './CopyToClipboard';
 import {
-  selectAccountInfo,
   selectisFetching,
   selectError,
   selectGroup,
+  selectStatusInfo,
 } from './selectors';
 import accountSaga from './saga';
 import { AccountDetails } from './types';
 import { actions } from './slice';
+import { useAuthUser } from 'react-auth-kit';
 
 import {
   Typography,
@@ -89,24 +91,94 @@ const displayNames = {
   gender: 'Gender',
   //extra: 'Extra Info',
 };
-
+const useMountEffect = fun => useEffect(fun, []);
+function getStatus(appstatus) {
+  if (appstatus === undefined)
+    return <span style={{ color: '#fffc37' }}>Pending </span>;
+  if (appstatus === false)
+    return <span style={{ color: 'rgb(255, 143, 143)' }}>Denied </span>;
+  if (appstatus === true)
+    return <span style={{ color: 'rgb(178, 255, 9)' }}>Accepted </span>;
+}
 export function Account(props: Props) {
   useInjectReducer({ key: sliceKey, reducer: reducer });
   useInjectSaga({ key: sliceKey, saga: accountSaga });
   const classes = useStyles();
   const errormsg = useSelector(selectError);
   const isFetching = useSelector(selectisFetching);
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const dispatch = useDispatch();
   const matches = useMediaQuery('(min-width:600px)');
 
   const groupInfo = useSelector(selectGroup);
   const groupExists: boolean = !!groupInfo.payload;
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const account: AccountDetails = useSelector(selectAccountInfo);
-  if (!account) {
-    dispatch(actions.refreshState());
+  const authU = useAuthUser();
+  const statusPayload = useSelector(selectStatusInfo);
+
+  if (!authU) {
     return (
+      <motion.div exit="undefined">
+        <motion.div
+          initial="initial"
+          animate="in"
+          exit="out"
+          style={{ marginBottom: '2em' }}
+          variants={pageVariants}
+          transition={{
+            duration: 0.5,
+            ease: [0.43, 0.13, 0.23, 0.96],
+            staggerChildren: 0.5,
+          }}
+        >
+          <div className="titleDiv">
+            <h1 className="title">
+              <span role="img" aria-label="flag">
+                🍊
+              </span>{' '}
+              Loading... &nbsp;
+              <span role="img" aria-label="flag">
+                🍊
+              </span>{' '}
+            </h1>
+          </div>
+        </motion.div>
+      </motion.div>
+    );
+  }
+
+  //console.log(account);
+  //console.log(account);
+  // const table = Object.assign({}, authU());
+  // //Values to hide
+  // [
+  //   'blocked',
+  //   'confirmed',
+  //   'created_at',
+  //   '_id',
+  //   'id',
+  //   '__v',
+  //   'provider',
+  //   'role',
+  //   'resume',
+  //   'group',
+  //   'createdAt',
+  //   'updatedAt',
+  //   'year',
+  //   'updated_by',
+  //   'extra',
+  // ].forEach(elm => delete table[elm]);
+  //console.log(table);
+  //console.log(groupInfo);
+  const onSubmit = (values: any) => {
+    dispatch(actions.joinGroup(values));
+  };
+  if (statusPayload.payload) console.log(statusPayload.payload.status);
+  //console.log(table);
+  return (
+    <motion.div exit="undefined">
       <motion.div
         initial="initial"
         animate="in"
@@ -119,143 +191,117 @@ export function Account(props: Props) {
           staggerChildren: 0.5,
         }}
       >
-        <div className="titleDiv">
+        <motion.div
+          whileHover={
+            {
+              x: 5,
+              boxShadow: '20px 20px 0px -7px rgba(0, 0, 0, 0.45)',
+            } as any
+          }
+          transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+          className="scaleDiv"
+        >
           <h1 className="title">
             <span role="img" aria-label="flag">
               🍊
             </span>{' '}
-            Loading... &nbsp;
+            Application status:{' '}
+            {statusPayload.payload
+              ? getStatus(statusPayload.payload.status)
+              : 'Loading...'}
             <span role="img" aria-label="flag">
               🍊
             </span>{' '}
           </h1>
-        </div>
-      </motion.div>
-    );
-  }
-  //console.log(account);
-  //console.log(account);
-  const table = Object.assign({}, account);
-  //Values to hide
-  [
-    'blocked',
-    'confirmed',
-    'created_at',
-    '_id',
-    'id',
-    '__v',
-    'provider',
-    'role',
-    'resume',
-    'group',
-    'createdAt',
-    'updatedAt',
-    'year',
-    'updated_by',
-    'extra',
-  ].forEach(elm => delete table[elm]);
-  //console.log(table);
-  //console.log(groupInfo);
-  const onSubmit = (values: any) => {
-    dispatch(actions.joinGroup(values));
-  };
-  //console.log(table);
-  return (
-    <motion.div
-      initial="initial"
-      animate="in"
-      exit="out"
-      style={{ marginBottom: '2em' }}
-      variants={pageVariants}
-      transition={{
-        duration: 0.5,
-        ease: [0.43, 0.13, 0.23, 0.96],
-        staggerChildren: 0.5,
-      }}
-    >
-      <h1 className="title">
-        <span role="img" aria-label="flag">
-          🍊
-        </span>{' '}
-        My Application &nbsp;
-        <span role="img" aria-label="flag">
-          🍊
-        </span>{' '}
-      </h1>
-      <motion.div
-        initial="initial"
-        animate="in"
-        exit="out"
-        variants={pageVariants}
-        transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
-        className="mainCard accTable"
-      >
-        <Helmet>
-          <title>My Application</title>
-          <meta name="description" content=" My Application" />
-        </Helmet>
-        <CssBaseline />
-        <Grid container alignItems="center" justify="center">
-          <Table style={{ marginBottom: '1em' }}>
-            <TableBody>
-              {Object.entries(table).map(
-                ([key, value], idx) =>
-                  value && (
-                    <TableRow key={idx}>
-                      <TableCell>
-                        <strong>{displayNames[key] || key}</strong>
-                      </TableCell>
-                      <TableCell align="right">{`${value}`}</TableCell>
-                    </TableRow>
-                  ),
-              )}
-            </TableBody>
-          </Table>
-          <Grid item xs={6}>
-            <Button
-              variant="contained"
-              color="primary"
-              type="submit"
-              className={classes.editButton}
+          {/* <p style={{ textAlign: 'center' }}>
+            <Link
+              style={{ color: '#212121', textDecoration: 'none' }}
+              to="/apply"
             >
-              Change Email
-            </Button>
-          </Grid>
-          <Grid item xs={6}>
-            <Button
-              variant="contained"
-              color="primary"
-              type="submit"
-              className={classes.editButton}
+              Or register an account here{' '}
+              <span role="img" aria-label="flag">
+                ➡️
+              </span>
+            </Link>
+          </p> */}
+        </motion.div>
+        <motion.div
+          initial="initial"
+          animate="in"
+          exit="out"
+          variants={pageVariants}
+          transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+          className="mainCard accTable"
+        >
+          <Helmet>
+            <title>My Application</title>
+            <meta name="description" content=" My Application" />
+          </Helmet>
+          <CssBaseline />
+          <Grid container alignItems="center" justify="center">
+            <Grid item xs={12}></Grid>
+            <Typography
+              style={{
+                fontFamily: "'Libre Baskerville', serif",
+                fontSize: '1.5em',
+                fontWeight: 800,
+              }}
+              align="center"
+              variant="h5"
+              component="h1"
             >
-              Change Password
-            </Button>
+              You're all set, {authU().firstname}!<br></br>
+              <br></br>
+              Check back another time to see your status, or create a group
+              below if you're hacking with a friend.
+            </Typography>
+            {/* <Table style={{ marginBottom: '1em' }}>
+              <TableBody>
+                {Object.entries(table).map(
+                  ([key, value], idx) =>
+                    value && (
+                      <TableRow key={idx}>
+                        <TableCell>
+                          <strong>{displayNames[key] || key}</strong>
+                        </TableCell>
+                        <TableCell align="right">{`${value}`}</TableCell>
+                      </TableRow>
+                    ),
+                )}
+              </TableBody>
+            </Table> */}
+            {/* <Grid item xs={6}>
+              <Button
+                variant="contained"
+                color="primary"
+                type="submit"
+                className={classes.editButton}
+              >
+                Change Email
+              </Button>
+            </Grid>
+            <Grid item xs={6}>
+              <Button
+                variant="contained"
+                color="primary"
+                type="submit"
+                className={classes.editButton}
+              >
+                Change Password
+              </Button>
+            </Grid> */}
           </Grid>
-        </Grid>
-      </motion.div>
-      <h1 style={{ marginTop: '2.5em' }} className="title">
-        <span role="img" aria-label="flag">
-          🧑‍🤝‍🧑
-        </span>{' '}
-        Groups&nbsp;
-        <span role="img" aria-label="flag">
-          🧑‍🤝‍🧑
-        </span>{' '}
-      </h1>
-      <motion.div
-        initial="initial"
-        animate="in"
-        exit="out"
-        variants={pageVariants}
-        transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
-        className="mainCard"
-      >
-        <Box textAlign="center">
-          <Typography variant="body1" gutterBottom>
-            Plan on hacking with a friend? Enter your group code below, or
-            generate a code to share!
-          </Typography>
-        </Box>
+        </motion.div>
+        {/* <h1 style={{ marginTop: '2.5em' }} className="title">
+          <span role="img" aria-label="flag">
+            🧑‍🤝‍🧑
+          </span>{' '}
+          Groups&nbsp;
+          <span role="img" aria-label="flag">
+            🧑‍🤝‍🧑
+          </span>{' '}
+        </h1> */}
+
         {errormsg !== '' && (
           <Alert severity="error">
             <AlertTitle>{errormsg}</AlertTitle>
@@ -417,20 +463,24 @@ export function Account(props: Props) {
                                 <TableCell>
                                   <strong>{parseInt(key) + 1}</strong>
                                 </TableCell>
-                                <TableCell style={{ maxWidth: '9em' }}>
+                                <TableCell
+                                  style={{
+                                    maxWidth: '9em',
+                                    textAlign: 'right',
+                                  }}
+                                >
                                   {`${(value as userDisplay).firstname} ${
                                     (value as userDisplay).lastname
                                   }`}{' '}
                                 </TableCell>
-                                <TableCell>
-                                  {' '}
-                                  {/* <Button variant="contained" type="submit">
+                                {/* <TableCell> */}{' '}
+                                {/* <Button variant="contained" type="submit">
                                 Kick
                               </Button> */}
-                                  {(value as userDisplay).id === account.id && (
-                                    <strong>You</strong>
+                                {/* {(value as userDisplay).id === account.id && (
+                                    <strong>Me</strong>
                                   )}
-                                </TableCell>
+                                </TableCell> */}
                               </TableRow>
                             ),
                         )}

@@ -11,6 +11,7 @@ import { Form, Field } from 'react-final-form';
 import { actions } from './slice';
 import { countries, unis, majors } from './data';
 //import styled from 'styled-components/macro';
+import { useSignIn } from 'react-auth-kit';
 
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { reducer, sliceKey } from './slice';
@@ -66,11 +67,11 @@ function validateYear(year) {
 }
 const validate = values => {
   const errors = {} as validationError;
-  if (!values.email) {
-    errors.email = 'Required';
-  } else if (!validateEmail(values.email)) {
-    errors.email = 'Email not valid';
-  }
+  // if (!values.email) {
+  //   errors.email = 'Required';
+  // } else if (!validateEmail(values.email)) {
+  //   errors.email = 'Email not valid';
+  // }
 
   if (!values.github) {
     errors.github = 'Required';
@@ -90,24 +91,23 @@ const validate = values => {
     errors.year = 'Invalid year';
   }
 
-  if (!values.password) errors.password = 'Required';
-  if (!values.passwordConfirm) errors.passwordConfirm = 'Required';
-  if (values.password !== values.passwordConfirm)
-    errors.passwordConfirm = 'Passwords must match';
+  // if (!values.password) errors.password = 'Required';
+  // if (!values.passwordConfirm) errors.passwordConfirm = 'Required';
+  // if (values.password !== values.passwordConfirm)
+  //   errors.passwordConfirm = 'Passwords must match';
   if (!values['addr1']) errors['addr1'] = 'Required';
   if (!values.resume) errors.resume = 'Resume upload required';
   if (!values.country) errors.country = 'Required';
   if (!values.city) errors.city = 'Required';
   if (!values.state) errors.state = 'Required';
   if (!values.zip) errors.zip = 'Required';
-  if (!values.username) errors.username = 'Required';
+  // if (!values.username) errors.username = 'Required';
   if (!values.firstname) errors.firstname = 'Required';
   if (!values.lastname) errors.lastname = 'Required';
   // if (!values.school) errors.school = 'Required';
   // if (!!!values.major) errors.major = 'Required';
   if (!values.gender) errors.gender = 'Required';
 
-  //console.log(values);
   return errors;
 };
 interface Props {}
@@ -464,16 +464,19 @@ export function RegisterForm(props: Props) {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   //const authPage = useSelector(selectRegisterForm);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const signIn = useSignIn();
   let history = useHistory();
   const dispatch = useDispatch();
   const onSubmit = (values: any) => {
-    dispatch(actions.submit({ ...values, history: history }));
+    dispatch(
+      actions.submit({ ...values, history: history.push, signIn: signIn }),
+    );
   };
   const errormsg = useSelector(selectError);
   const isFetching = useSelector(selectisFetching);
   const matches = useMediaQuery('(min-width:600px)');
   return (
-    <div>
+    <motion.div exit="undefined">
       <motion.div
         initial="initial"
         exit="out"
@@ -546,8 +549,8 @@ export function RegisterForm(props: Props) {
           }) => (
             <form onSubmit={handleSubmit} noValidate>
               <Grid container alignItems="flex-start" spacing={2}>
-                <Grid item>
-                  <Box>
+                {/*<Grid item>
+                   <Box>
                     <h2>Login info</h2>
                     <Typography> Enter some basic account details.</Typography>
                   </Box>
@@ -556,7 +559,7 @@ export function RegisterForm(props: Props) {
                   <Grid item xs={item.size} key={idx}>
                     {item.field}
                   </Grid>
-                ))}
+                ))} */}
                 <Grid item>
                   <Box style={{ marginTop: 16 }}>
                     <h2>Check-in</h2>
@@ -643,6 +646,6 @@ export function RegisterForm(props: Props) {
           )}
         />
       </motion.div>
-    </div>
+    </motion.div>
   );
 }

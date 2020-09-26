@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import { CssBaseline, Typography } from '@material-ui/core';
 import { pageVariants } from '../../animations';
 import { motion } from 'framer-motion';
+import { useAuthUser, useSignIn, useAuthHeader } from 'react-auth-kit';
 
 // export class HomePage extends React.Component {
 // state = { showButton: false };
@@ -17,6 +18,20 @@ import { motion } from 'framer-motion';
 // render() {
 
 export function HomePage() {
+  // const authU = useAuthUser();
+  // const authHeader = useAuthHeader();
+  // const signIn = useSignIn();
+
+  // if (authU()) console.log(authU());
+  // if (signIn)
+  //   signIn({
+  //     token: authHeader().toString().split(' ')[1],
+  //     expiresIn: 10080,
+  //     tokenType: 'Bearer',
+  //     authState: Object.assign(authU(), { newVal: 'newVal' }),
+  //   });
+  // if (authHeader()) console.log(authHeader());
+
   return (
     <motion.div
       className="mainCard"
@@ -35,9 +50,12 @@ export function HomePage() {
         <title>Cutie Hack</title>
         <meta name="description" content="Cutie Hack" />
       </Helmet>
-      <Typography variant="h4" align="left" component="h1" gutterBottom>
-        HomePage container
-      </Typography>
+      <Typography
+        variant="h4"
+        align="left"
+        component="h1"
+        gutterBottom
+      ></Typography>
     </motion.div>
   );
 }

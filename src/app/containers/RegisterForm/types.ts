@@ -33,7 +33,7 @@ export type postDataPayload = {
 };
 
 export type registerPostData = PayloadAction<
-  postDataPayload & { history: History<any> },
+  postDataPayload & { history: History<any>; signIn: Function },
   any
 >;
 

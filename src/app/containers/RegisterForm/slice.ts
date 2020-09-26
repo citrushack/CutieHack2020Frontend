@@ -20,6 +20,9 @@ const registerFormSlice = createSlice({
       state.isFetching = false;
       state.error = action.payload.message;
     },
+    submitSucc(state) {
+      state.isFetching = false;
+    },
   },
 });
 

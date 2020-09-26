@@ -13,6 +13,7 @@ import { selectLogOut } from './selectors';
 import { pageVariants } from '../../animations';
 import { motion } from 'framer-motion';
 import { actions } from './slice';
+import { useSignOut } from 'react-auth-kit';
 
 interface Props {}
 
@@ -23,10 +24,14 @@ export function LogOut(props: Props) {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const logOut = useSelector(selectLogOut);
+  const signOut = useSignOut();
+
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const dispatch = useDispatch();
 
   useMountEffect(() => {
+    signOut();
+    window.localStorage.clear();
     dispatch(actions.resetState({}));
   });
   return (

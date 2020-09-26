@@ -1,7 +1,6 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from 'utils/@reduxjs/toolkit';
 import { ContainerState } from './types';
-import auth from 'utils/auth';
 
 // The initial state of the LogOut container
 export const initialState: ContainerState = {};
@@ -11,7 +10,7 @@ const logOutSlice = createSlice({
   initialState,
   reducers: {
     resetState(state, action: PayloadAction<any>) {
-      auth.clearAppStorage();
+      window.localStorage.clear();
     },
   },
 });

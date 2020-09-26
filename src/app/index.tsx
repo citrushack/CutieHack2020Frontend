@@ -11,6 +11,7 @@ import { Helmet } from 'react-helmet-async';
 import { Switch, Route, BrowserRouter, Link } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { pageVariants } from './animations';
+import { useIsAuthenticated } from 'react-auth-kit';
 
 import { GlobalStyle } from 'styles/global-styles';
 
@@ -18,17 +19,21 @@ import { HomePage } from './containers/HomePage/Loadable';
 import { NotFoundPage } from './components/NotFoundPage/Loadable';
 import ProtectedRoute from './containers/ProtectedRoute';
 import UnprotectedOnlyRoute from './containers/UnprotectedOnlyRoute';
+import AppCompleteOnlyRoute from './containers/CompleteOnlyRoute';
+import IncompleteOnlyRoute from './containers/IncompleteOnlyRoute';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { AuthPage } from './containers/AuthPage';
 import { RegisterForm } from './containers/RegisterForm';
 import { SecurePage } from './containers/SecurePage';
 import { Account } from './containers/Account';
 import { LogOut } from './containers/LogOut';
+import LoginRedirect from './containers/LoginRedirect/index.jsx';
+
 //import Base, { styles as stickyNavStyles } from './containers/StickyNav';
 // import { css } from 'styled-components';
 import styled from 'styled-components';
 import getTheme from './theme';
-import auth from 'utils/auth';
+
 import { motion, useAnimation } from 'framer-motion';
 
 import './styles.css';
@@ -74,7 +79,7 @@ const Nav = styled.nav`
     font-size: 1em;
     background: url('/images/asfalt-dark-light.png'), #f5bb32;
     padding: 0.75rem;
-    box-shadow: 8px 8px 0 -8px rgba(0, 0, 0, 0.45);
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.45);
     border-radius: 22px;
     font-family: 'Fugaz One', cursive;
     text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,
@@ -138,6 +143,8 @@ function getNav(loggedIn, location) {
 }
 
 export function App() {
+  const isAuthenticated = useIsAuthenticated();
+
   return (
     <BrowserRouter>
       <Helmet
@@ -151,6 +158,7 @@ export function App() {
           render={({ location }) => (
             <>
               <DivNav
+                className="divNav"
                 whileHover={{
                   boxShadow: '16px 16px 0px -5px rgba(0, 0, 0, 0.45)',
                   x: 5,
@@ -162,25 +170,34 @@ export function App() {
                     alt="logo"
                     src="https://cdn.pixabay.com/photo/2016/02/23/17/42/orange-1218158_960_720.png"
                   ></Logo>
-                  {getNav(!!auth.getToken(), location.pathname)}
+                  {getNav(isAuthenticated(), location.pathname)}
                 </Nav>
               </DivNav>
               <AnimatePresence exitBeforeEnter>
                 <Switch location={location} key={location.pathname}>
+                  <Route
+                    exact
+                    path="/connect/:providerName/redirect"
+                    component={LoginRedirect}
+                  />
                   <Route exact path="/" component={HomePage} />
                   <UnprotectedOnlyRoute
                     exact
                     path="/auth"
                     component={AuthPage}
                   />
-                  <UnprotectedOnlyRoute
+                  <IncompleteOnlyRoute
                     exact
                     path="/apply"
                     component={RegisterForm}
                   />
-                  <ProtectedRoute exact path="/account" component={Account} />
+                  <AppCompleteOnlyRoute
+                    exact
+                    path="/account"
+                    component={Account}
+                  />
                   <ProtectedRoute exact path="/test" component={SecurePage} />
-                  <ProtectedRoute exact path="/logout" component={LogOut} />
+                  <Route exact path="/logout" component={LogOut} />
                   <Route component={NotFoundPage} />
                 </Switch>
               </AnimatePresence>

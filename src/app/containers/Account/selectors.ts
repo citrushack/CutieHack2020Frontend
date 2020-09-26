@@ -9,10 +9,6 @@ export const selectAccount = createSelector(
   [selectDomain],
   accountState => accountState,
 );
-export const selectAccountInfo = createSelector(
-  [selectDomain],
-  accountState => accountState.info,
-);
 
 export const selectFormData = createSelector(
   [selectDomain],
@@ -27,6 +23,10 @@ export const selectError = createSelector(
 export const selectisFetching = createSelector(
   [selectDomain],
   accountState => accountState.isFetching,
+);
+export const selectStatusInfo = createSelector(
+  [selectDomain],
+  accountState => accountState.statusInfo,
 );
 
 export const selectGroup = createSelector(

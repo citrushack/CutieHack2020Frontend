@@ -18,6 +18,7 @@ import 'sanitize.css/sanitize.css';
 import { App } from 'app';
 
 import { HelmetProvider } from 'react-helmet-async';
+import { AuthProvider } from 'react-auth-kit';
 
 import { configureAppStore } from 'store/configureStore';
 
@@ -32,11 +33,18 @@ interface Props {
 }
 const ConnectedApp = ({ Component }: Props) => (
   <Provider store={store}>
-    <HelmetProvider>
-      <React.StrictMode>
-        <Component />
-      </React.StrictMode>
-    </HelmetProvider>
+    <AuthProvider
+      authStorageType={'localstorage'}
+      authStorageName={'_auth_t'}
+      authTimeStorageName={'_auth_time'}
+      stateStorageName={'_auth_state'}
+    >
+      <HelmetProvider>
+        <React.StrictMode>
+          <Component />
+        </React.StrictMode>
+      </HelmetProvider>
+    </AuthProvider>
   </Provider>
 );
 const render = (Component: typeof App) => {

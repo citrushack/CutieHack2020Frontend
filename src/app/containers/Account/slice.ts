@@ -1,17 +1,21 @@
 // import { PayloadAction } from '@reduxjs/toolkit';
 import { createSlice } from 'utils/@reduxjs/toolkit';
 import { ContainerState } from './types';
-import auth from 'utils/auth';
-import { postDataPayload, postErrorPayload, groupInfoPayload } from './types';
+import {
+  postDataPayload,
+  postErrorPayload,
+  groupInfoPayload,
+  statusInfoPayload,
+} from './types';
 // import { PayloadAction } from '@reduxjs/toolkit';
 
 // The initial state of the Account container
 export const initialState: ContainerState = {
-  info: auth.getUserInfo(),
   error: '',
   postData: {} as postDataPayload,
   isFetching: false,
-  groupInfo: { payload: auth.get('groupInfo') } as groupInfoPayload,
+  groupInfo: {} as groupInfoPayload,
+  statusInfo: {} as statusInfoPayload,
 };
 
 const accountSlice = createSlice({
@@ -28,6 +32,7 @@ const accountSlice = createSlice({
     },
     joinGroupSucc(state, action: groupInfoPayload) {
       state.groupInfo.payload = action.payload;
+      state.error = '';
       state.isFetching = false;
     },
     leaveGroup(state) {
@@ -39,6 +44,7 @@ const accountSlice = createSlice({
     },
     leaveGroupSucc(state) {
       state.groupInfo.payload = null;
+      state.error = '';
       state.isFetching = false;
     },
     generateCode(state) {
@@ -50,6 +56,7 @@ const accountSlice = createSlice({
     },
     generateCodeSucc(state, action: groupInfoPayload) {
       state.groupInfo.payload = action.payload;
+      state.error = '';
       state.isFetching = false;
     },
     refreshGroup(state) {
@@ -61,15 +68,23 @@ const accountSlice = createSlice({
     },
     refreshGroupSucc(state, action: groupInfoPayload) {
       state.groupInfo.payload = action.payload;
+      state.error = '';
       state.isFetching = false;
     },
     clearGroupInfo(state) {
       state.groupInfo.payload = null;
       state.isFetching = false;
     },
-    refreshState(state) {
-      state.info = auth.getUserInfo();
-      state.groupInfo = { payload: auth.get('groupInfo') } as groupInfoPayload;
+    refreshStatus(state) {
+      state.isFetching = true;
+    },
+    refreshStatusFail(state, action: postErrorPayload) {
+      state.isFetching = false;
+      state.error = action.payload.message;
+    },
+    refreshStatusSucc(state, action: statusInfoPayload) {
+      state.statusInfo.payload = action.payload;
+      state.error = '';
       state.isFetching = false;
     },
   },

@@ -6,7 +6,7 @@
 
 import React, { useEffect } from 'react';
 import { Route, Redirect, RedirectProps } from 'react-router-dom';
-import auth from 'utils/auth';
+import { useIsAuthenticated } from 'react-auth-kit';
 import { motion } from 'framer-motion';
 
 const MotionRedirect: React.FC<RedirectProps> = ({ children, ...props }) => (
@@ -16,7 +16,9 @@ const MotionRedirect: React.FC<RedirectProps> = ({ children, ...props }) => (
 );
 
 function UnprotectedOnlyRoute({ component: Component, ...rest }) {
-  if (!!auth.getToken()) {
+  const isAuthenticated = useIsAuthenticated();
+
+  if (isAuthenticated()) {
     return <MotionRedirect push to="/account" />;
   } else {
     return <Route {...rest} render={props => <Component {...props} />} />;

@@ -18,6 +18,7 @@ export type AccountTable = {
   extra: string;
   linkedin: string;
   github: string;
+  appStatus: boolean;
 };
 
 export type ExtraAccountDetails = {
@@ -27,6 +28,7 @@ export type ExtraAccountDetails = {
   resume: { url: string; name: string };
   role: Object;
   year: string;
+  appComplete: boolean;
   group: Object;
 } & mongoEntry;
 //ignore extra types lol
@@ -63,14 +65,21 @@ export type groupInfoPayload = PayloadAction<
   any
 >;
 
+export type statusInfoPayload = PayloadAction<
+  {
+    status: boolean;
+  },
+  any
+>;
+
 export type AccountDetails = AccountTable & ExtraAccountDetails;
 
 export interface AccountState {
-  info: AccountDetails;
   error: string;
   postData: postDataPayload;
   isFetching: boolean;
   groupInfo: groupInfoPayload;
+  statusInfo: statusInfoPayload;
 }
 
 export type ContainerState = AccountState;

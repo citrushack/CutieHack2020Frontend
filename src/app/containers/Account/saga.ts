@@ -1,8 +1,8 @@
 import { all, call, select, takeLatest, put, fork } from 'redux-saga/effects';
 import { actions } from './slice';
 import request from 'utils/request';
-import auth from 'utils/auth';
 
+import { groupInfoPayload } from './types';
 import { selectFormData } from './selectors';
 //import {  postDataPayload } from './types';
 //import { format } from 'url';
@@ -25,16 +25,7 @@ export function* joinGroup() {
       body,
     });
     //console.log(response);
-
-    yield all([
-      call(
-        auth.set,
-        response,
-        'groupInfo',
-        localStorage.getItem('userInfo') !== null,
-      ),
-      put(actions.joinGroupSucc(response)),
-    ]);
+    yield put(actions.joinGroupSucc(response));
   } catch (error) {
     //console.log(error.response.payload.message[0].messages[0].message);
 
@@ -48,7 +39,6 @@ export function* joinGroup() {
 
 export function* leaveGroup() {
   //Select the form data
-
   try {
     //Generate request body from payload
     const body = {
@@ -61,12 +51,7 @@ export function* leaveGroup() {
       method: 'PUT',
       body,
     });
-    //console.log(response);
-
-    yield all([
-      call(auth.clearToken, 'groupInfo'),
-      put(actions.leaveGroupSucc()),
-    ]);
+    yield put(actions.leaveGroupSucc());
   } catch (error) {
     //console.log(error.response.payload.message[0].messages[0].message);
 
@@ -88,15 +73,7 @@ export function* generateGroup() {
       method: 'POST',
     });
     //console.log(response);
-    yield all([
-      call(
-        auth.set,
-        response,
-        'groupInfo',
-        localStorage.getItem('userInfo') !== null,
-      ),
-      put(actions.generateCodeSucc(response)),
-    ]);
+    yield put(actions.generateCodeSucc(response));
   } catch (error) {
     //console.log(error.response.payload.message[0].messages[0].message);
 
@@ -115,20 +92,12 @@ export function* refresh() {
       method: 'GET',
     });
     //console.log(response);
-
-    yield all([
-      call(
-        auth.set,
-        response,
-        'groupInfo',
-        localStorage.getItem('userInfo') !== null,
-      ),
-      put(actions.refreshGroupSucc(response)),
-    ]);
+    // yield call(auth.set, response, 'groupInfo', true);
+    yield put(actions.refreshGroupSucc(response));
   } catch (error) {
     //console.log(error.response.payload.message[0].messages[0].message);
-    if (error.response.payload.message === 'UserNotInGroup') {
-      yield all([call(auth.clear, 'groupInfo'), put(actions.clearGroupInfo())]);
+    if (error.response?.payload?.message === 'UserNotInGroup') {
+      yield put(actions.clearGroupInfo());
     } else {
       yield put(
         actions.refreshGroupFail({
@@ -137,11 +106,31 @@ export function* refresh() {
       );
     }
   }
-  yield put(actions.refreshState());
+}
+
+export function* refreshStatus() {
+  try {
+    const requestURL = 'http://localhost:1337/users/getmystatus';
+    const response = yield call(request, requestURL, {
+      method: 'GET',
+    });
+    console.log(response);
+    // yield call(auth.set, response, 'groupInfo', true);
+    yield put(actions.refreshStatusSucc(response));
+  } catch (error) {
+    //console.log(error.response.payload.message[0].messages[0].message);
+    yield put(
+      actions.refreshStatusFail({
+        message: JSON.stringify(error.response.payload),
+      }),
+    );
+  }
 }
 
 export default function* accountSaga() {
+  yield call(refreshStatus);
   yield call(refresh);
+  yield takeLatest(actions.refreshStatus.type, refreshStatus);
   yield takeLatest(actions.joinGroup.type, joinGroup);
   yield takeLatest(actions.leaveGroup.type, leaveGroup);
   yield takeLatest(actions.generateCode.type, generateGroup);
