@@ -10,7 +10,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Switch, Route, BrowserRouter, Link } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import { pageVariants } from './animations';
 import { useIsAuthenticated } from 'react-auth-kit';
 
 import { GlobalStyle } from 'styles/global-styles';
@@ -34,21 +33,23 @@ import LoginRedirect from './containers/LoginRedirect/index.jsx';
 import styled from 'styled-components';
 import getTheme from './theme';
 
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import './styles.css';
 
 const DivNav = styled(motion.div)`
-  background: url(/images/asfalt-dark-light.png), #b0e7e8;
+  /* background: url(/images/asfalt-dark-light.png), #b0e7e8; */
+  background: #b0e7e8;
+  border: 5px solid #94b4b5;
   /* box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.4); */
-  box-shadow: 23px 23px 0 -8px rgba(0, 0, 0, 0.45);
+  box-shadow: 6px 6px 0 0px rgba(0, 0, 0, 0.45);
   border-radius: 49px;
   height: auto;
-  max-width: 75em;
   padding: 0;
   margin: auto;
-  margin-top: 1.9rem;
-  margin-bottom: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  max-width: 1920px;
   line-height: 24px;
   top: 0;
 `;
@@ -65,7 +66,6 @@ const Logo = styled.img`
 const Nav = styled.nav`
   overflow: auto;
   padding: 0;
-  margin: 0;
   ul {
     float: right;
     transform: translate(-5%, -4%);
@@ -75,11 +75,15 @@ const Nav = styled.nav`
     margin-right: 0.1rem;
     padding: 10px;
   }
+  li:before {
+    content: none;
+  }
   ul li .navLink {
+    border: 5px solid #d5a638;
     font-size: 1em;
-    background: url('/images/asfalt-dark-light.png'), #f5bb32;
+    background: #f5bb32;
     padding: 0.75rem;
-    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.45);
+    box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 0.45);
     border-radius: 22px;
     font-family: 'Fugaz One', cursive;
     text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000,

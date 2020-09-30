@@ -41,14 +41,3 @@ const Wrapper = styled.div`
   flex-direction: column;
   min-height: 320px;
 `;
-
-const Title = styled.div`
-  margin-top: -8vh;
-  font-weight: bold;
-  color: black;
-  font-size: 3.375rem;
-
-  span {
-    font-size: 3.125rem;
-  }
-`;

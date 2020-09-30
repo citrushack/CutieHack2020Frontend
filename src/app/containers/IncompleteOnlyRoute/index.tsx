@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Route, Redirect, RedirectProps } from 'react-router-dom';
 
 import { motion } from 'framer-motion';
@@ -15,12 +15,12 @@ function IncompleteOnlyRoute({ component: Component, ...rest }) {
   const isAuthenticated = useIsAuthenticated();
   if (isAuthenticated()) {
     if (authU() && authU().appComplete) {
-      return <MotionRedirect push to="/account" />;
+      return <MotionRedirect to="/account" />;
     } else {
       return <Route {...rest} render={props => <Component {...props} />} />;
     }
   } else {
-    return <MotionRedirect push to="/auth" />;
+    return <MotionRedirect to="/auth" />;
   }
 }
 

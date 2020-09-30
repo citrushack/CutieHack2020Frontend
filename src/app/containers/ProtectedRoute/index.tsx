@@ -20,7 +20,7 @@ function ProtectedOnlyRoute({ component: Component, ...rest }) {
   const isAuthenticated = useIsAuthenticated();
 
   if (!isAuthenticated()) {
-    return <MotionRedirect push to="/auth" />;
+    return <MotionRedirect to="/auth" />;
   } else {
     return <Route {...rest} render={props => <Component {...props} />} />;
   }

@@ -1,8 +1,7 @@
-import { all, call, select, takeLatest, put, fork } from 'redux-saga/effects';
+import { call, select, takeLatest, put } from 'redux-saga/effects';
 import { actions } from './slice';
 import request from 'utils/request';
 
-import { groupInfoPayload } from './types';
 import { selectFormData } from './selectors';
 //import {  postDataPayload } from './types';
 //import { format } from 'url';

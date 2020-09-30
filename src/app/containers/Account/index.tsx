@@ -4,11 +4,10 @@
  *
  */
 
-import React, { useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useSelector, useDispatch } from 'react-redux';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { reducer, sliceKey } from './slice';
 import CopyToClipboard from './CopyToClipboard';
@@ -19,18 +18,10 @@ import {
   selectStatusInfo,
 } from './selectors';
 import accountSaga from './saga';
-import { AccountDetails } from './types';
 import { actions } from './slice';
 import { useAuthUser } from 'react-auth-kit';
 
-import {
-  Typography,
-  Paper,
-  Grid,
-  Button,
-  CssBaseline,
-  Box,
-} from '@material-ui/core';
+import { Typography, Grid, Button, CssBaseline, Box } from '@material-ui/core';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -42,19 +33,20 @@ import { motion } from 'framer-motion';
 import { pageVariants } from '../../animations';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 // @typescript-eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import copy from 'clipboard-copy';
 
 interface Props {}
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  editButton: {
-    textAlign: 'center',
-    display: 'block',
-    margin: 'auto',
-  },
-}));
+// const useStyles = makeStyles(theme => ({
+//   root: {
+//     flexGrow: 1,
+//   },
+//   editButton: {
+//     textAlign: 'center',
+//     display: 'block',
+//     margin: 'auto',
+//   },
+// }));
 
 type validationError = {
   groupCode: string;
@@ -73,25 +65,25 @@ const validate = values => {
   return errors;
 };
 
-const displayNames = {
-  username: 'Username',
-  email: 'Email',
-  firstname: 'First Name',
-  lastname: 'Last Name',
-  school: 'School',
-  major: 'Major',
-  linkedin: 'Linkedin',
-  github: 'Github',
-  addr1: 'Address Line 1',
-  addr2: 'Address Line 2',
-  country: 'Country',
-  city: 'City',
-  state: 'State',
-  zip: 'Zip',
-  gender: 'Gender',
-  //extra: 'Extra Info',
-};
-const useMountEffect = fun => useEffect(fun, []);
+// const displayNames = {
+//   username: 'Username',
+//   email: 'Email',
+//   firstname: 'First Name',
+//   lastname: 'Last Name',
+//   school: 'School',
+//   major: 'Major',
+//   linkedin: 'Linkedin',
+//   github: 'Github',
+//   addr1: 'Address Line 1',
+//   addr2: 'Address Line 2',
+//   country: 'Country',
+//   city: 'City',
+//   state: 'State',
+//   zip: 'Zip',
+//   gender: 'Gender',
+//   //extra: 'Extra Info',
+// };
+// const useMountEffect = fun => useEffect(fun, []);
 function getStatus(appstatus) {
   if (appstatus === undefined)
     return <span style={{ color: '#fffc37' }}>Pending </span>;
@@ -103,7 +95,7 @@ function getStatus(appstatus) {
 export function Account(props: Props) {
   useInjectReducer({ key: sliceKey, reducer: reducer });
   useInjectSaga({ key: sliceKey, saga: accountSaga });
-  const classes = useStyles();
+  // const classes = useStyles();
   const errormsg = useSelector(selectError);
   const isFetching = useSelector(selectisFetching);
 

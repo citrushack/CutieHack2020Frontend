@@ -1,10 +1,10 @@
-import { all, call, select, takeLatest, put } from 'redux-saga/effects';
-import { actions } from './slice';
-import request from 'utils/request';
+// import { all, call, select, takeLatest, put } from 'redux-saga/effects';
+// import { actions } from './slice';
+// import request from 'utils/request';
 
 //import { useHistory } from 'react-router-dom';
 //import React from "react";
-import { selectFormData } from './selectors';
+// import { selectFormData } from './selectors';
 //import {  postDataPayload } from './types';
 //import { format } from 'url';
 export function* login() {

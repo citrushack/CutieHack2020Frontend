@@ -9,26 +9,25 @@ import React from 'react';
 import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { reducer, sliceKey } from './slice';
 import { authPageSaga } from './saga';
-import { TextField, Checkboxes } from 'mui-rff';
-import { Typography, Box, Grid, Button, CssBaseline } from '@material-ui/core';
+// import { TextField, Checkboxes } from 'mui-rff';
+import { Typography, Button, CssBaseline } from '@material-ui/core';
 import { motion } from 'framer-motion';
 import { pageVariants } from '../../animations';
-import { Link } from 'react-router-dom';
 type validationError = {
   username: string;
   password: string;
 };
 
-const validate = values => {
-  const errors = {} as validationError;
-  if (!values.username) {
-    errors.username = 'Required';
-  }
-  if (!values.password) {
-    errors.password = 'Required';
-  }
-  return errors;
-};
+// const validate = values => {
+//   const errors = {} as validationError;
+//   if (!values.username) {
+//     errors.username = 'Required';
+//   }
+//   if (!values.password) {
+//     errors.password = 'Required';
+//   }
+//   return errors;
+// };
 
 interface Props {}
 
@@ -44,43 +43,43 @@ interface formType {
 }
 type formTypes = formType[];
 
-const formFields: formTypes = [
-  {
-    size: 12,
-    field: (
-      <TextField
-        label="Username or email"
-        variant="outlined"
-        name="username"
-        margin="none"
-        required={true}
-      />
-    ),
-  },
-  {
-    size: 12,
-    field: (
-      <TextField
-        label="Password"
-        name="password"
-        variant="outlined"
-        type="password"
-        margin="none"
-        required={true}
-      />
-    ),
-  },
-  {
-    size: 12,
-    field: (
-      <Checkboxes
-        name="rememberMe"
-        formControlProps={{ margin: 'none' }}
-        data={{ label: 'Remember me', value: true }}
-      />
-    ),
-  },
-];
+// const formFields: formTypes = [
+//   {
+//     size: 12,
+//     field: (
+//       <TextField
+//         label="Username or email"
+//         variant="outlined"
+//         name="username"
+//         margin="none"
+//         required={true}
+//       />
+//     ),
+//   },
+//   {
+//     size: 12,
+//     field: (
+//       <TextField
+//         label="Password"
+//         name="password"
+//         variant="outlined"
+//         type="password"
+//         margin="none"
+//         required={true}
+//       />
+//     ),
+//   },
+//   {
+//     size: 12,
+//     field: (
+//       <Checkboxes
+//         name="rememberMe"
+//         formControlProps={{ margin: 'none' }}
+//         data={{ label: 'Remember me', value: true }}
+//       />
+//     ),
+//   },
+// ];
 const backendUrl = 'http://localhost:1337';
 
 const providersNames = ['github', 'google', 'linkedin'];

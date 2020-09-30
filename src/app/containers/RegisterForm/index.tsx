@@ -4,7 +4,7 @@
  *
  */
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 //import styled from 'styled-components/macro';
 import { Form, Field } from 'react-final-form';
@@ -33,8 +33,8 @@ import {
   CssBaseline,
 } from '@material-ui/core';
 import Dropzone from './Dropzone';
-import { useHistory, useLocation } from 'react-router-dom';
-import { motion, useAnimation } from 'framer-motion';
+import { useHistory } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { pageVariants } from '../../animations';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
@@ -49,10 +49,10 @@ const genders = [
   { label: '🏳️‍🌈 Non-Binary', value: 'Non-Binary' },
   { label: '🤷🏿‍♀️ Prefer Not to Say', value: 'N/A' },
 ];
-function validateEmail(email) {
-  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(email);
-}
+// function validateEmail(email) {
+//   const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+//   return re.test(email);
+// }
 function validateLinkedin(url) {
   const re = /(https?:\/\/(.+?\.)?linkedin\.com(\/[A-Za-z0-9\-._~:/?#[\]@!$&'()*+,;=]*)?)/;
   return re.test(url);
@@ -215,66 +215,66 @@ const checkIn: formTypes = [
     ),
   },
 ];
-const loginInfo: formTypes = [
-  {
-    size: 12,
-    field: (
-      <TextField
-        variant="outlined"
-        label="Username"
-        name="username"
-        margin="none"
-        required={true}
-      />
-    ),
-  },
-  {
-    size: 12,
-    field: (
-      <TextField
-        variant="outlined"
-        label="Email"
-        name="email"
-        margin="none"
-        required={true}
-        type="email"
-      />
-    ),
-  },
+// const loginInfo: formTypes = [
+//   {
+//     size: 12,
+//     field: (
+//       <TextField
+//         variant="outlined"
+//         label="Username"
+//         name="username"
+//         margin="none"
+//         required={true}
+//       />
+//     ),
+//   },
+//   {
+//     size: 12,
+//     field: (
+//       <TextField
+//         variant="outlined"
+//         label="Email"
+//         name="email"
+//         margin="none"
+//         required={true}
+//         type="email"
+//       />
+//     ),
+//   },
 
-  {
-    size: 12,
-    field: (
-      <TextField
-        variant="outlined"
-        inputProps={{
-          autoComplete: 'new-password',
-        }}
-        label="Password"
-        name="password"
-        type="password"
-        margin="none"
-        required={true}
-      />
-    ),
-  },
-  {
-    size: 12,
-    field: (
-      <TextField
-        variant="outlined"
-        inputProps={{
-          autoComplete: 'new-password',
-        }}
-        label="Confirm Password"
-        name="passwordConfirm"
-        type="password"
-        margin="none"
-        required={true}
-      />
-    ),
-  },
-];
+//   {
+//     size: 12,
+//     field: (
+//       <TextField
+//         variant="outlined"
+//         inputProps={{
+//           autoComplete: 'new-password',
+//         }}
+//         label="Password"
+//         name="password"
+//         type="password"
+//         margin="none"
+//         required={true}
+//       />
+//     ),
+//   },
+//   {
+//     size: 12,
+//     field: (
+//       <TextField
+//         variant="outlined"
+//         inputProps={{
+//           autoComplete: 'new-password',
+//         }}
+//         label="Confirm Password"
+//         name="passwordConfirm"
+//         type="password"
+//         margin="none"
+//         required={true}
+//       />
+//     ),
+//   },
+// ];
 
 const demoInfo: formTypes = [
   {
