@@ -493,6 +493,7 @@ export function RegisterForm(props: Props) {
             } as any
           }
           transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+          style={{ marginTop: '10px' }}
           className="scaleDiv"
         >
           <h1 className="title">
@@ -510,12 +511,7 @@ export function RegisterForm(props: Props) {
               onClick={() => {
                 history.push('/auth');
               }}
-            >
-              If you've already applied, login here{' '}
-              <span role="img" aria-label="flag">
-                ➡️
-              </span>
-            </Link>
+            ></Link>
           </Typography>
         </motion.div>
       </motion.div>

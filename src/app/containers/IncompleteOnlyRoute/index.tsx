@@ -15,12 +15,12 @@ function IncompleteOnlyRoute({ component: Component, ...rest }) {
   const isAuthenticated = useIsAuthenticated();
   if (isAuthenticated()) {
     if (authU() && authU().appComplete) {
-      return <MotionRedirect to="/account" />;
+      return <MotionRedirect from="/" to="/account" />;
     } else {
       return <Route {...rest} render={props => <Component {...props} />} />;
     }
   } else {
-    return <MotionRedirect to="/auth" />;
+    return <MotionRedirect from="/" to="/auth" />;
   }
 }
 

@@ -43,7 +43,15 @@ export function LogOut(props: Props) {
       variants={pageVariants}
       transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
     >
-      <h1 className="title">See ya soon!</h1>
+      <motion.div
+        transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+        className="shelfTitle "
+        id="middleshelf"
+      >
+        <h1 className=" aboutTitle" style={{ fontSize: '4em' }}>
+          See you soon!
+        </h1>
+      </motion.div>
     </motion.div>
   );
 }

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   viewBox="0 0 712.8 492.321"
+   id="svg906"
+   version="1.1">
+  <metadata
+     id="metadata105">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs817">
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter950">
+      <feFlood
+         id="feFlood940"
+         result="flood"
+         flood-color="#000"
+         flood-opacity=".498" />
+      <feComposite
+         id="feComposite942"
+         result="composite1"
+         operator="in"
+         in2="SourceGraphic"
+         in="flood" />
+      <feGaussianBlur
+         id="feGaussianBlur944"
+         result="blur"
+         stdDeviation="0"
+         in="composite1" />
+      <feOffset
+         id="feOffset946"
+         result="offset"
+         dy="6"
+         dx="6" />
+      <feComposite
+         id="feComposite948"
+         result="composite2"
+         operator="over"
+         in2="offset"
+         in="SourceGraphic" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter986">
+      <feFlood
+         id="feFlood976"
+         result="flood"
+         flood-color="#000"
+         flood-opacity=".498" />
+      <feComposite
+         id="feComposite978"
+         result="composite1"
+         operator="in"
+         in2="SourceGraphic"
+         in="flood" />
+      <feGaussianBlur
+         id="feGaussianBlur980"
+         result="blur"
+         stdDeviation="0"
+         in="composite1" />
+      <feOffset
+         id="feOffset982"
+         result="offset"
+         dy="6"
+         dx="6" />
+      <feComposite
+         id="feComposite984"
+         result="composite2"
+         operator="over"
+         in2="offset"
+         in="SourceGraphic" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter998">
+      <feFlood
+         id="feFlood988"
+         result="flood"
+         flood-color="#000"
+         flood-opacity=".498" />
+      <feComposite
+         id="feComposite990"
+         result="composite1"
+         operator="in"
+         in2="SourceGraphic"
+         in="flood" />
+      <feGaussianBlur
+         id="feGaussianBlur992"
+         result="blur"
+         stdDeviation="0"
+         in="composite1" />
+      <feOffset
+         id="feOffset994"
+         result="offset"
+         dy="6"
+         dx="6" />
+      <feComposite
+         id="feComposite996"
+         result="composite2"
+         operator="over"
+         in2="offset"
+         in="SourceGraphic" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter1094">
+      <feFlood
+         id="feFlood1084"
+         result="flood"
+         flood-color="#000"
+         flood-opacity=".498" />
+      <feComposite
+         id="feComposite1086"
+         result="composite1"
+         operator="in"
+         in2="SourceGraphic"
+         in="flood" />
+      <feGaussianBlur
+         id="feGaussianBlur1088"
+         result="blur"
+         stdDeviation="0"
+         in="composite1" />
+      <feOffset
+         id="feOffset1090"
+         result="offset"
+         dy="7.4"
+         dx="-.3" />
+      <feComposite
+         id="feComposite1092"
+         result="composite2"
+         operator="over"
+         in2="offset"
+         in="SourceGraphic" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       id="filter1094-4">
+      <feFlood
+         id="feFlood1084-6"
+         result="flood"
+         flood-color="#000"
+         flood-opacity=".498" />
+      <feComposite
+         id="feComposite1086-2"
+         result="composite1"
+         operator="in"
+         in2="SourceGraphic"
+         in="flood" />
+      <feGaussianBlur
+         id="feGaussianBlur1088-6"
+         result="blur"
+         stdDeviation="0"
+         in="composite1" />
+      <feOffset
+         id="feOffset1090-7"
+         result="offset"
+         dy="7.4"
+         dx="-.3" />
+      <feComposite
+         id="feComposite1092-5"
+         result="fbSourceGraphic"
+         operator="over"
+         in2="offset"
+         in="SourceGraphic" />
+      <feColorMatrix
+         id="feColorMatrix1450"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         in="fbSourceGraphic"
+         result="fbSourceGraphicAlpha" />
+      <feFlood
+         result="flood"
+         flood-color="#000"
+         flood-opacity=".498"
+         id="feFlood1452" />
+      <feComposite
+         result="composite1"
+         operator="in"
+         in="flood"
+         id="feComposite1454"
+         in2="fbSourceGraphic" />
+      <feGaussianBlur
+         result="blur"
+         stdDeviation="0"
+         in="composite1"
+         id="feGaussianBlur1456" />
+      <feOffset
+         result="offset"
+         dy="-4.1"
+         dx="-4.4"
+         id="feOffset1458" />
+      <feComposite
+         result="composite2"
+         operator="atop"
+         in="offset"
+         id="feComposite1460"
+         in2="offset" />
+    </filter>
+    <style
+       id="style815">.cls-1{fill:#a6544e}.cls-3{fill:#d1d1d1}.cls-8{fill:#bb998f}.cls-9{fill:#e9ddaf}</style>
+  </defs>
+  <g
+     transform="translate(59.4 33.596)"
+     data-name="Layer 2"
+     id="Layer_2">
+    <g
+       data-name="Layer 2"
+       id="Layer_2-2">
+      <g
+         id="Fire">
+        <path
+           stroke-dasharray="none"
+           stroke-miterlimit="4"
+           stroke-width="5.5"
+           stroke-opacity="1"
+           stroke="#ff761a"
+           fill="#ffa467"
+           id="path847"
+           d="M408.32 395.85c-2.07 4.35-10.55 12.72-16.46 16.25a54.5 54.5 0 00-6.23 4.18c-1.41 1.26-1.45 1.55-.54 3.3a9.41 9.41 0 011 2.71c0 3.46-29.93 8.71-63.36 11.11-10.65.76-56.61 1.48-64.44 1-14.54-.88-27.88-2-36.36-3.09l-9.72-1.23-.86-2.49a35.51 35.51 0 01-.9-8.34c-.05-6.54-.93-8.2-3.6-6.77-1.89 1-3.33.26-6.75-3.52-4.86-5.39-9.43-16.51-11-26.69l-.49-3.24 2.77 2.63c5.94 5.63 18.23 9.89 19.44 6.73a2.9 2.9 0 00-.34-2.44q-6.54-9.21-3.37-23.56c1.74-7.9 4-12.55 12.66-26 4.13-6.4 7.83-12.17 8.23-12.83.51-.84.74 1.18.79 7 .11 11.85 2.29 18.35 8.87 26.44 2.11 2.59 7 5.85 7.54 5 .07-.12-.18-5.89-.56-12.82-.59-10.75-.52-13.44.49-18.32 1.37-6.66 4.89-14.29 11.48-24.93 5.89-9.51 8.48-14.62 11-21.77l2-5.62 3.91 10.66c5 13.56 6.42 19.21 7.07 27.43.54 7 1.53 9 3.57 7.35.65-.54 1.08-2.12 1.08-4a18.78 18.78 0 011.36-6.21c1.85-4.26 4-19.6 3.89-28a73.19 73.19 0 00-1.22-12.11c-1.47-6.75-1.46-12 .05-16.64 1.19-3.7 2.36-3.82 2.39-.26 0 2.66 2.82 9.3 5.81 13.78 1.56 2.33 7.1 8.67 12.32 14.09 5.22 5.42 10.28 10.89 11.23 12.15 4.31 5.75 8.81 17.22 8.81 22.46a12.54 12.54 0 001.16 4.39l1.16 2.45 1.36-1.73a7.45 7.45 0 001.36-4c0-1.23 1.34-5.87 3-10.33 4.34-11.76 5-14.55 5-22v-6.67l4.72 4.15c6.87 6 14.13 14.67 17.08 20.29a55.37 55.37 0 014 10.95c2.55 10.9 3.78 28.53 2.27 32.5-1 2.51-1.22 7.94-.4 8.2.38.13 1.83-1.76 3.22-4.18 3.23-5.66 7.57-10.13 12-12.35 3.72-1.87 11.72-4.4 12.25-3.87.18.17-.83 2.41-2.24 5-5.2 9.45-8.31 22.07-8.31 33.68 0 6.95.76 8.42 3.91 7.63 2.06-.51 7.12-6.15 12.41-13.84 4-5.85 3.82-5.88 5.3.81 2.45 11 2.18 19.26-.81 25.53z" />
+      </g>
+    </g>
+  </g>
+</svg>

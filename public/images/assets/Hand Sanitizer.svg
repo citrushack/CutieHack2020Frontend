@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="566"
+   height="1439"
+   viewBox="0 0 566 1439"
+   fill="none"
+   version="1.1"
+   id="svg86"
+   sodipodi:docname="Hand Sanitizer.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata90">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1272"
+     inkscape:window-height="2123"
+     id="namedview88"
+     showgrid="false"
+     inkscape:zoom="0.46386991"
+     inkscape:cx="271.69961"
+     inkscape:cy="1534.2752"
+     inkscape:window-x="1136"
+     inkscape:window-y="4"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg86" />
+  <rect
+     x="256"
+     y="66"
+     width="62"
+     height="149"
+     id="rect4"
+     stroke-width="20"
+     stroke="black"
+     fill="#9BBEC0"
+     style="fill:#a1783c;fill-opacity:1;stroke:#5e4623;stroke-opacity:1" />
+  <g
+     id="g10"
+     style="fill:#76582c;fill-opacity:1"
+     filter="url(#filter0_d)">
+    <rect
+       x="199"
+       y="132"
+       width="176"
+       height="125"
+       rx="20"
+       id="rect6"
+       style="fill:#76582c;fill-opacity:1"
+       fill="#8DAAAC" />
+    <rect
+       x="209"
+       y="142"
+       width="156"
+       height="105"
+       rx="10"
+       id="rect8"
+       style="fill:#a1783c;fill-opacity:1;stroke:#5e4623;stroke-opacity:1"
+       stroke-width="20"
+       stroke="black" />
+  </g>
+  <path
+     d="m 27,10 h 342 c 7.18,0 13,5.8203 13,13 v 34.6374 c 0,7.6805 -6.623,13.6867 -14.267,12.9381 L 22.684171,70.616617 C 11.453978,63.86716 14,30.8315 14,24.1425 V 23 c 0,-7.1797 5.8203,-13 13,-13 z"
+     id="path16"
+     style="fill:#a37a3d;fill-opacity:1;stroke:#5e4623;stroke-width:20;stroke-opacity:1"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="ssssccsss" />
+  <mask
+     id="path-7-inside-1"
+     fill="white">
+    <path
+       fill-rule="evenodd"
+       clip-rule="evenodd"
+       d="M0 656C0 499.703 126.703 373 283 373C439.297 373 566 499.703 566 656V1012C566 1017.71 565.831 1023.38 565.498 1029H566V1361C566 1404.08 531.078 1439 488 1439H78C34.9218 1439 0 1404.08 0 1361V1029H0.502193C0.168972 1023.38 0 1017.71 0 1012V656Z"
+       id="path18" />
+  </mask>
+  <path
+     d="M0 656C0 499.703 126.703 373 283 373C439.297 373 566 499.703 566 656V1012C566 1017.71 565.831 1023.38 565.498 1029H566V1361C566 1404.08 531.078 1439 488 1439H78C34.9218 1439 0 1404.08 0 1361V1029H0.502193C0.168972 1023.38 0 1017.71 0 1012V656Z"
+     id="path21"
+     clip-rule="evenodd"
+     fill-rule="evenodd"
+     fill="#CCEEF0"
+     style="fill:#34a9ae;fill-opacity:0.66666669" />
+  <path
+     d="M565.498 1029L545.533 1027.82L544.278 1049H565.498V1029ZM566 1029H586V1009H566V1029ZM0 1029V1009H-20V1029H0ZM0.502193 1029V1049H21.7223L20.4672 1027.82L0.502193 1029ZM283 353C115.658 353 -20 488.658 -20 656H20C20 510.749 137.749 393 283 393V353ZM586 656C586 488.658 450.342 353 283 353V393C428.251 393 546 510.749 546 656H586ZM586 1012V656H546V1012H586ZM585.463 1030.18C585.819 1024.17 586 1018.1 586 1012H546C546 1017.31 545.843 1022.59 545.533 1027.82L585.463 1030.18ZM566 1009H565.498V1049H566V1009ZM586 1361V1029H546V1361H586ZM488 1459C542.124 1459 586 1415.12 586 1361H546C546 1393.03 520.033 1419 488 1419V1459ZM78 1459H488V1419H78V1459ZM-20 1361C-20 1415.12 23.8761 1459 78 1459V1419C45.9674 1419 20 1393.03 20 1361H-20ZM-20 1029V1361H20V1029H-20ZM0.502193 1009H0V1049H0.502193V1009ZM-20 1012C-20 1018.1 -19.8193 1024.17 -19.4628 1030.18L20.4672 1027.82C20.1573 1022.59 20 1017.31 20 1012H-20ZM-20 656V1012H20V656H-20Z"
+     fill="black"
+     mask="url(#path-7-inside-1)"
+     id="path23" />
+  <rect
+     x="143"
+     y="204"
+     width="289"
+     height="215"
+     rx="23"
+     id="rect12"
+     stroke-width="20"
+     stroke="black"
+     fill="#9BBEC0"
+     style="stroke:#5e4623;stroke-opacity:1;fill:#a77c3e;fill-opacity:1" />
+  <path
+     d="M43 664C43 602.786 78.2642 527.836 115.5 485"
+     stroke="white"
+     stroke-opacity="0.5"
+     stroke-width="20"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path25" />
+  <path
+     d="M392 443.685C474.204 482.933 531 566.834 531 664V704"
+     stroke="black"
+     stroke-opacity="0.1"
+     stroke-width="20"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path27" />
+  <path
+     d="M50.0053 1045.56H49.5V1311.35C49.5 1354.16 84.1979 1388.85 127 1388.85H446.291C489.093 1388.85 523.791 1354.16 523.791 1311.35V1045.56H523.286L523.319 1045.03C523.633 1040.04 523.791 1035.01 523.791 1029.95V731.589C392.574 753.328 324.162 815.356 269.025 872.034C264.213 876.98 259.502 881.886 254.858 886.723C206.231 937.366 164.965 980.343 93.3196 980.354L49.5 985.301V1029.95C49.5 1035.01 49.6589 1040.04 49.972 1045.03L50.0053 1045.56Z"
+     id="path29"
+     stroke="#7DED7A"
+     fill="#7DED7A"
+     style="opacity:0.901;fill:#00ccc2;fill-opacity:1" />
+  <path
+     d="M523.791 1045.21V1311C523.791 1353.8 489.094 1388.5 446.291 1388.5H127C84.198 1388.5 49.5 1353.8 49.5 1311V1045.21H50.0053L49.9719 1044.68C49.6589 1039.69 49.5 1034.66 49.5 1029.59V731.235C180.76 752.924 245.324 795.151 296.583 831.987C299.961 834.414 303.282 836.819 306.561 839.193C353.135 872.917 391.227 900.5 464.5 900.5H523.32L523.791 1029.59C523.791 1029.59 523.791 1029.59 523.791 1029.59C523.791 1034.66 523.633 1039.69 523.319 1044.68L523.286 1045.21H523.791Z"
+     id="path31"
+     stroke="#6AD168"
+     fill="#6AD168"
+     style="fill:#00aac2;fill-opacity:1" />
+  <path
+     d="M65 1296.35C65 1339.43 99.9219 1374.35 143 1374.35"
+     stroke="white"
+     stroke-opacity="0.2"
+     stroke-width="20"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path33" />
+  <path
+     d="M424 1374C467.078 1374 502 1339.08 502 1296V1142"
+     id="path35"
+     stroke-opacity="0.1"
+     stroke-linejoin="round"
+     stroke-linecap="round"
+     stroke-width="20"
+     stroke="black" />
+  <path
+     d="M276.5 91L276 115.5"
+     id="path37"
+     stroke-opacity="0.5"
+     stroke-linejoin="round"
+     stroke-linecap="round"
+     stroke-width="15"
+     stroke="white" />
+  <path
+     d="M230.5 161L230 181"
+     stroke="white"
+     stroke-opacity="0.5"
+     stroke-width="15"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path39"
+     style="fill:#76582c;fill-opacity:1" />
+  <path
+     d="M167 230V387"
+     id="path41"
+     stroke-opacity="0.5"
+     stroke-linejoin="round"
+     stroke-linecap="round"
+     stroke-width="15"
+     stroke="white" />
+  <path
+     d="M410 379V250.158C410 236.264 398.359 225 384 225"
+     stroke="black"
+     stroke-opacity="0.2"
+     stroke-width="10"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path14" />
+  <path
+     d="M360.5 15L360 35.5"
+     stroke="black"
+     stroke-opacity="0.2"
+     stroke-width="15"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path43" />
+  <path
+     d="M343 161V181"
+     stroke="black"
+     stroke-opacity="0.2"
+     stroke-width="15"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path45" />
+  <circle
+     cx="215.5"
+     cy="663.5"
+     r="58.5"
+     fill="#6AD168"
+     id="circle47"
+     style="fill:#00ccc2;fill-opacity:1" />
+  <ellipse
+     cx="190.153"
+     cy="631.58"
+     rx="19.5"
+     ry="6"
+     transform="rotate(-37.255 190.153 631.58)"
+     fill="white"
+     fill-opacity="0.5"
+     id="ellipse49" />
+  <ellipse
+     cx="242.721"
+     cy="693.338"
+     rx="34"
+     ry="11"
+     transform="rotate(-37.255 242.721 693.338)"
+     fill="black"
+     fill-opacity="0.1"
+     id="ellipse51" />
+  <circle
+     cx="345.5"
+     cy="545.5"
+     r="58.5"
+     fill="#6AD168"
+     id="circle53"
+     style="fill:#00d1c2;fill-opacity:1" />
+  <ellipse
+     cx="320.153"
+     cy="513.58"
+     rx="19.5"
+     ry="6"
+     transform="rotate(-37.255 320.153 513.58)"
+     id="ellipse55"
+     fill-opacity="0.5"
+     fill="white" />
+  <ellipse
+     cx="372.721"
+     cy="575.338"
+     rx="34"
+     ry="11"
+     transform="rotate(-37.255 372.721 575.338)"
+     fill="black"
+     fill-opacity="0.1"
+     id="ellipse57" />
+  <rect
+     x="20"
+     y="1001"
+     width="16"
+     height="62"
+     fill="#CCEEF0"
+     id="rect59" />
+  <rect
+     y="496.0809"
+     width="0"
+     height="541.91913"
+     id="rect61"
+     x="9.0002441"
+     style="fill:#000000" />
+  <path
+     d="M537 1012H546V1063H537V1012Z"
+     fill="#CCEEF0"
+     id="path63" />
+  <rect
+     x="563"
+     y="1014"
+     width="3"
+     height="36"
+     fill="black"
+     id="rect65" />
+  <rect
+     x="49"
+     y="1036"
+     width="5"
+     height="14"
+     fill="#6AD168"
+     id="rect67" />
+  <defs
+     id="defs84">
+    <filter
+       id="filter0_d"
+       x="195"
+       y="132"
+       width="184"
+       height="133"
+       filterUnits="userSpaceOnUse"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         flood-opacity="0"
+         result="BackgroundImageFix"
+         id="feFlood69" />
+      <feColorMatrix
+         in="SourceAlpha"
+         type="matrix"
+         values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+         id="feColorMatrix71" />
+      <feOffset
+         dy="4"
+         id="feOffset73" />
+      <feGaussianBlur
+         stdDeviation="2"
+         id="feGaussianBlur75" />
+      <feColorMatrix
+         type="matrix"
+         values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"
+         id="feColorMatrix77" />
+      <feBlend
+         mode="normal"
+         in2="BackgroundImageFix"
+         result="effect1_dropShadow"
+         id="feBlend79" />
+      <feBlend
+         mode="normal"
+         in="SourceGraphic"
+         in2="effect1_dropShadow"
+         result="shape"
+         id="feBlend81" />
+    </filter>
+  </defs>
+  <rect
+     style="stroke-linecap:round"
+     id="rect897"
+     width="161.68326"
+     height="105.63306"
+     x="206.95457"
+     y="-46.330231" />
+</svg>

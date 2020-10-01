@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 834.41 163.3"
+   version="1.1"
+   id="svg86"
+   sodipodi:docname="Bottom Shelf.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata90">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="952"
+     inkscape:window-height="1954"
+     id="namedview88"
+     showgrid="false"
+     inkscape:zoom="6.1168972"
+     inkscape:cx="722.08865"
+     inkscape:cy="108.71298"
+     inkscape:window-x="2397"
+     inkscape:window-y="4"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="_3rd_shelf"
+     inkscape:snap-global="false" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">.cls-1{fill:#bd9975;}.cls-2{fill:#916f6f;}.cls-3{fill:#30b6bb;}.cls-4{fill:#f2f2f2;}.cls-5{fill:#b8e7e9;}.cls-6{fill:#da942b;}.cls-7{fill:#f6bd6a;}.cls-8{fill:#507d3b;}.cls-9{fill:#98c583;}.cls-10{fill:#ffffcb;}.cls-11{fill:#dbca4d;}</style>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter1630">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood1620" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite1622" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0"
+         result="blur"
+         id="feGaussianBlur1624" />
+      <feOffset
+         dx="7.4"
+         dy="1.4"
+         result="offset"
+         id="feOffset1626" />
+      <feComposite
+         in="offset"
+         in2="offset"
+         operator="atop"
+         result="composite2"
+         id="feComposite1628" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter1671">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood1661" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite1663" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0"
+         result="blur"
+         id="feGaussianBlur1665" />
+      <feOffset
+         dx="7.4"
+         dy="1.4"
+         result="offset"
+         id="feOffset1667" />
+      <feComposite
+         in="offset"
+         in2="offset"
+         operator="atop"
+         result="fbSourceGraphic"
+         id="feComposite1669" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix1673" />
+      <feFlood
+         id="feFlood1675"
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         in="fbSourceGraphic" />
+      <feComposite
+         in2="fbSourceGraphic"
+         id="feComposite1677"
+         in="flood"
+         operator="in"
+         result="composite1" />
+      <feGaussianBlur
+         id="feGaussianBlur1679"
+         in="composite1"
+         stdDeviation="0"
+         result="blur" />
+      <feOffset
+         id="feOffset1681"
+         dx="7.4"
+         dy="1.4"
+         result="offset" />
+      <feComposite
+         in2="offset"
+         id="feComposite1683"
+         in="offset"
+         operator="atop"
+         result="composite2" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter1723">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood1713" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite1715" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0"
+         result="blur"
+         id="feGaussianBlur1717" />
+      <feOffset
+         dx="7.4"
+         dy="1.4"
+         result="offset"
+         id="feOffset1719" />
+      <feComposite
+         in="offset"
+         in2="offset"
+         operator="atop"
+         result="composite2"
+         id="feComposite1721" />
+    </filter>
+  </defs>
+  <g
+     id="Layer_2"
+     data-name="Layer 2">
+    <g
+       id="_3rd_shelf"
+       data-name="3rd shelf">
+      <rect
+         class="cls-1"
+         x="332.14896"
+         y="92.029999"
+         width="153.57814"
+         height="69.059998"
+         id="rect6"
+         style="fill:#bd9975;stroke-width:1" />
+      <path
+         class="cls-1"
+         d="M829.49,147.89,815.1,161.08l-100.4-.63v.64H477.88V92H714.7v.1l11.81-.1,3.94,3.08,19.19.52Z"
+         id="path8" />
+      <path
+         class="cls-1"
+         d="M120.46,92H340.65v69.06H120.46v-.64l-103,.64L3,147.9,82.89,95.64l19.19-.52L106,92l14.44.12Z"
+         id="path10" />
+      <path
+         id="Left_Shelf_Outline"
+         data-name="Left Shelf Outline"
+         class="cls-2"
+         d="M100,99.64a24.39,24.39,0,0,0,4.21-2.52c1.12-1,24-1.12,236.48-1.13V89.83c-75,0-142.39.21-174.09.46l-62.28.49-2,1.7c-2.42,2-1.63,1.91-12.36,1.75l-8.64-.14L41.28,120C19.3,134.27.92,146.53.43,147.27c-1.25,1.87-.12,3.28,8.2,10.25l6.89,5.78H340.65v-5.54l-323.91.14L13.21,155a21.28,21.28,0,0,1-3.37-3c.64-.65,30.87-1,138-1.47,58.89-.28,125.38-.44,192.81-.51v-4.43c-31.91,0-62.33.15-90.39.3-42.32.23-85.72.48-121.54.71s-64.08.44-76.1.56c-24.06.25-43.74.26-43.74,0,0-.47.51-.81,44.12-29l29.36-19,5.91.21,5.91.21L67.83,117.73c-14.49,10-27.36,18.73-28.6,19.44-6,3.44-12.55,3.32,148.39,2.68,43.23-.17,99-.29,153-.33v-3c-26.34,0-50.07.1-69,.19-65.54.32-143.45.6-173.12.63l-54,.06,2.85-2C59.88,126.42,97.66,100.74,100,99.64Z" />
+      <path
+         id="Right_Shelf_Outline"
+         data-name="Right Shelf Outline"
+         class="cls-2"
+         d="M833,151a81,81,0,0,1-8.28,7.29l-6.41,5.06H477.88v-5.59l339.81-.15,3.5-2.67a20.51,20.51,0,0,0,3.33-2.83c-1.14-1.14-163.41-1.93-346.64-2v-4.43c104.83.14,214.56.68,304,1.57,38.42.38,43.78.3,42.84-.61-.6-.58-17.21-11.48-36.93-24.22L751.94,99.16l-11.82.42,26.57,18.36c14.61,10.09,27.5,18.82,28.63,19.39s1.95,1.38,1.81,1.8c-.28.86-75.55,1-297.13.44l-22.12,0v-3c35,.05,69.5.13,99.88.26,88.5.37,172.32.57,186.25.46l25.33-.21-18.78-13c-30.95-21.36-36.15-24.84-37-24.84a7.93,7.93,0,0,1-2.87-1.62L728.63,96H477.88V89.81c81.5,0,156.27.21,189.78.49l62.17.5L732,92.62c2.09,1.77,2.45,1.82,11.62,1.67l9.46-.15L793,120c22,14.24,40.38,26.52,40.89,27.29C834.73,148.53,834.6,149,833,151Z" />
+      <g
+         id="Shelf_Middle"
+         data-name="Shelf Middle">
+        <polygon
+           class="cls-2"
+           points="477.88 157.71 477.88 163.3 340.65 163.3 340.65 157.76 419.08 157.73 477.88 157.71"
+           id="polygon14" />
+        <path
+           class="cls-2"
+           d="M477.88,145.59V150c-45.17,0-91.37,0-137.23,0v-4.43C384.59,145.55,430.84,145.54,477.88,145.59Z"
+           id="path16" />
+        <path
+           class="cls-2"
+           d="M477.88,136.51v3c-39.88,0-88,0-137.23,0v-3C383,136.46,430.72,136.46,477.88,136.51Z"
+           id="path18" />
+        <path
+           class="cls-2"
+           d="M477.88,89.83V96H340.65V89.85C385.47,89.82,432.51,89.82,477.88,89.83Z"
+           id="path20" />
+      </g>
+      <g
+         id="Bottom_Candles"
+         data-name="Bottom Candles">
+        <g
+           id="Orange_Candle"
+           data-name="Orange Candle">
+          <path
+             class="cls-6"
+             d="M715.78,58.52A30.64,30.64,0,0,0,706,56.61c-6.24-.41-6.42-.47-7.27-2.53-1.13-2.72-4-4.7-5.15-3.56-.61.61-.42,1.24.76,2.49a6.08,6.08,0,0,1,1.57,2.43c0,.43-2.74.92-6.44,1.16a31.24,31.24,0,0,0-9.83,1.91L676.26,60l.47,11.33c1.49,35.32,1.24,32.55,3.1,34.76,1.64,2,6.08,3.85,10.67,4.56,4.2.66,16.57-.2,20-1.37a13.66,13.66,0,0,0,5.11-3.2c1.59-1.88,1.73-2.82,2.18-14.15.26-6.68.69-16.59.94-22l.46-9.89Z"
+             id="path30" />
+          <path
+             class="cls-7"
+             d="M687,60.75c7.85-1.14,9.67-1,9.67.69,0,1.91,1.94,1.85,2.55-.09.45-1.43.82-1.5,5.27-1.06,9.32.92,11.88,1.89,7.48,2.85-3.66.8-20.66,1.1-25.28.45C679.44,62.58,679.53,61.82,687,60.75Z"
+             id="path32" />
+          <path
+             class="cls-4"
+             d="M683.12,65.6a138.22,138.22,0,0,0,14.58.52,137.93,137.93,0,0,0,14.58-.52c2-.45,2.34-.33,2.34.87s-.9,1.66-3.75,2.51c-10,3-30.09,1.28-30.09-2.54C680.78,65.27,681.12,65.15,683.12,65.6Z"
+             id="path34" />
+          <path
+             class="cls-7"
+             d="M714.21,84c-.28,7.57-.7,15.23-1,17-.43,3.13-.56,3.28-4,4.47-5,1.69-18.07,1.69-23,0-3.34-1.15-3.61-1.43-4.05-4.11-.25-1.59-.69-9.24-1-17l-.5-14.13,3.83,1.33c5.44,1.88,20.94,1.88,26.38,0l3.82-1.32Z"
+             id="path36" />
+        </g>
+        <g
+           id="Green_Candle"
+           data-name="Green Candle">
+          <path
+             class="cls-8"
+             d="M702.66,103.7c-8.22-4.62-35.55-4.8-43.26-.29-3.89,2.28-5.18,4.66-4.6,8.49.9,6,6.3,10.21,15.86,12.29,12.51,2.73,29.8-.75,34.38-6.91C708.76,112.26,707.76,106.57,702.66,103.7Z"
+             id="path39" />
+          <path
+             class="cls-9"
+             d="M702.78,115.07c-1.09,2-6.82,4.88-12.47,6.22-10.87,2.56-24.39.22-30.22-5.23-2.56-2.4-2-3.12,1.52-1.91,7.57,2.6,23.93,3.28,32.83,1.34C704.62,113.28,703.71,113.33,702.78,115.07Z"
+             id="path41" />
+          <path
+             class="cls-4"
+             d="M696.49,112.56c-11.3,2.85-32.21,1.57-37-2.27L658,109l1.67-1.54c2.55-2.36,6.51-3.18,17.41-3.63,11.31-.47,20.61.58,24.13,2.72C705.16,109,703.81,110.71,696.49,112.56Z"
+             id="path43" />
+        </g>
+        <g
+           transform="translate(6.4399192,-49.916744)"
+           id="Blue_Candle-5"
+           data-name="Blue Candle">
+          <path
+             inkscape:connector-curvature="0"
+             class="cls-5"
+             d="m 663.09457,149.34626 c -4.42,1.32 -16.0665,0.0191 -19.4265,-1.51089 -4.66,-2.14 -3.32015,2.19319 -3.03015,-4.36681 0.32,-7.12 7.1166,-4.51807 7.1166,-4.51807 7.74938,-1.51684 31.44639,5.01713 15.34005,10.39577 z"
+             id="path27-1"
+             style="fill:#000000;fill-opacity:0.41013824;stroke-width:0.96843833"
+             transform="matrix(-1.0662426,0,0,1,1354.3158,1.3078529)"
+             sodipodi:nodetypes="ccccc" />
+        </g>
+        <g
+           id="Blue_Candle"
+           data-name="Blue Candle">
+          <path
+             class="cls-3"
+             d="M662.45,69.7c-2-3.33-2.83-4.06-5.59-4.89-3.84-1.15-13.81-.82-16.7.55-1.38.66-3,2.93-5.4,7.75-3.16,6.22-3.48,7.33-3.71,12.75-.2,5,0,6.43,1.28,8.92a16,16,0,0,0,9.58,7.32c3.56.85,10.83.81,15-.08,4.87-1,9.54-5.38,10.78-10C669.28,86,667.39,77.93,662.45,69.7Z"
+             id="path23" />
+          <path
+             class="cls-4"
+             d="M641.37,69c.62-1,9.15-1.66,12.6-1,3.87.77,4.42,2,1.38,3C650.52,72.73,640,71.19,641.37,69Z"
+             id="path25" />
+          <path
+             class="cls-5"
+             d="M656.86,98.34c-4.42,1.32-13,1-16.36-.53-4.66-2.14-6.08-5-5.79-11.56.32-7.12,3.54-14.77,5.89-14,6.39,2,13.21,2,17.87,0,1-.44,1.65.31,3.38,4.05C666.84,87.08,664.83,96,656.86,98.34Z"
+             id="path27" />
+        </g>
+      </g>
+      <g
+         id="Bottom_Books"
+         data-name="Bottom Books">
+        <g
+           id="Blue_Book"
+           data-name="Blue Book">
+          <path
+             class="cls-5"
+             d="M119.81,95.08l-26,25.13V21.75L120.28,5Q120,50,119.81,95.08Z"
+             id="path47" />
+          <path
+             class="cls-3"
+             d="M121.52,2.26a2.75,2.75,0,0,0-2.4.74c-1,.92-2.89,1.17-8.93,1.17h-7.63l-.23-2c-.13-1.14-.73-2.07-1.42-2.2C99.84-.21,74.39,15.6,71.32,18.37c-1.17,1.07-1.26,4.51-1.26,52.56,0,34.06.25,51.88.75,52.81.69,1.28,1.6,1.39,11.64,1.39,9.13,0,11.11-.19,12.22-1.19,1.46-1.32,1.72-2.87.56-3.26-.53-.18-.58-15.23-.18-49.45L95.62,22l11-6.77c6-3.72,11.3-6.77,11.7-6.77s.73,2.66.73,6.66c0,7.06.57,8.94,2.44,8.23C123.16,22.73,123.2,2.91,121.52,2.26Z"
+             id="path49" />
+          <path
+             class="cls-5"
+             d="M92,28.11c0,3.07-.09,25.34-.18,49.5l-.16,43.92h-18L73.84,72,74,22.53H92Z"
+             id="path51" />
+          <path
+             class="cls-4"
+             d="M103.39,13.35l-9.52,5.94-8.84,0c-10.27,0-10.44.56,2-7.25l8-5,8.91.21,8.91.2Z"
+             id="path53" />
+        </g>
+        <g
+           id="Yellow_Book"
+           data-name="Yellow Book">
+          <rect
+             class="cls-10"
+             x="94.88"
+             y="52.65"
+             width="10.14"
+             height="67.01"
+             id="rect56" />
+          <path
+             class="cls-11"
+             d="M95.66,122.11a3,3,0,0,1-.5-1.82c0-1.15.63-1.32,5-1.32,4.56,0,5,.14,5,1.44s-.48,1.44-3.55,1.44a20.16,20.16,0,0,0-4.53.38,1.56,1.56,0,0,1-1.5-.12Z"
+             id="path58" />
+          <path
+             class="cls-4"
+             d="M106.83,51.73,96,52.64c0-.58,0-1.16-.07-1.75l10.69-8.1Z"
+             id="path60" />
+          <path
+             class="cls-11"
+             d="M95.26,54.32a6.18,6.18,0,0,1-.38-2.61c0-1.84.68-2.75,4-5.28,4.43-3.42,5-3.61,5.73-1.8.35.9-.25,1.91-2.15,3.55l-2.63,2.3,2.75.22c3.25.27,4.37,2.46,1.56,3-3,.62-8.44,1-8.84.58Z"
+             id="path62" />
+        </g>
+        <g
+           id="Orange_Book"
+           data-name="Orange Book">
+          <path
+             class="cls-7"
+             d="M152.55,11.84,119,33.51v88L152.67,91.7Z"
+             id="path65" />
+          <path
+             class="cls-6"
+             d="M105.22,122.94c-.72-1.88-.5-89.32.23-91.24.42-1.12,3.45-3.5,8.27-6.53A75.6,75.6,0,0,1,122,20.4,16.78,16.78,0,0,0,125.74,18c4.92-3.76,16.12-10.55,17.4-10.55a2,2,0,0,1,1.6,1.44c.59,1.83,4.35,2,6.29.21,1-.94,1.65-1.05,2.58-.46,1.09.7,1.21,2.69,1.21,19.41,0,10.25-.24,19.39-.54,20.31s-1,1.59-1.8,1.43c-1.14-.22-1.29-1.84-1.62-18l-.36-17.82-15.12,9.58-15.12,9.58L119.9,41c-.19,4.34-.19,23.51,0,42.61l.36,34.72,3.16-2.5c3.54-2.79,3.89-2.9,5-1.54s.12,2.4-5.62,6.51l-4.64,3.33h-6.26c-5,0-6.35-.22-6.7-1.14Z"
+             id="path67" />
+          <path
+             class="cls-7"
+             d="M116.3,77.24V34.08h-7.92l-.17,30.24c-.09,16.63-.17,36-.18,43v12.78l3.6.38a18.38,18.38,0,0,0,4.14.14c.3-.14.54-19.67.54-43.4Z"
+             id="path69" />
+          <path
+             class="cls-4"
+             d="M129.26,23.42c6.14-3.88,12.25-7.73,13.59-8.55l2.42-1.49-2.51-.3c-2.18-.25-4.25.78-15.74,7.88L112.7,29.78c-.75.46-.11.66,2.16.67,2.88,0,4.5-.77,14.4-7Z"
+             id="path71" />
+        </g>
+        <g
+           id="Green_Book"
+           data-name="Green Book">
+          <path
+             style="fill:#000000;fill-opacity:0.47465437;stroke:none;stroke-width:1.00157475;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             d="M 172.41251,104.28315 183.5898,97.722097 V 90.223742 H 171.98261 Z"
+             id="path1687"
+             inkscape:connector-curvature="0" />
+          <path
+             class="cls-8"
+             d="M173.82,50c-.43-1.68-.48-1.69-8.28-1.28-6.93.37-7.86.28-7.86-.75a2.75,2.75,0,0,0-1.5-2c-1.32-.71-3.2.33-15.3,8.46l-13.8,9.27-.2,26.61c-.11,14.64,0,27.34.19,28.23.39,1.59.6,1.62,11.17,1.62H149l12.08-8c6.64-4.4,12.3-8.37,12.59-8.82C174.3,102.41,174.43,52.45,173.82,50Z"
+             id="path74" />
+          <path
+             class="cls-9"
+             d="M145.8,117l-7.64.2-7.64.21-.46-3.37c-.25-1.85-.46-13.2-.46-25.22V66.93h16.58Z"
+             id="path76" />
+          <path
+             class="cls-4"
+             d="M147.24,63.33h-6.3c-3.46,0-6.3-.16-6.3-.35a89.35,89.35,0,0,1,8.1-5.76l8.09-5.41h13.69l-8.64,5.76Z"
+             id="path78" />
+          <path
+             class="cls-9"
+             d="M170.64,102.07,160.18,109c-5.76,3.8-10.62,6.91-10.8,6.91S149,104.72,149,91.07V66.25l9.75-6.68c5.36-3.67,10.22-6.78,10.8-6.91.91-.2,1,3.17,1,24.59Z"
+             id="path80" />
+        </g>
+        <g
+           transform="translate(-32.165406,79.673366)"
+           id="Green_Book-1"
+           data-name="Green Book"
+           style="filter:url(#filter1630)" />
+      </g>
+      <path
+         style="fill:#000000;fill-opacity:0.47465437;stroke:none;stroke-width:1.00157475;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 717.70532,104.77359 9.21551,-8.522827 0.16348,-5.536576 -8.828,0.163482 z"
+         id="path1687-8"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="ccccc" />
+    </g>
+  </g>
+</svg>

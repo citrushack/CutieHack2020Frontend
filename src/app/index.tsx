@@ -170,10 +170,7 @@ export function App() {
                 transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
               >
                 <Nav>
-                  <Logo
-                    alt="logo"
-                    src="https://cdn.pixabay.com/photo/2016/02/23/17/42/orange-1218158_960_720.png"
-                  ></Logo>
+                  <Logo alt="logo" src="/images/assets/icon.svg"></Logo>
                   {getNav(isAuthenticated(), location.pathname)}
                 </Nav>
               </DivNav>

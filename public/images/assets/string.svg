@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 38.107281 21.77201"
+   version="1.1"
+   id="svg3880"
+   sodipodi:docname="string.svg"
+   width="38.107281"
+   height="21.772011"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata3884">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1910"
+     inkscape:window-height="1058"
+     id="namedview3882"
+     showgrid="false"
+     inkscape:zoom="18.996052"
+     inkscape:cx="13.496871"
+     inkscape:cy="6.8709958"
+     inkscape:window-x="4"
+     inkscape:window-y="1069"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Layer_3"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:snap-bbox="false" />
+  <defs
+     id="defs3869">
+    <style
+       id="style3867">.cls-1{fill:#bbb;stroke-width:3px;}.cls-1,.cls-2{stroke:#646464;;stroke-miterlimit:10;}.cls-2{fill:none;stroke-width:2px;}</style>
+  </defs>
+  <g
+     id="Layer_2"
+     data-name="Layer 2"
+     transform="translate(-33.643871)">
+    <g
+       id="Layer_2-2"
+       data-name="Layer 2">
+      <g
+         id="Layer_3"
+         data-name="Layer 3">
+        <circle
+           class="cls-1"
+           cx="52.470001"
+           cy="6.5999999"
+           r="5.0999999"
+           id="circle3871"
+           style="fill:#bbbbbb;stroke:#646464;stroke-width:3px;stroke-miterlimit:10" />
+        <line
+           class="cls-2"
+           x1="47.601471"
+           y1="10.067607"
+           x2="33.28429"
+           y2="21.789995"
+           id="line3873"
+           style="fill:none;stroke:#646464;stroke-width:2px;stroke-miterlimit:10;stroke-linecap:round" />
+        <line
+           class="cls-2"
+           x1="57.685234"
+           y1="10.059933"
+           x2="71.646217"
+           y2="21.437733"
+           id="line3875"
+           style="fill:none;stroke:#646464;stroke-width:1.99999988px;stroke-linecap:round;stroke-miterlimit:10" />
+      </g>
+    </g>
+  </g>
+</svg>

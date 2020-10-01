@@ -18,10 +18,10 @@ function AppCompleteOnlyRoute({ component: Component, ...rest }) {
     if (authU() && authU().appComplete) {
       return <Route {...rest} render={props => <Component {...props} />} />;
     } else {
-      return <MotionRedirect to="/apply" />;
+      return <MotionRedirect from="/" to="/apply" />;
     }
   } else {
-    return <MotionRedirect to="/auth" />;
+    return <MotionRedirect from="/" to="/auth" />;
   }
 }
 

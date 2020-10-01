@@ -19,7 +19,7 @@ function UnprotectedOnlyRoute({ component: Component, ...rest }) {
   const isAuthenticated = useIsAuthenticated();
 
   if (isAuthenticated()) {
-    return <MotionRedirect to="/account" />;
+    return <MotionRedirect from="/" to="/account" />;
   } else {
     return <Route {...rest} render={props => <Component {...props} />} />;
   }

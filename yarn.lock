@@ -10605,6 +10605,11 @@ react-error-overlay@^6.0.7:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.7.tgz#1dcfb459ab671d53f660a991513cb2f0a0553108"
   integrity sha512-TAv1KJFh3RhqxNvhzxj6LeT5NWklP6rDr2a0jaTfsZ5wSZWHOGeqQyejUp3xxLfPt2UpyJEcVQB/zyPcmonNFA==
 
+react-faq-component@1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/react-faq-component/-/react-faq-component-1.0.8.tgz#5d8a5498312bac23c1f44de7fefeb10a972fce78"
+  integrity sha512-2JhxUrHSktj4BVuXbg+MbyHqyd+hQ739/6zyPR6Do7J6sBCH9tH2axVcjor6QGgcOPAidy9WZeCyw9y3FIvYCw==
+
 react-fast-compare@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-3.2.0.tgz#641a9da81b6a6320f270e89724fb45a0b39e43bb"

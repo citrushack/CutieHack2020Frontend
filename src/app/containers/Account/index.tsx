@@ -101,7 +101,7 @@ export function Account(props: Props) {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const dispatch = useDispatch();
-  const matches = useMediaQuery('(min-width:600px)');
+  const matches = useMediaQuery('(min-width:768px)');
 
   const groupInfo = useSelector(selectGroup);
   const groupExists: boolean = !!groupInfo.payload;
@@ -186,8 +186,9 @@ export function Account(props: Props) {
         <motion.div
           whileHover={
             {
-              x: 5,
-              boxShadow: '20px 20px 0px -7px rgba(0, 0, 0, 0.45)',
+              ...(matches
+                ? { boxShadow: '20px 20px 0px -7px rgba(0, 0, 0, 0.45)', x: 5 }
+                : {}),
             } as any
           }
           transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
@@ -442,7 +443,12 @@ export function Account(props: Props) {
                 Group members
               </Typography>
               <Grid item xs={12}>
-                <Box style={{ width: '70%', margin: 'auto' }}>
+                <Box
+                  style={{
+                    ...(matches ? { width: '70%' } : { width: '100%' }),
+                    margin: 'auto',
+                  }}
+                >
                   <Table style={{ marginBottom: '2em' }}>
                     <TableBody>
                       {groupInfo &&

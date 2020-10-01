@@ -224,6 +224,7 @@ const LoginButton = props => (
         borderRadius: '2em',
         paddingTop: '1em',
         paddingBottom: '1em',
+        textDecoration: 'none',
       }}
     >
       {getSvg[props.providerName]}
@@ -262,7 +263,7 @@ export function AuthPage(props: Props) {
           whileHover={
             {
               x: 5,
-              boxShadow: '20px 20px 0px -7px rgba(0, 0, 0, 0.45)',
+              boxShadow: '20px 20px 0px -7px rgba(0, 0, 0, 0.5)',
             } as any
           }
           transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
@@ -301,8 +302,8 @@ export function AuthPage(props: Props) {
         <motion.div
           whileHover={
             {
-              x: 5,
-              boxShadow: '20px 20px 0px -7px rgba(0, 0, 0, 0.45)',
+              x: 1,
+              boxShadow: 'inset 0px 0px 12px 0px rgba(0, 0, 0, 1)',
             } as any
           }
           transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
