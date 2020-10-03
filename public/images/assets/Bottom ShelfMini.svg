@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 871 170"
+   version="1.1"
+   id="svg86"
+   sodipodi:docname="Bottom ShelfMini.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata106">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1910"
+     inkscape:window-height="702"
+     id="namedview104"
+     showgrid="false"
+     inkscape:zoom="5.8599311"
+     inkscape:cx="727.30186"
+     inkscape:cy="65.244317"
+     inkscape:window-x="1922"
+     inkscape:window-y="1425"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Bottom_Candles" />
+  <defs
+     id="defs4">
+    <filter
+       id="filter1630"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         flood-opacity=".5"
+         flood-color="#000"
+         result="flood"
+         id="feFlood1620" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite1622" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0"
+         result="blur"
+         id="feGaussianBlur1624" />
+      <feOffset
+         dx="7"
+         dy="1"
+         result="offset"
+         id="feOffset1626" />
+      <feComposite
+         in="offset"
+         in2="offset"
+         operator="atop"
+         result="composite2"
+         id="feComposite1628" />
+    </filter>
+    <filter
+       id="filter1671"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         flood-opacity=".5"
+         flood-color="#000"
+         result="flood"
+         id="feFlood1661" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite1663" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0"
+         result="blur"
+         id="feGaussianBlur1665" />
+      <feOffset
+         dx="7"
+         dy="1"
+         result="offset"
+         id="feOffset1667" />
+      <feComposite
+         in="offset"
+         in2="offset"
+         operator="atop"
+         result="fbSourceGraphic"
+         id="feComposite1669" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix1673" />
+      <feFlood
+         id="feFlood1675"
+         flood-opacity=".5"
+         flood-color="#000"
+         result="flood" />
+      <feComposite
+         in2="fbSourceGraphic"
+         id="feComposite1677"
+         in="flood"
+         operator="in"
+         result="composite1" />
+      <feGaussianBlur
+         id="feGaussianBlur1679"
+         in="composite1"
+         stdDeviation="0"
+         result="blur" />
+      <feOffset
+         id="feOffset1681"
+         dx="7"
+         dy="1"
+         result="offset" />
+      <feComposite
+         in2="offset"
+         id="feComposite1683"
+         in="offset"
+         operator="atop"
+         result="composite2" />
+    </filter>
+    <filter
+       id="filter1723"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         flood-opacity=".5"
+         flood-color="#000"
+         result="flood"
+         id="feFlood1713" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite1715" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0"
+         result="blur"
+         id="feGaussianBlur1717" />
+      <feOffset
+         dx="7"
+         dy="1"
+         result="offset"
+         id="feOffset1719" />
+      <feComposite
+         in="offset"
+         in2="offset"
+         operator="atop"
+         result="composite2"
+         id="feComposite1721" />
+    </filter>
+    <filter
+       id="filter2186"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         flood-opacity=".5"
+         flood-color="#000"
+         result="flood"
+         id="feFlood2176" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite2178" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0"
+         result="blur"
+         id="feGaussianBlur2180" />
+      <feOffset
+         dx="4"
+         dy="-2"
+         result="offset"
+         id="feOffset2182" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite2184" />
+    </filter>
+    <filter
+       id="filter2198"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         flood-opacity=".5"
+         flood-color="#000"
+         result="flood"
+         id="feFlood2188" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite2190" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0"
+         result="blur"
+         id="feGaussianBlur2192" />
+      <feOffset
+         dx="4"
+         dy="-2"
+         result="offset"
+         id="feOffset2194" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite2196" />
+    </filter>
+    <filter
+       id="filter2210"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         flood-opacity=".5"
+         flood-color="#000"
+         result="flood"
+         id="feFlood2200" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite2202" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0"
+         result="blur"
+         id="feGaussianBlur2204" />
+      <feOffset
+         dx="4"
+         dy="-2"
+         result="offset"
+         id="feOffset2206" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite2208" />
+    </filter>
+    <style
+       id="style2">.cls-1{fill:#bd9975}.cls-2{fill:#916f6f}.cls-3{fill:#30b6bb}.cls-4{fill:#f2f2f2}.cls-5{fill:#b8e7e9}.cls-6{fill:#da942b}.cls-7{fill:#f6bd6a}.cls-8{fill:#507d3b}.cls-9{fill:#98c583}.cls-11{fill:#dbca4d}</style>
+  </defs>
+  <g
+     id="Layer_2"
+     data-name="Layer 2"
+     transform="translate(32)">
+    <g
+       id="_3rd_shelf"
+       data-name="3rd shelf">
+      <path
+         class="cls-1"
+         id="rect6"
+         fill="#bd9975"
+         stroke-width="1"
+         d="M332 92h154v69H332z" />
+      <path
+         class="cls-1"
+         d="M829 148l-14 13-100-1v1H478V92h249l3 3 20 1z"
+         id="path8"
+         fill="#bd9975" />
+      <path
+         class="cls-1"
+         d="M120 92h221v69H120v-1l-103 1-14-13 80-52 19-1 4-3h14z"
+         id="path10"
+         fill="#bd9975" />
+      <path
+         class="cls-7"
+         d="M676 58l3-1c8-4 38-4 46 3l-1 31c-19 3-46 0-48-33z"
+         id="path36-6"
+         fill="#000"
+         fill-opacity=".5"
+         stroke-width="1"
+         style="fill:#000000;fill-opacity:0.4627451" />
+      <g
+         id="g957"
+         fill="#000"
+         fill-opacity=".5"
+         stroke="none"
+         stroke-opacity="1">
+        <path
+           id="path925-7"
+           d="M18 170l-19-20 4-5 15 15z"
+           stroke-width="1"
+           stroke-linecap="butt"
+           stroke-linejoin="miter" />
+        <path
+           id="rect906"
+           stroke-width="5.5"
+           stroke-linecap="round"
+           stroke-miterlimit="4"
+           stroke-dasharray="none"
+           d="M18 162h801v8H18z" />
+        <path
+           id="path925"
+           d="M819 170l20-17-5-4-15 13z"
+           stroke-width="1"
+           stroke-linecap="butt"
+           stroke-linejoin="miter" />
+      </g>
+      <path
+         id="Right_Shelf_Outline"
+         data-name="Right Shelf Outline"
+         class="cls-2"
+         d="M833 151a81 81 0 01-8 7l-7 5H478v-5h340l3-3a21 21 0 004-3c-2-1-164-2-347-2v-4a37086 37086 0 01347 1l-37-25-36-23-12 1 27 18a1075 1075 0 0030 21l-297 1h-22v-3a36091 36091 0 01286 0h25l-18-13-37-25a8 8 0 01-3-1l-2-2H478v-6h190l62 1 2 2 12 1h9l40 26 41 27c1 2 1 2-1 4z"
+         fill="#916f6f" />
+      <g
+         id="Shelf_Middle"
+         data-name="Shelf Middle">
+        <path
+           class="cls-2"
+           id="polygon14"
+           fill="#916f6f"
+           d="M341 163v-5h137v5z" />
+        <path
+           class="cls-2"
+           d="M478 146v4H341v-4h137z"
+           id="path16"
+           fill="#916f6f" />
+        <path
+           class="cls-2"
+           d="M478 137v3H341v-3h137z"
+           id="path18"
+           fill="#916f6f" />
+        <path
+           class="cls-2"
+           d="M478 90v6H341v-6h137z"
+           id="path20"
+           fill="#916f6f" />
+      </g>
+      <path
+         d="M717 105l7-9v-5h-6z"
+         id="path1687-8"
+         fill="#000"
+         fill-opacity=".5"
+         stroke="none"
+         stroke-width="1"
+         stroke-linecap="butt"
+         stroke-linejoin="miter"
+         stroke-miterlimit="4"
+         stroke-dasharray="none"
+         stroke-opacity="1" />
+      <g
+         id="Bottom_Candles"
+         data-name="Bottom Candles">
+        <g
+           id="Orange_Candle"
+           data-name="Orange Candle">
+          <path
+             class="cls-6"
+             d="M716 59a31 31 0 00-10-2c-6-1-6-1-7-3-1-3-4-5-5-3v2a6 6 0 012 2l-7 2a31 31 0 00-9 2l-4 1 1 11c1 36 1 33 3 35 1 2 6 4 11 5l20-2a14 14 0 005-3l2-14 1-22V60z"
+             id="path30"
+             fill="#da942b" />
+          <path
+             class="cls-7"
+             d="M687 61h10c0 2 2 2 2 0l5-1c10 1 12 2 8 3l-25 1c-8-1-7-2 0-3z"
+             id="path32"
+             fill="#f6bd6a" />
+          <path
+             class="cls-4"
+             d="M683 66a138 138 0 0015 0 138 138 0 0014 0h3c0 2-1 2-4 3-10 3-30 1-30-3h2z"
+             id="path34"
+             fill="#f2f2f2" />
+          <path
+             class="cls-7"
+             d="M714 84l-1 17c0 3 0 3-4 4-5 2-18 2-23 0-3-1-3-1-4-4l-1-17V70l3 2h27l4-2z"
+             id="path36"
+             fill="#f6bd6a" />
+        </g>
+        <g
+           transform="matrix(2.0976 0 0 2.2932 -648 -215)"
+           id="Blue_Candle-5-5"
+           data-name="Blue Candle"
+           stroke-width=".5"
+           style="fill:#000000;fill-opacity:0.46341464">
+          <path
+             class="cls-5"
+             d="M641 147c-3 1-10 2-13 0-5-1-7-3-7-6 3-5 22-6 28-2 2 2-1 6-8 8z"
+             id="path27-1-0"
+             fill="#000"
+             fill-opacity=".4"
+             stroke-width=".5"
+             style="fill:#000000;fill-opacity:0.46341464" />
+        </g>
+        <g
+           id="Green_Candle"
+           data-name="Green Candle">
+          <path
+             class="cls-8"
+             d="M703 104c-9-5-36-5-44-1-3 3-5 5-4 9 1 6 6 10 16 12 12 3 29-1 34-7 4-5 3-10-2-13z"
+             id="path39"
+             fill="#507d3b" />
+          <path
+             class="cls-9"
+             d="M703 115c-1 2-7 5-13 6-11 3-24 1-30-5-2-2-2-3 2-2 7 3 24 3 32 1 11-2 10-2 9 0z"
+             id="path41"
+             fill="#98c583" />
+          <path
+             class="cls-4"
+             d="M696 113c-11 2-32 1-37-3l-1-1 2-2c2-2 6-3 17-3 11-1 21 0 24 3 4 2 3 4-5 6z"
+             id="path43"
+             fill="#f2f2f2" />
+        </g>
+        <g
+           transform="matrix(.9718 0 0 2.38552 130 -270)"
+           id="Blue_Candle-5"
+           data-name="Blue Candle"
+           stroke-width=".7"
+           style="fill:#000000;fill-opacity:0.4627451">
+          <path
+             class="cls-5"
+             d="M534 156c9 2 22-2 22-7-2-7-12-9-12-9-34-3-27 11-10 16z"
+             id="path27-1"
+             fill="#000"
+             fill-opacity=".4"
+             stroke-width=".7"
+             style="fill:#000000;fill-opacity:0.4627451" />
+        </g>
+        <g
+           id="Blue_Candle"
+           data-name="Blue Candle">
+          <path
+             class="cls-3"
+             d="M662 70c-2-4-2-4-5-5h-17l-5 8c-3 6-4 7-4 13l1 9a16 16 0 0010 7h15c5-1 9-5 11-10 1-6-1-14-6-22z"
+             id="path23"
+             fill="#30b6bb" />
+          <path
+             class="cls-4"
+             d="M641 69c1-1 10-2 13-1 4 1 4 2 1 3-4 2-15 0-14-2z"
+             id="path25"
+             fill="#f2f2f2" />
+          <path
+             class="cls-5"
+             d="M657 98c-5 2-13 1-16 0-5-2-7-5-6-12 0-7 3-15 6-14 6 2 13 2 17 0l4 4c5 11 3 20-5 22z"
+             id="path27"
+             fill="#b8e7e9" />
+        </g>
+      </g>
+      <path
+         id="Left_Shelf_Outline"
+         data-name="Left Shelf Outline"
+         class="cls-2"
+         d="M100 100a24 24 0 004-3l237-1v-6H167l-63 1-2 1c-2 2-1 2-12 2h-9l-40 26-41 27c-1 2 0 4 9 11l7 5h325v-5H17l-4-3a21 21 0 01-3-3l138-1 193-1v-4a16714 16714 0 00-332 1l44-29 29-19h6l6 1-26 18-29 19c-6 4-12 3 149 3h153v-3a14281 14281 0 00-243 0H44l3-2 53-35z"
+         fill="#916f6f" />
+      <g
+         id="Bottom_Books"
+         data-name="Bottom Books">
+        <g
+           id="Blue_Book"
+           data-name="Blue Book"
+           filter="url(#filter2186)">
+          <path
+             class="cls-5"
+             d="M120 95l-26 25V22l26-17v90z"
+             id="path47"
+             fill="#b8e7e9" />
+          <path
+             class="cls-3"
+             d="M122 2a3 3 0 00-3 1l-9 1h-7l-1-2-1-2-30 18-1 53 1 53 11 1 13-1v-3-50l1-49 11-7 11-7 1 7c0 7 1 9 2 8 2 0 2-20 1-21z"
+             id="path49"
+             fill="#30b6bb" />
+          <path
+             class="cls-5"
+             d="M92 28v94H74V23h18z"
+             id="path51"
+             fill="#b8e7e9" />
+          <path
+             class="cls-4"
+             d="M103 13l-9 6h-9c-10 0-10 1 2-7l8-5h18z"
+             id="path53"
+             fill="#f2f2f2" />
+        </g>
+        <g
+           id="Yellow_Book"
+           data-name="Yellow Book">
+          <path
+             id="rect56"
+             fill="#ffffcb"
+             d="M95 53h10v67H95z" />
+          <path
+             class="cls-11"
+             d="M95 123a3 3 0 010-2c0-1 0-2 5-2s6 0 6 2l-4 1a23 22 0 00-5 1 2 2 0 01-2 0z"
+             id="path58"
+             fill="#dbca4d"
+             stroke-width="1" />
+          <path
+             class="cls-4"
+             d="M107 52l-11 1v-2l11-8z"
+             id="path60"
+             fill="#f2f2f2" />
+          <path
+             class="cls-11"
+             d="M95 54a6 6 0 010-2c0-2 1-3 4-6 4-3 5-3 6-1l-3 3-2 2 3 1c3 0 4 2 1 3h-9z"
+             id="path62"
+             fill="#dbca4d" />
+        </g>
+        <g
+           id="Orange_Book"
+           data-name="Orange Book"
+           filter="url(#filter2210)">
+          <path
+             class="cls-7"
+             d="M153 12l-34 22v88l34-30z"
+             id="path65"
+             fill="#f6bd6a" />
+          <path
+             class="cls-6"
+             d="M105 123V32l9-7a76 76 0 018-5 17 17 0 004-2l17-11a2 2 0 012 2c0 2 4 2 6 0h3l1 19-1 20-2 2-1-18V14l-16 10-15 9v85l3-2c4-3 4-3 5-2 2 2 1 3-5 7l-5 3h-6l-7-1z"
+             id="path67"
+             fill="#da942b" />
+          <path
+             class="cls-7"
+             d="M116 77V34h-8v86h4a18 18 0 004 1V77z"
+             id="path69"
+             fill="#f6bd6a" />
+          <path
+             class="cls-4"
+             d="M129 23l14-8 2-2h-2l-16 8-14 9h2c3 0 4 0 14-7z"
+             id="path71"
+             fill="#f2f2f2" />
+        </g>
+        <g
+           id="Green_Book"
+           data-name="Green Book"
+           filter="url(#filter2198)">
+          <path
+             class="cls-8"
+             d="M174 50c-1-2-1-2-8-1l-8-1a3 3 0 00-2-2c-1-1-3 0-15 8l-14 10v55l11 1h11l12-8 13-9V50z"
+             id="path74"
+             fill="#507d3b" />
+          <path
+             class="cls-9"
+             d="M146 117h-15l-1-3V67h16z"
+             id="path76"
+             fill="#98c583" />
+          <path
+             class="cls-4"
+             d="M147 63h-12a89 89 0 018-6l8-5h14l-9 6z"
+             id="path78"
+             fill="#f2f2f2" />
+          <path
+             class="cls-9"
+             d="M171 102l-11 7-11 7V66l10-6 11-7 1 24z"
+             id="path80"
+             fill="#98c583" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -220,6 +220,12 @@ export function Account(props: Props) {
         </motion.div>
         <motion.div
           initial="initial"
+          whileHover={
+            {
+              x: 1,
+              boxShadow: 'inset 0px 0px 12px 0px rgba(0, 0, 0, 1)',
+            } as any
+          }
           animate="in"
           exit="out"
           variants={pageVariants}
@@ -305,6 +311,12 @@ export function Account(props: Props) {
           animate="in"
           exit="out"
           variants={pageVariants}
+          whileHover={
+            {
+              x: 4,
+              boxShadow: '10px 10px 0px -8px rgba(0, 0, 0, 0.45)',
+            } as any
+          }
           transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
           className="groupCard"
         >
@@ -437,6 +449,12 @@ export function Account(props: Props) {
             variants={pageVariants}
             transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
             className="joinGroup"
+            whileHover={
+              {
+                x: 2,
+                boxShadow: '4px 4px 0px -3px rgba(0, 0, 0, 0.45)',
+              } as any
+            }
           >
             <Grid container alignItems="center" justify="center" spacing={2}>
               <Typography variant="h5" component="h1" gutterBottom>

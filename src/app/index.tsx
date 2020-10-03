@@ -46,10 +46,11 @@ const DivNav = styled(motion.div)`
   border-radius: 49px;
   height: auto;
   padding: 0;
+  width: 70vw;
+  max-width: 1320px;
   margin: auto;
-  margin-top: 1rem;
   margin-bottom: 0;
-  max-width: 1920px;
+  margin-top: 1rem;
   line-height: 24px;
   top: 0;
 `;
@@ -151,11 +152,27 @@ export function App() {
 
   return (
     <BrowserRouter>
-      <Helmet
-        titleTemplate="%s - React Boilerplate"
-        defaultTitle="React Boilerplate"
-      >
-        <meta name="description" content="A React Boilerplate application" />
+      <Helmet titleTemplate="%s" defaultTitle="Cutie Hack">
+        <meta
+          name="description"
+          content="Cutie Hack is a 12-hour, beginner-oriented hackathon hosted at the University of California, Riverside."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://cutiehack.io/" />
+        <meta property="og:title" content="Cutie Hack" />
+        <meta
+          property="og:description"
+          content="Cutie Hack is a 12-hour, beginner-oriented hackathon hosted at the University of California, Riverside."
+        />
+        <meta property="og:image" content="/thumb.png" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://cutiehack.io/" />
+        <meta property="twitter:title" content="Cutie Hack" />
+        <meta
+          property="twitter:description"
+          content="Cutie Hack is a 12-hour, beginner-oriented hackathon hosted at the University of California, Riverside."
+        />
+        <meta property="twitter:image" content="/thumb.png" />
       </Helmet>
       <ThemeProvider theme={theme}>
         <Route

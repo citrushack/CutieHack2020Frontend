@@ -101,10 +101,10 @@ border: 5px solid #7B8E6F;
   border-radius: 59px;
   padding: 2rem;
   /* text-shadow:
--1px -1px 0 #000,  
- 1px -1px 0 #000,
- -1px 1px 0 #000,
-  1px 1px 0 #000, 6px 6px 0 rgba(0, 0, 0, 0.5);; */
+-1px -1px 0 rgba(0, 0, 0, 0.87),  
+ 1px -1px 0 rgba(0, 0, 0, 0.87),
+ -1px 1px 0 rgba(0, 0, 0, 0.87),
+  1px 1px 0 rgba(0, 0, 0, 0.87), 6px 6px 0 rgba(0, 0, 0, 0.5);; */
   color: #212121;
   text-align: center;
   font-family: 'Fugaz One', cursive;
@@ -123,10 +123,10 @@ border: 5px solid #7B8E6F;
   /* box-shadow: 10px 10px 0px -4px rgba(0, 0, 0, 0.45); */
   border-radius: 59px;
   text-shadow:
--1px -1px 0 #000,  
- 1px -1px 0 #000,
- -1px 1px 0 #000,
-  1px 1px 0 #000,7px 7px 0 rgba(0, 0, 0, 0.486);
+-1px -1px 0 rgba(0, 0, 0, 0.87),  
+ 1px -1px 0 rgba(0, 0, 0, 0.87),
+ -1px 1px 0 rgba(0, 0, 0, 0.87),
+  1px 1px 0 rgba(0, 0, 0, 0.87),7px 7px 0 rgba(0, 0, 0, 0.486);
   -webkit-text-stroke: 1px rgb(0, 0, 0);
   color: white;
   text-align: center;
@@ -143,10 +143,10 @@ border: 5px solid #7B8E6F;
   /* box-shadow: 10px 10px 0px -4px rgba(0, 0, 0, 0.45); */
   border-radius: 59px;
   text-shadow:
--1px -1px 0 #000,  
- 1px -1px 0 #000,
- -1px 1px 0 #000,
-  1px 1px 0 #000, 6px 6px 0 rgba(0, 0, 0, 0.5);;
+-1px -1px 0 rgba(0, 0, 0, 0.87),  
+ 1px -1px 0 rgba(0, 0, 0, 0.87),
+ -1px 1px 0 rgba(0, 0, 0, 0.87),
+  1px 1px 0 rgba(0, 0, 0, 0.87), 6px 6px 0 rgba(0, 0, 0, 0.5);;
   -webkit-text-stroke: 1px black;
   color: white;
   text-align: center;
@@ -154,17 +154,6 @@ border: 5px solid #7B8E6F;
   font-size:4em;
 }
 
-
-.shelfTitle {
-  content: ' ';
-  background-image: url('/images/assets/Bottom Shelf.svg');
-  height: 12em; /* You must set a specified height */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  margin-bottom:3rem;
-  /* filter: drop-shadow(6px 6px  rgba(0,0,0,0.5)); */
-
-}
 
 
 .flex-1{
@@ -176,32 +165,31 @@ border: 5px solid #7B8E6F;
   justify-content: center;
 }
 
-.couchTitle {
-  content: ' ';
-  background-image: url('/images/assets/Couch v2.svg');
-  height: 12em; /* You must set a specified height */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  margin-bottom:3rem;
-  filter: drop-shadow(6px 6px  rgba(0,0,0,0.5));
-  align-self: flex-end;
-}
-
-
-
-#couchpic {
-
-}
 
 .right{
   text-align: right;
 }
-#middleshelf{
-  background-image: url('/images/assets/Top Shelf v2.svg')!important;
 
+
+.shelfTitle {
+  content: ' ';
+  background-image: url('/images/assets/Bottom ShelfMini.svg');
+  height: 12em; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  margin-bottom:3rem;
+  /* filter: drop-shadow(6px 6px  rgba(0,0,0,0.5)); */
+
+}
+
+
+#middleshelf{
+  background-image: url('/images/assets/Top Shelf v2Mini.svg')!important;
+  height: 12.6em; /* You must set a specified height */
 }
 #toiletshelf {
   background-image: url('/images/assets/toiletshelf2.svg')!important;
+  height: 12.7em; /* You must set a specified height */
 
 }
 
@@ -223,7 +211,7 @@ margin:auto;
   font-size: 2em;
 }
 .frame {
-  filter: drop-shadow(5px 7px  rgba(0,0,0,0.5)) drop-shadow(-3px -2px  rgba(0,0,0,0.3));
+  /* filter: drop-shadow(5px 7px  rgba(0,0,0,0.5)) drop-shadow(-3px -2px  rgba(0,0,0,0.3)); */
   background: url("/images/asfalt-dark-light.png"), #ffebd5;
   border:solid 3vmin #8b6835;
   border-bottom: solid 50px #9b7c5d;
@@ -231,7 +219,7 @@ margin:auto;
   border-radius:2px;
   border-right-color:#a88b6f;
   border-top-color:#c1a589;
-  box-shadow:0 0 0px 0 rgba(0,0,0,.25) inset,  inset 0px 0px 0px 2px #87622b;
+  box-shadow:0 0 0px 0 rgba(0,0,0,.25) inset,  inset 0px 0px 0px 2px #87622b, 5px 7px  rgba(0,0,0,0.5);
   /* box-shadow: 23px 23px 0px -8px rgba(0, 0, 0, 0.45),0 0 5px 0 rgba(0,0,0,.25) inset, 0 5px 10px 5px rgba(0,0,0,.25); */
   box-sizing:border-box;
   display:inline-block;
@@ -440,8 +428,9 @@ height: 20px;
 }
 
 .groupCard{
-  background: url(/images/always-grey.png), #A4E6E8;
+  background:  #A4E6E8;
 border-radius: 14px;
+border: 5px solid #94b4b5;
 box-shadow: 23px 23px 0px -8px rgba(0, 0, 0, 0.45);
 padding: 2rem;
 width:50em;
@@ -458,12 +447,12 @@ margin-bottom:3rem;
 }
 
 .joinGroup{
-  background:  url("/images/asfalt-dark-light.png"), #ADDE8E;
+  background:  #ADDE8E;
 border-radius: 14px;
 border-radius: 49px;
 box-shadow: 10px 10px 0px -3px rgba(0, 0, 0, 0.45);
 padding: 3rem;
- 
+border: 5px solid #7B8E6F;
  max-width:50em;
  margin:auto;
  margin-top: 3.5rem; 
@@ -483,11 +472,11 @@ padding: 3rem;
   -webkit-text-stroke: 1px black;
   color: white;
   text-shadow:
-      3px 3px 0 #000,
-    -1px -1px 0 #000,  
-     1px -1px 0 #000,
-     -1px 1px 0 #000,
-      1px 1px 0 #000;
+      3px 3px 0 rgba(0, 0, 0, 0.87),
+    -1px -1px 0 rgba(0, 0, 0, 0.87),  
+     1px -1px 0 rgba(0, 0, 0, 0.87),
+     -1px 1px 0 rgba(0, 0, 0, 0.87),
+      1px 1px 0 rgba(0, 0, 0, 0.87);
   text-align: center;
   font-family: 'Fugaz One', cursive;
   font-size: 3.5em;
@@ -591,7 +580,11 @@ nav img{
     margin-left: 0;
     margin-right:0;
   }
-  
+  .applyBody{
+    border-radius: 5px;
+    box-shadow: 0px 16px 0px 0px rgba(0, 0, 0, 0.45);
+    margin-top:0;
+  }
 }
 
 
@@ -684,7 +677,7 @@ nav img{
     box-shadow: 0px 8px 0px 0px rgba(0, 0, 0, 0.45);
   }
   .scaleDiv h1{
-    font-size:3em;
+    font-size:2.5em;
   }
   .scaleDiv [aria-label="flag"] {
     display:none;
@@ -723,5 +716,22 @@ nav img{
   margin-bottom: 25px;
 
 }
-
+.scaleDiv .title {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 18px;
+ }
+ .scaleDiv {
+  padding: 0;
+  border: 2px solid #7B8E6F;
+  }
+  
+.divNav{
+  width:94vw!important;
+  max-width: none!important;
+}
+.applyBody{
+  border-radius: 5px;
+margin-top: 0;
+}
 }

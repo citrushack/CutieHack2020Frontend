@@ -593,30 +593,43 @@ function FireplaceComp(props) {
 const data = {
   rows: [
     {
-      title: 'Lorem ipsum dolor sit amet,',
-      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed tempor sem. Aenean vel turpis feugiat, 
-              ultricies metus at, consequat velit. Curabitur est nibh, varius in tellus nec, mattis pulvinar metus. 
-              In maximus cursus lorem, nec laoreet velit eleifend vel. Ut aliquet mauris tortor, sed egestas libero interdum vitae. 
-              Fusce sed commodo purus, at tempus turpis.`,
-    },
-    {
-      title: 'Nunc maximus, magna at ultricies elementum',
+      title: 'What is a hackathon?',
       content:
-        'Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam, vitae convallis ex tortor sed dolor.',
+        'A hackathon is an event where you can build a project and demo to judges in order to win awesome prizes! We offer cool workshops to help you learn about new technologies or new programming languages as well!',
     },
     {
-      title: 'Curabitur laoreet, mauris vel blandit fringilla',
-      content: `Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc, ac sagittis leo elit vel lorem. 
-            Fusce tempor lacus ut libero posuere viverra. Nunc velit dolor, tincidunt at varius vel, laoreet vel quam. 
-            Sed dolor urna, lobortis in arcu auctor, tincidunt mattis ante. Vivamus venenatis ultricies nibh in volutpat. 
-            Cras eu metus quis leo vestibulum feugiat nec sagittis lacus.Mauris vulputate arcu sed massa euismod dignissim. `,
+      title: 'Where will we submit?',
+      content:
+        'You can submit through Devpost! Further instructions will follow on the day-of the event. ',
     },
     {
-      title: 'How is your life going?',
-      content: `Curabitur laoreet, mauris vel blandit fringilla, leo elit rhoncus nunc, ac sagittis leo elit vel lorem. 
-            Fusce tempor lacus ut libero posuere viverra. Nunc velit dolor, tincidunt at varius vel, laoreet vel quam. 
-            Sed dolor urna, lobortis in arcu auctor, tincidunt mattis ante. Vivamus venenatis ultricies nibh in volutpat. 
-            Cras eu metus quis leo vestibulum feugiat nec sagittis lacus.Mauris vulputate arcu sed massa euismod dignissim. `,
+      title: 'Can I submit a project I’ve already worked on?',
+      content:
+        'No, you must start working on a project (code-wise) after hacking starts at 8 AM. Projects started before that time will be disqualified along with projects that have been submitted to multiple hackathons.',
+    },
+    {
+      title: 'How long is Cutie Hack?',
+      content:
+        'Cutie Hack 2020 will be a 12 hour hackathon. Hacking will start at 8 AM (PDT) (PDT) and end at 8 PM (PDT). The closing ceremony will be at 11 PM through YouTube live!',
+    },
+    {
+      title: 'Is Cutie Hack Free?',
+      content: 'Yes!',
+    },
+    {
+      title: 'Who can come to Cutie Hack?',
+      content:
+        'Any undergraduate student enrolled in a college can participate, regardless of majors.',
+    },
+    {
+      title: 'When are applications due?',
+      content:
+        'Applications will be accepted on a rolling basis but will close on November 2nd!',
+    },
+    {
+      title: 'Help, my question is not listed!',
+      content:
+        'Email us at citrushack@gmail.com and we can answer your questions!',
     },
   ],
 };
@@ -738,7 +751,7 @@ export function HomePage() {
       <motion.div
         animate={
           {
-            rotate: isActive ? (mx > midpoint ? 3 : -2) : -0.5,
+            rotate: isActive ? (mx > midpoint ? 3.3 : -2.3) : -0.5,
           } as any
         }
         onMouseMove={e => {
@@ -786,7 +799,7 @@ export function HomePage() {
             </h2>
           )}
 
-          <img id="couchpic" src="/images/assets/Couch v2.svg"></img>
+          <img id="couchpic" src="/images/assets/CouchMini.svg"></img>
           {matches && (
             <h2 className=" greenCenter">
               This year, Cutie Hack will be held virtually, open to
