@@ -8,6 +8,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Faq from 'react-faq-component';
 import { motion } from 'framer-motion';
 import { randomInt } from 'crypto';
+import { FaChevronCircleDown } from 'react-icons/fa';
 // import { useAuthUser, useSignIn, useAuthHeader } from 'react-auth-kit';
 
 // export class HomePage extends React.Component {
@@ -663,7 +664,7 @@ const data = {
 
 const config = {
   animate: true,
-  arrowIcon: <img id="FaqarrowIcon" src="/images/assets/right-arrow.svg"></img>,
+  arrowIcon: <FaChevronCircleDown />,
 };
 
 export function useContainerDimensions(myRef: React.RefObject<any>) {
