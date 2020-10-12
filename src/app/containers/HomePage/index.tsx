@@ -1,14 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useHistory } from 'react-router-dom';
-import { CssBaseline, Typography } from '@material-ui/core';
+import { CssBaseline } from '@material-ui/core';
 import { pageVariants } from '../../animations';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-// import { ExpandLi } from '../../components/ExpandLi';
 import Faq from 'react-faq-component';
 import { motion } from 'framer-motion';
-import { randomInt } from 'crypto';
 import { FaChevronCircleDown } from 'react-icons/fa';
+
+import '../../component-styles/accordion.css';
+
+// import { randomInt } from 'crypto';
+// import { ExpandLi } from '../../components/ExpandLi';
 // import { useAuthUser, useSignIn, useAuthHeader } from 'react-auth-kit';
 
 // export class HomePage extends React.Component {
@@ -649,7 +652,7 @@ const data = {
     },
     {
       title:
-        'If I’m residing outside of the U.S, can I still attend and/or win a prize/raffle?',
+        'If I’m outside of the U.S, can I still attend and/or win a prize/raffle?',
       content: `If you’re residing outside of the U.S, you can still attend! However, due to shipping restrictions and COVID, we won’t be able to send any type of physical prizes,  swag items, or raffle prizes to those residing outside of the U.S. You are still eligible to win a category, however!
         If you currently attend a university within the U.S but reside outside of the U.S, you’ll be able to win a category but will not be eligible to receive a physical prize, swag item, or raffle prize. 
         If you both attend a university outside of the U.S and also reside outside of the U.S, you will e ineligible to win or receive a prize, but are still encouraged to attend and participate in all festivities!`,
@@ -664,7 +667,7 @@ const data = {
 
 const config = {
   animate: true,
-  arrowIcon: <FaChevronCircleDown />,
+  arrowIcon: <FaChevronCircleDown size={70} />,
 };
 
 export function useContainerDimensions(myRef: React.RefObject<any>) {
@@ -694,27 +697,27 @@ export function useContainerDimensions(myRef: React.RefObject<any>) {
   return dimensions;
 }
 
-function getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min;
-}
-const rumble = {
-  shake: i => ({
-    x: i.i,
-    y: i.j,
-    transition: {
-      duration: 1,
-    },
-  }),
-};
-const frameVariants = {
-  shake: i => ({
-    x: i.i,
-    y: i.j,
-    transition: {
-      duration: 1,
-    },
-  }),
-};
+// function getRandomArbitrary(min, max) {
+//   return Math.random() * (max - min) + min;
+// }
+// const rumble = {
+//   shake: i => ({
+//     x: i.i,
+//     y: i.j,
+//     transition: {
+//       duration: 1,
+//     },
+//   }),
+// };
+// const frameVariants = {
+//   shake: i => ({
+//     x: i.i,
+//     y: i.j,
+//     transition: {
+//       duration: 1,
+//     },
+//   }),
+// };
 
 function TopBanner(props) {
   return (
@@ -1394,9 +1397,9 @@ export function HomePage() {
   const history = useHistory();
   const { width } = useContainerDimensions(componentRef);
   const [mouse, setMouse] = useState([0, 0, false]);
-  const [overYellow, setoverYellow] = useState(false);
-  const [overGreen, setoverGreen] = useState(false);
-  const [overBlue, setoverBlue] = useState(false);
+  // const [overYellow, setoverYellow] = useState(false);
+  // const [overGreen, setoverGreen] = useState(false);
+  // const [overBlue, setoverBlue] = useState(false);
   const [mx, my, isActive] = mouse;
   const midpoint = (width || 0) / 2;
   const matches = useMediaQuery('(min-width: 0px) and (max-width: 768px)');
@@ -1473,6 +1476,7 @@ export function HomePage() {
           <img
             style={{ transform: 'translateY(-115%)', width: '120px' }}
             src="/images/assets/2015.png"
+            alt="2015 Plaque"
           ></img>
         </motion.div>
         <div className="split">
@@ -1494,7 +1498,11 @@ export function HomePage() {
               </h2>
             )}
 
-            <img id="couchpic" src="/images/assets/CouchMini.svg"></img>
+            <img
+              id="couchpic"
+              src="/images/assets/CouchMini.svg"
+              alt="mini couch"
+            ></img>
             {matches && (
               <h2 className=" greenCenter">
                 This year, Cutie Hack will be held virtually, open to
@@ -1553,7 +1561,11 @@ export function HomePage() {
             className="actionbtn1"
           >
             <p>Become a mentor</p>
-            <img id="arrowIcon" src="/images/assets/right-arrow.svg"></img>
+            <img
+              id="arrowIcon"
+              src="/images/assets/right-arrow.svg"
+              alt="right icon"
+            />
           </motion.a>
           <motion.a
             whileHover={{
@@ -1568,7 +1580,11 @@ export function HomePage() {
             className="actionbtn2"
           >
             <p>Apply for the event</p>
-            <img id="arrowIcon" src="/images/assets/right-arrow.svg"></img>
+            <img
+              id="arrowIcon"
+              src="/images/assets/right-arrow.svg"
+              alt="right icon"
+            />
           </motion.a>
           <motion.a
             whileHover={{
@@ -1580,7 +1596,11 @@ export function HomePage() {
             href="https://docs.google.com/forms/u/3/d/e/1FAIpQLScmjmosfr0FPgGRtjHf1VGpcEcINovD0QRc_qikJrdYGhwR2g/viewform"
           >
             <p>Become a volunteer </p>
-            <img id="arrowIcon" src="/images/assets/right-arrow.svg"></img>
+            <img
+              id="arrowIcon"
+              src="/images/assets/right-arrow.svg"
+              alt="right icon"
+            />
           </motion.a>
         </div>
         <motion.div
@@ -1610,7 +1630,7 @@ export function HomePage() {
             transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
             href="https://acmucr.org/"
           >
-            <img src="/images/acm_ucr.png" className="acm"></img>
+            <img src="/images/acm_ucr.png" className="acm" alt="acm logo"></img>
           </motion.a>
           <motion.a
             whileHover={{
@@ -1619,7 +1639,11 @@ export function HomePage() {
             transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
             href="https://linode.com/"
           >
-            <img src="/images/linode.png" className="linode"></img>
+            <img
+              src="/images/linode.png"
+              className="linode"
+              alt="linode logo"
+            ></img>
           </motion.a>
           <motion.a
             whileHover={{
@@ -1628,7 +1652,7 @@ export function HomePage() {
             transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
             href="https://gen.xyz/"
           >
-            <img src="/images/xcolor.png" className="xyz"></img>
+            <img src="/images/xcolor.png" className="xyz" alt="xyz logo"></img>
           </motion.a>
           <motion.a
             whileHover={{
@@ -1637,7 +1661,7 @@ export function HomePage() {
             transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
             href="https://ieee.ee.ucr.edu/"
           >
-            <img src="/images/IEEE.png" className="ieee"></img>
+            <img src="/images/IEEE.png" className="ieee" alt="ieee logo"></img>
           </motion.a>
           <motion.a
             whileHover={{
@@ -1646,7 +1670,11 @@ export function HomePage() {
             transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
             href="https://www.wolfram.com/"
           >
-            <img src="/images/wolfram.png" className="wolfram"></img>
+            <img
+              src="/images/wolfram.png"
+              className="wolfram"
+              alt="wolfram logo"
+            ></img>
           </motion.a>
         </div>
       </motion.div>

@@ -35,7 +35,7 @@ import getTheme from './theme';
 
 import { motion } from 'framer-motion';
 
-import './styles.css';
+import './component-styles/styles.css';
 
 const DivNav = styled(motion.div)`
   /* background: url(/images/asfalt-dark-light.png), #b0e7e8; */
