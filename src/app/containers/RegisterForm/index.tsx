@@ -73,15 +73,11 @@ const validate = values => {
   //   errors.email = 'Email not valid';
   // }
 
-  if (!values.github) {
-    errors.github = 'Required';
-  } else if (!validateGithub(values.github)) {
+  if (values.github && !validateGithub(values.github)) {
     errors.github = 'Invalid url';
   }
 
-  if (!values.linkedin) {
-    errors.linkedin = 'Required';
-  } else if (!validateLinkedin(values.linkedin)) {
+  if (values.linkedin && !validateLinkedin(values.linkedin)) {
     errors.linkedin = 'Invalid url';
   }
 
@@ -104,7 +100,7 @@ const validate = values => {
   // if (!values.username) errors.username = 'Required';
   if (!values.firstname) errors.firstname = 'Required';
   if (!values.lastname) errors.lastname = 'Required';
-  // if (!values.school) errors.school = 'Required';
+  if (!values.school) errors.school = 'Required';
   // if (!!!values.major) errors.major = 'Required';
   if (!values.gender) errors.gender = 'Required';
 
@@ -322,82 +318,46 @@ const demoInfo: formTypes = [
   {
     size: 12,
     field: (
-      <Autocomplete
+      <TextField
+        variant="outlined"
         label="School"
         name="school"
+        margin="none"
         required={true}
-        options={unis}
-        freeSolo
-        getOptionValue={option => option.uni}
-        getOptionLabel={option => option?.uni || `${option}`}
-        renderOption={option => option.uni}
-        disableCloseOnSelect={false}
-        onChange={(_event, newValue, reason, details) => {
-          if (newValue && reason === 'select-option' && details?.option.uni) {
-            // Create a new value from the user input
-            unis.push({
-              uni: details?.option.uni,
-            });
-          }
-        }}
-        filterOptions={(options, params) => {
-          const filtered = filter(options, params);
-          //console.log(filtered);
-          // Suggest the creation of a new value
-          if (params.inputValue.length) {
-            filtered.push({
-              uni: params.inputValue,
-            });
-          }
+        // label="School"
+        // name="school"
+        // required={true}
+        // options={unis}
+        // freeSolo
+        // getOptionValue={option => option?.uni || `${option}`}
+        // getOptionLabel={option => option?.uni || `${option}`}
+        // renderOption={option => option.uni}
+        // disableCloseOnSelect={false}
+        // onChange={(_event, newValue, reason, details) => {
+        //   if (newValue && reason === 'select-option' && details?.option.uni) {
+        //     // Create a new value from the user input
+        //     unis.push({
+        //       uni: details?.option.uni,
+        //     });
+        //   }
+        // }}
+        // filterOptions={(options, params) => {
+        //   const filtered = filter(options, params);
+        //   //console.log(filtered);
+        //   // Suggest the creation of a new value
+        //   if (params.inputValue.length) {
+        //     filtered.push({
+        //       uni: params.inputValue,
+        //     });
+        //   }
 
-          return filtered;
-        }}
-        selectOnFocus
-        autoHighlight
-        autoSelect
-        handleHomeEndKeys
-        clearOnBlur
-      />
-    ),
-  },
-  {
-    size: 12,
-    field: (
-      <Autocomplete
-        label="Major"
-        name="major"
-        required={true}
-        options={majors}
-        freeSolo
-        getOptionValue={option => option?.major}
-        getOptionLabel={option => option?.major || `${option}`}
-        renderOption={option => option?.major}
-        disableCloseOnSelect={false}
-        onChange={(_event, newValue, reason, details) => {
-          if (newValue && reason === 'select-option' && details?.option.major) {
-            // Create a new value from the user input
-            majors.push({
-              major: details?.option.major,
-            });
-          }
-        }}
-        filterOptions={(options, params) => {
-          const filtered = filter(options, params);
-          //console.log(filtered);
-          // Suggest the creation of a new value
-          if (params.inputValue.length) {
-            filtered.push({
-              major: params.inputValue,
-            });
-          }
-
-          return filtered;
-        }}
-        selectOnFocus
-        autoHighlight
-        autoSelect
-        handleHomeEndKeys
-        clearOnBlur
+        //   return filtered;
+        // }}
+        // selectOnFocus
+        // autoHighlight
+        // autoSelect
+        // handleHomeEndKeys
+        // clearOnBlur
       />
     ),
   },
@@ -406,7 +366,50 @@ const demoInfo: formTypes = [
     field: (
       <TextField
         variant="outlined"
-        label="Year"
+        margin="none"
+        label="Major"
+        name="major"
+        required={true}
+        // options={majors}
+        // freeSolo
+        // getOptionValue={option => option?.major}
+        // getOptionLabel={option => option?.major || `${option}`}
+        // renderOption={option => option?.major}
+        // disableCloseOnSelect={false}
+        // onChange={(_event, newValue, reason, details) => {
+        //   if (newValue && reason === 'select-option' && details?.option.major) {
+        //     // Create a new value from the user input
+        //     majors.push({
+        //       major: details?.option.major,
+        //     });
+        //   }
+        // }}
+        // filterOptions={(options, params) => {
+        //   const filtered = filter(options, params);
+        //   //console.log(filtered);
+        //   // Suggest the creation of a new value
+        //   if (params.inputValue.length) {
+        //     filtered.push({
+        //       major: params.inputValue,
+        //     });
+        //   }
+
+        //   return filtered;
+        // }}
+        // selectOnFocus
+        // autoHighlight
+        // autoSelect
+        // handleHomeEndKeys
+        // clearOnBlur
+      />
+    ),
+  },
+  {
+    size: 12,
+    field: (
+      <TextField
+        variant="outlined"
+        label="Graduation Year"
         name="year"
         margin="none"
         required={true}
@@ -424,7 +427,7 @@ const hackerInfo: formTypes = [
         label="Github profile link"
         name="github"
         margin="none"
-        required={true}
+        required={false}
       />
     ),
   },
@@ -436,7 +439,7 @@ const hackerInfo: formTypes = [
         label="Linkedin profile link"
         name="linkedin"
         margin="none"
-        required={true}
+        required={false}
       />
     ),
   },
@@ -582,7 +585,7 @@ export function RegisterForm(props: Props) {
                 ))}
                 <Grid item style={{ marginTop: 16, marginBottom: 20 }}>
                   <h2>Hacker app</h2>
-                  <Typography> Are you a worthy opponent? </Typography>
+                  <Typography> We want to learn more about you. </Typography>
                 </Grid>
                 <Grid item xs={12}>
                   <Card

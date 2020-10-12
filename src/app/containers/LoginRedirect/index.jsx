@@ -5,7 +5,7 @@ import { pageVariants } from '../../animations';
 import { motion } from 'framer-motion';
 import { useSignIn } from 'react-auth-kit';
 import { fetch } from 'whatwg-fetch';
-const backendUrl = 'http://localhost:1337';
+const backendUrl = 'https://cutiehack.io/api';
 
 const LoginRedirect = props => {
   const [text, setText] = useState('Loading...');

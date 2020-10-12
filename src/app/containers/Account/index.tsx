@@ -322,6 +322,9 @@ export function Account(props: Props) {
         >
           <Box textAlign="center">
             <Typography variant="h6" component="h1" gutterBottom>
+              Remember, the max group size is 4.
+            </Typography>
+            <Typography variant="h6" component="h1" gutterBottom>
               {!groupExists
                 ? "Looks like you're not in a group"
                 : 'Your group code'}{' '}

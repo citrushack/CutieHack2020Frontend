@@ -17,7 +17,7 @@ export function* joinGroup() {
       group: formData.payload.groupCode,
     };
 
-    const requestURL = 'http://localhost:1337/users/updateme';
+    const requestURL = 'https://cutiehack.io/api/users/updateme';
     //console.log(body);
     const response = yield call(request, requestURL, {
       method: 'PUT',
@@ -44,7 +44,7 @@ export function* leaveGroup() {
       group: 'none',
     };
 
-    const requestURL = 'http://localhost:1337/users/updateme';
+    const requestURL = 'https://cutiehack.io/api/users/updateme';
     //console.log(body);
     yield call(request, requestURL, {
       method: 'PUT',
@@ -66,7 +66,7 @@ export function* generateGroup() {
   //Select the form data
 
   try {
-    const requestURL = 'http://localhost:1337/groups';
+    const requestURL = 'https://cutiehack.io/api/groups';
     //Request auth
     const response = yield call(request, requestURL, {
       method: 'POST',
@@ -86,7 +86,7 @@ export function* generateGroup() {
 
 export function* refresh() {
   try {
-    const requestURL = 'http://localhost:1337/users/getmygroup';
+    const requestURL = 'https://cutiehack.io/api/users/getmygroup';
     const response = yield call(request, requestURL, {
       method: 'GET',
     });
@@ -109,7 +109,7 @@ export function* refresh() {
 
 export function* refreshStatus() {
   try {
-    const requestURL = 'http://localhost:1337/users/getmystatus';
+    const requestURL = 'https://cutiehack.io/api/users/getmystatus';
     const response = yield call(request, requestURL, {
       method: 'GET',
     });

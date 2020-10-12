@@ -80,7 +80,7 @@ type formTypes = formType[];
 //     ),
 //   },
 // ];
-const backendUrl = 'http://localhost:1337';
+const backendUrl = 'https://cutiehack.io/api';
 
 const providersNames = ['github', 'google', 'linkedin'];
 
@@ -212,7 +212,10 @@ const getSvg = {
   ),
 };
 const LoginButton = props => (
-  <a href={`${backendUrl}/connect/${props.providerName}`}>
+  <a
+    style={{ textDecoration: 'none' }}
+    href={`${backendUrl}/connect/${props.providerName}`}
+  >
     <Button
       variant="contained"
       size="large"
@@ -297,7 +300,6 @@ export function AuthPage(props: Props) {
         variants={pageVariants}
         animate={'in'}
         transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
-        className="titleDiv"
       >
         <motion.div
           whileHover={
@@ -310,9 +312,7 @@ export function AuthPage(props: Props) {
           className="mainCard authCard"
         >
           <CssBaseline />
-          <Typography variant="h5" style={{ marginBottom: '1em' }}>
-            {text}
-          </Typography>
+
           {buttons}
           {/* <Form
             onSubmit={onSubmit}

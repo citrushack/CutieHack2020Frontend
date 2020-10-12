@@ -8,15 +8,17 @@ import 'whatwg-fetch';
 export function* register() {
   //Select the form data
   const formData = yield select(selectFormData);
+  console.log(formData);
   const { resume, history, signIn, ...body } = formData.payload;
   let response;
   try {
     //Get submit action payload
     //console.log(formData);
     //Generate request bodies from payload
-    const requestURL = 'http://localhost:1337/users/updateme';
+    const requestURL = 'https://cutiehack.io/api/users/updateme';
     //console.log(body);
     //Request auth
+    console.log(body);
     response = yield call(request, requestURL, {
       method: 'PUT',
       body,
@@ -76,7 +78,7 @@ function sendResume(data: FormData, refId, token) {
   data.append('source', 'users-permissions');
   data.append('field', 'resume');
   options.body = data;
-  return fetch('http://localhost:1337/upload', options);
+  return fetch('https://cutiehack.io/api/upload', options);
 }
 
 export function* registerFormSaga() {

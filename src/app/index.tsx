@@ -52,8 +52,12 @@ const DivNav = styled(motion.div)`
   margin-bottom: 0;
   margin-top: 1rem;
   line-height: 24px;
+  z-index: 100;
   top: 0;
-`;
+  position: ${props => ((props as any).float ? 'absolute' : 'static')};
+  left: ${props => ((props as any).float ? '0' : 'auto')};
+  right: ${props => ((props as any).float ? '0' : 'auto')};
+` as any;
 
 // const StickyNav = styled(Base)`
 //   padding: 0;
@@ -158,7 +162,7 @@ export function App() {
           content="Cutie Hack is a 12-hour, beginner-oriented hackathon hosted at the University of California, Riverside."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://cutiehack.io/" />
+        <meta property="og:url" content="https://cutiehack.io/api/" />
         <meta property="og:title" content="Cutie Hack" />
         <meta
           property="og:description"
@@ -166,7 +170,7 @@ export function App() {
         />
         <meta property="og:image" content="/thumb.png" />
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://cutiehack.io/" />
+        <meta property="twitter:url" content="https://cutiehack.io/api/" />
         <meta property="twitter:title" content="Cutie Hack" />
         <meta
           property="twitter:description"
@@ -179,6 +183,7 @@ export function App() {
           render={({ location }) => (
             <>
               <DivNav
+                float={location.pathname === '/'}
                 className="divNav"
                 whileHover={{
                   boxShadow: '16px 16px 0px -5px rgba(0, 0, 0, 0.45)',

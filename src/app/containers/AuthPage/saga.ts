@@ -17,7 +17,7 @@ export function* login() {
   //     identifier: formData.payload.username,
   //     password: formData.payload.password,
   //   };
-  //   const requestURL = 'http://localhost:1337/auth/local';
+  //   const requestURL = 'https://cutiehack.io/api/auth/local';
   //   //console.log(body);
   //   //Request auth
   //   const response = yield call(request, requestURL, {

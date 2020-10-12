@@ -75,6 +75,50 @@ border: 5px solid #7B8E6F;
   max-width:min(50vw, 700px);
 }
 
+.logoflex {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: space-around;
+  max-width: 1200px;
+  margin:auto;
+}
+
+.acm {
+  max-width: min(400px, 90vw);
+  height: auto;
+  filter: drop-shadow(-1px -1px 1px rgba(0,0,0,0.4)) drop-shadow(1px -1px 1px rgba(0,0,0,0.4)) drop-shadow(-1px 1px 1px rgba(0,0,0,0.4)) drop-shadow(1px 1px 1px rgba(0,0,0,0.4)) drop-shadow(0 0 0.7rem white);
+
+
+}
+.linode {
+  max-width: min(500px, 90vw);
+  height: auto;
+  filter: drop-shadow(0 0 0.75rem white);
+
+}
+
+.xyz {
+  max-width: min(300px , 90vw);
+  height: auto;
+  filter: drop-shadow(0 0 0.75rem white);
+}
+
+.ieee {
+  max-width: min(500px, 90vw);
+  height: auto;
+  filter: drop-shadow(0 0 0.75rem white);
+}
+
+.wolfram {
+  max-width: min(500px, 90vw);
+  height: auto;
+  filter: drop-shadow(0 0 0.75rem white);
+}
+
+
 .fireplaceFlex{
   flex-basis: 0%;
   flex-grow: 1;
@@ -131,7 +175,7 @@ border: 5px solid #7B8E6F;
   color: white;
   text-align: center;
   font-family: 'Fugaz One', cursive;
-  font-size:5em;
+  font-size:4.1em;
 }
 .homeTitle{ 
   transform: translateX(0%);
@@ -192,7 +236,11 @@ border: 5px solid #7B8E6F;
   height: 12.7em; /* You must set a specified height */
 
 }
+#emptyshelf {
+  background-image: url('/images/assets/emptyshelf.svg')!important;
+  height: 12.7em; /* You must set a specified height */
 
+}
 .outerFrame{
 padding:0;
 max-width: 805px;
@@ -444,6 +492,7 @@ margin-bottom:3rem;
   border-bottom-left-radius: 0;
   border-top-right-radius: 8px;
   border-top-left-radius: 8px;
+  margin-top:0;
 }
 
 .joinGroup{
@@ -594,6 +643,11 @@ nav img{
 */
 
 @media (min-width: 0px) and (max-width: 768px) {
+  .authCard{
+    border-radius: 5px;
+    padding: 3rem!important;
+    margin-top: 0px;
+  }
   .accTable{
     padding: 2rem 1rem;
     margin: 2rem 0; 
@@ -663,10 +717,13 @@ nav img{
       height: auto;
   }
   .shelfTitle{
-    margin-bottom:0;
+    margin-bottom:30px;
   }
   #toiletshelf{
-    margin-bottom:0!important;
+    margin-bottom:30px!important;
+  }
+  #emptyshelf{
+    margin-bottom:30px!important;
   }
   .scaleDiv{
     padding: 2rem 1rem;
@@ -716,10 +773,18 @@ nav img{
   margin-bottom: 25px;
 
 }
+.row-title{
+  color: #222;
+  font-size: 1.35em!important;
+  line-height: 1.35;
+}
+
+
 .scaleDiv .title {
   margin-top: 0px;
   margin-bottom: 0px;
   padding-top: 18px;
+  padding-bottom: 18px;
  }
  .scaleDiv {
   padding: 0;
