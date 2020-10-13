@@ -10,7 +10,7 @@ import { useInjectReducer, useInjectSaga } from 'utils/redux-injectors';
 import { reducer, sliceKey } from './slice';
 import { authPageSaga } from './saga';
 // import { TextField, Checkboxes } from 'mui-rff';
-import { Typography, Button, CssBaseline } from '@material-ui/core';
+import { Button, CssBaseline } from '@material-ui/core';
 import { motion } from 'framer-motion';
 import { pageVariants } from '../../animations';
 type validationError = {
@@ -250,7 +250,7 @@ export function AuthPage(props: Props) {
     </ul>
   );
 
-  let text = 'Log in or sign up using a service below';
+  // let text = 'Log in or sign up using a service below';
 
   return (
     <>

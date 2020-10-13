@@ -236,7 +236,7 @@ export function HomePage() {
           }}
           className="outerFrame"
         >
-          <img src="/images/assets/string.svg"></img>
+          <img alt="pictureframe string" src="/images/assets/string.svg"></img>
           <div className="frame" ref={componentRef}>
             <h2>
               Cutie Hack is a 12-hour, beginner-oriented hackathon hosted at the
