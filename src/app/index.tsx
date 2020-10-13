@@ -23,7 +23,7 @@ import { SecurePage } from './containers/SecurePage';
 import { Account } from './containers/Account';
 import { LogOut } from './containers/LogOut';
 import LoginRedirect from './containers/LoginRedirect/index.jsx';
-
+import { AnimatePresence } from 'framer-motion';
 //import Base, { styles as stickyNavStyles } from './containers/StickyNav';
 // import { css } from 'styled-components';
 import styled from 'styled-components';
@@ -41,6 +41,10 @@ const NavContainer = styled.div`
   position: ${props => ((props as any).float ? 'absolute' : 'static')};
   left: ${props => ((props as any).float ? '0' : 'auto')};
   right: ${props => ((props as any).float ? '0' : 'auto')};
+  @media (max-width: 768px) {
+    padding: 0;
+    margin: 0.4rem auto;
+  }
 ` as any;
 
 const Logo = styled.img`
@@ -89,6 +93,18 @@ const Nav = styled.nav`
   .navLink:hover {
     background: orange;
     color: white;
+  }
+  @media (max-width: 768px) {
+    li {
+      margin-right: 5px;
+      padding: 1px;
+    }
+    .navLink {
+      padding: 0.6rem;
+      font-size: 0.8em;
+      border: 3px solid rgb(213, 166, 56);
+      margin-right: 6px;
+    }
   }
 `;
 const theme = getTheme({
@@ -172,28 +188,34 @@ export function App() {
                   {getNav(isAuthenticated(), location.pathname)}
                 </Nav>
               </NavContainer>
-              <Switch location={location} key={location.pathname}>
-                <Route
-                  exact
-                  path="/connect/:providerName/redirect"
-                  component={LoginRedirect}
-                />
-                <Route exact path="/" component={HomePage} />
-                <UnprotectedOnlyRoute exact path="/auth" component={AuthPage} />
-                <IncompleteOnlyRoute
-                  exact
-                  path="/apply"
-                  component={RegisterForm}
-                />
-                <AppCompleteOnlyRoute
-                  exact
-                  path="/account"
-                  component={Account}
-                />
-                <ProtectedRoute exact path="/test" component={SecurePage} />
-                <Route exact path="/logout" component={LogOut} />
-                <Route component={NotFoundPage} />
-              </Switch>
+              <AnimatePresence exitBeforeEnter>
+                <Switch location={location} key={location.pathname}>
+                  <Route
+                    exact
+                    path="/connect/:providerName/redirect"
+                    component={LoginRedirect}
+                  />
+                  <Route exact path="/" component={HomePage} />
+                  <UnprotectedOnlyRoute
+                    exact
+                    path="/auth"
+                    component={AuthPage}
+                  />
+                  <IncompleteOnlyRoute
+                    exact
+                    path="/apply"
+                    component={RegisterForm}
+                  />
+                  <AppCompleteOnlyRoute
+                    exact
+                    path="/account"
+                    component={Account}
+                  />
+                  <ProtectedRoute exact path="/test" component={SecurePage} />
+                  <Route exact path="/logout" component={LogOut} />
+                  <Route component={NotFoundPage} />
+                </Switch>
+              </AnimatePresence>
             </>
           )}
         />
