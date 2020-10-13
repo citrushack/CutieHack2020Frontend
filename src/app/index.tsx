@@ -90,6 +90,18 @@ const Nav = styled.nav`
     background: orange;
     color: white;
   }
+  @media (max-width: 768px) {
+    li {
+      margin-right: 5px;
+      padding: 1px;
+    }
+    .navLink {
+      padding: 0.6rem;
+      font-size: 0.8em;
+      border: 3px solid rgb(213, 166, 56);
+      margin-right: 6px;
+    }
+  }
 `;
 const theme = getTheme({
   paletteType: 'light',
