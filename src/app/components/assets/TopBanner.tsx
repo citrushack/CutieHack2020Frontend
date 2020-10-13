@@ -35,49 +35,6 @@ export function TopBanner(props) {
           y2={789}
           xlinkHref="#prefix__a"
         />
-        <filter id="prefix__c" colorInterpolationFilters="sRGB">
-          <feFlood result="flood" floodColor="#000" floodOpacity={1} />
-          <feComposite
-            result="composite1"
-            operator="in"
-            in2="SourceGraphic"
-            in="flood"
-          />
-          <feGaussianBlur result="blur" in="composite1" />
-          <feOffset result="offset" dy={1.6} dx={2.2} />
-          <feComposite result="composite2" in2="offset" in="SourceGraphic" />
-        </filter>
-        <filter id="prefix__d" colorInterpolationFilters="sRGB">
-          <feFlood result="flood" floodColor="#000" floodOpacity={1} />
-          <feComposite
-            result="composite1"
-            operator="in"
-            in2="SourceGraphic"
-            in="flood"
-          />
-          <feGaussianBlur result="blur" in="composite1" />
-          <feOffset result="offset" dy={1.6} dx={2.2} />
-          <feComposite
-            result="fbSourceGraphic"
-            in2="offset"
-            in="SourceGraphic"
-          />
-          <feColorMatrix
-            values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
-            in="fbSourceGraphic"
-            result="fbSourceGraphicAlpha"
-          />
-          <feFlood result="flood" floodColor="#000" floodOpacity={1} />
-          <feComposite
-            result="composite1"
-            operator="in"
-            in="flood"
-            in2="fbSourceGraphic"
-          />
-          <feGaussianBlur result="blur" in="composite1" />
-          <feOffset result="offset" dy={1.6} dx={2.2} />
-          <feComposite result="composite2" in="fbSourceGraphic" in2="offset" />
-        </filter>
       </defs>
       <path fill="#cba2a2" d="M1 0h1925v1087H1z" />
       <path
@@ -586,7 +543,6 @@ export function TopBanner(props) {
         fontFamily="Fugaz One"
         letterSpacing={0}
         wordSpacing={0}
-        filter="url(#prefix__c)"
       >
         <tspan
           style={{
@@ -639,8 +595,25 @@ export function TopBanner(props) {
         fontFamily="Fugaz One"
         letterSpacing={0}
         wordSpacing={0}
-        filter="url(#prefix__d)"
       >
+        <textPath startOffset={394} xlinkHref="#prefix__e">
+          <tspan
+            style={{
+              fontVariantLigatures: 'normal',
+              fontVariantCaps: 'normal',
+              fontVariantNumeric: 'normal',
+              fontFeatureSettings: 'normal',
+              textAlign: 'start',
+              textShadow:
+                '-1px -1px 0 (0, 0, 0, 0.87), 1px -1px 0 rgba(0, 0, 0, 0.87), -1px 1px 0 rgba(0, 0, 0, 0.87), 1px 1px 0 rgba(0, 0, 0, 0.87), 7px 7px 0 rgba(0, 0, 0, 0.486)',
+            }}
+            fontSize={83}
+            fill="#000"
+            stroke="#000"
+          >
+            {'Cutie Hack 2020'}
+          </tspan>
+        </textPath>
         <textPath startOffset={390} xlinkHref="#prefix__e">
           <tspan
             style={{
@@ -650,7 +623,7 @@ export function TopBanner(props) {
               fontFeatureSettings: 'normal',
               textAlign: 'start',
             }}
-            fontSize={80}
+            fontSize={83}
             fill="#fff"
             stroke="#000"
           >
