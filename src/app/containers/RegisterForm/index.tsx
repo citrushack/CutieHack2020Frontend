@@ -9,7 +9,8 @@ import { useSelector, useDispatch } from 'react-redux';
 //import styled from 'styled-components/macro';
 import { Form, Field } from 'react-final-form';
 import { actions } from './slice';
-import { countries, unis, majors } from './data';
+import { countries } from './data';
+//unis, majors
 //import styled from 'styled-components/macro';
 import { useSignIn } from 'react-auth-kit';
 
@@ -18,10 +19,10 @@ import { reducer, sliceKey } from './slice';
 import { selectError, selectisFetching } from './selectors';
 import { registerFormSaga } from './saga';
 //import { makeStyles } from '@material-ui/core/styles';
-import { TextField, Autocomplete, AutocompleteData } from 'mui-rff';
+import { TextField, Autocomplete } from 'mui-rff';
 //import { Checkbox as MuiCheckbox } from '@material-ui/core';
 import { Alert, AlertTitle } from '@material-ui/lab';
-import { createFilterOptions } from '@material-ui/lab';
+// import { createFilterOptions } from '@material-ui/lab';
 import { postDataPayload } from './types';
 import {
   Typography,
@@ -417,7 +418,7 @@ const demoInfo: formTypes = [
     ),
   },
 ];
-const filter = createFilterOptions<AutocompleteData>();
+// const filter = createFilterOptions<AutocompleteData>();
 const hackerInfo: formTypes = [
   {
     size: 12,
