@@ -438,45 +438,6 @@ h2 {
   max-width: 45em;
 }
 
-/* .applyBody{
-  display:block;
-  margin:auto;
-  max-width:600px;
-  padding-top: 3em;
-  padding-bottom: 3em;
-}  */
-
-/* .authCard{
-  border-radius: 5px;
-  box-shadow: 0px 16px 0px 0px rgba(0, 0, 0, 0.45);
-  margin-bottom: 2rem!important;
-}
-.divNav{
-  border-radius: 5px!important;
-  box-shadow: 0px 16px 0px 0px rgba(0, 0, 0, 0.45)!important;
-  margin-bottom: 2rem!important;
-  padding: 2rem 1rem;
- margin: 2rem 0; 
-}
-.divNav nav img{
-  transform: translate(10%,38%);
-}
-.divNav nav ul{
-  transform: none;
-}
-.mainCard{
-  padding:1rem;
-  margin:auto;
-  margin-bottom: 2rem!important;
-  border-radius: 5px;
-  box-shadow: 0px 16px 0px 0px rgba(0, 0, 0, 0.45);
-} */
-
-/* 
-  ##Device = Tablets, Ipads (portrait)
-  ##Screen = B/w 768px to 1024px
-*/
-
 @media (min-width: 768px) and (max-width: 1055px) {
   .aboutTitle {
     font-size: 4.5em;
@@ -490,9 +451,6 @@ h2 {
     text-align: center;
     line-height: 1.5;
     font-size: 1.5em;
-  }
-  nav img {
-    transform: translate(50%, 48%) !important;
   }
 
   .split {
@@ -547,16 +505,8 @@ h2 {
     margin-bottom: 5px;
     margin-top: 5px;
   }
-  nav ul li {
-    padding: 0 3px !important;
-  }
-  nav img {
-    transform: translate(20%, 13%) !important;
-  }
-  ul li .navLink {
-    padding: 5px !important;
-    border: 4px solid #d5a638 !important;
-  }
+  
+
   #getInvolved {
     font-size: 3.4em;
   }
@@ -679,10 +629,7 @@ h2 {
     border: 2px solid #7b8e6f;
   }
 
-  .divNav {
-    width: 94vw !important;
-    max-width: none !important;
-  }
+
   .applyBody {
     border-radius: 5px;
     margin-top: 0;
