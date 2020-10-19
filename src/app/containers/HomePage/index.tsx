@@ -54,7 +54,7 @@ const data = {
     {
       title: 'Who can come to Cutie Hack?',
       content:
-        'Any undergraduate student enrolled in a college can participate, regardless of majors.',
+        'Any highschool student or undergraduate student enrolled in a college can participate, regardless of majors.',
     },
     {
       title: 'When are applications due?',
