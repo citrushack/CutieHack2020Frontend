@@ -36,7 +36,7 @@ export function TopBanner(props) {
           xlinkHref="#prefix__a"
         />
       </defs>
-      <path fill="#cba2a2" d="M1 0h1925v1087H1z" />
+      <path fill="#afe6c5" d="M1 0h1925v1087H1z" />
       <path
         className="prefix__cls-5"
         fill="#8b5e3c"
@@ -62,7 +62,7 @@ export function TopBanner(props) {
       />
       <path
         className="prefix__cls-2"
-        fill="#f2d1cd"
+        fill="#262525"
         d="M1392 539h387v226h-387z"
       />
       <motion.path
@@ -554,11 +554,10 @@ export function TopBanner(props) {
           }}
           y={612.4}
           x={1587.5}
-          fontSize={33.3}
+          fontSize={36.5}
           writingMode="lr"
           textAnchor="middle"
           fill="#fff"
-          stroke="#303030"
         >
           {'November 7th'}
         </tspan>
@@ -572,11 +571,10 @@ export function TopBanner(props) {
           }}
           y={712.4}
           x={1587.5}
-          fontSize={33.3}
+          fontSize={36.5}
           writingMode="lr"
           textAnchor="middle"
           fill="#fff"
-          stroke="#303030"
         >
           {'Online Hackathon'}
         </tspan>

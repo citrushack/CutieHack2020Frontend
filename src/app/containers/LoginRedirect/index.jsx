@@ -53,7 +53,9 @@ const LoginRedirect = props => {
       })
       .catch(err => {
         console.log(err);
-        setText('An error occured, please see the developer console.');
+        setText(
+          'An error occured, make sure you are logging in with the correct provider.',
+        );
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [history, location.search, params.providerName]);
