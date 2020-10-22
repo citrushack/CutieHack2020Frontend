@@ -41,13 +41,15 @@ export function* register() {
         response,
       ),
     });
-
-    yield call(
-      sendResume,
-      resume,
-      response.id,
-      window.localStorage.getItem('_auth_t'),
-    );
+    console.log(resume);
+    if (resume) {
+      yield call(
+        sendResume,
+        resume,
+        response.id,
+        window.localStorage.getItem('_auth_t'),
+      );
+    }
     console.log('reachedhere');
     yield put(actions.submitSucc());
     console.log(history);
