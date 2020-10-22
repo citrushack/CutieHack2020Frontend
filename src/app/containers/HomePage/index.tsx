@@ -6,7 +6,7 @@ import { pageVariants } from '../../animations';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Faq from 'react-faq-component';
 import { motion } from 'framer-motion';
-import { FaChevronCircleDown } from 'react-icons/fa';
+import { RiArrowDownLine } from 'react-icons/ri';
 import { FireplaceComp } from '../../components/assets/FireplaceComp';
 import { TopBanner } from '../../components/assets/TopBanner';
 import '../../component-styles/accordion.css';
@@ -98,7 +98,7 @@ const data = {
 
 const config = {
   animate: false,
-  arrowIcon: <FaChevronCircleDown size={70} />,
+  arrowIcon: <RiArrowDownLine size={70} />,
 };
 
 export function useContainerDimensions(myRef: React.RefObject<any>) {

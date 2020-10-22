@@ -41,3 +41,6 @@
   .faq-row {
     padding: none !important;
   }
+  .styles_icon-wrapper{
+    flex:none;
+  }
