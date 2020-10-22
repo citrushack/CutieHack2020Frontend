@@ -93,7 +93,7 @@ const validate = values => {
   // if (values.password !== values.passwordConfirm)
   //   errors.passwordConfirm = 'Passwords must match';
   if (!values['addr1']) errors['addr1'] = 'Required';
-  if (!values.resume) errors.resume = 'Resume upload required';
+  // if (!values.resume) errors.resume = 'Resume upload required';
   if (!values.country) errors.country = 'Required';
   if (!values.city) errors.city = 'Required';
   if (!values.state) errors.state = 'Required';
@@ -593,18 +593,18 @@ export function RegisterForm(props: Props) {
                     raised={true}
                     style={{ padding: 16, backgroundColor: '#f7f7f7' }}
                   >
-                    <Field required={true} name="resume">
+                    <Field required={false} name="resume">
                       {props => <Dropzone {...props.input} />}
                     </Field>
                   </Card>
-                  {submitFailed && errors.resume && (
+                  {/* {submitFailed && errors.resume && (
                     <>
                       <br></br>
                       <Alert severity="error">
                         <AlertTitle>{errors.resume}</AlertTitle>
                       </Alert>
                     </>
-                  )}{' '}
+                  )}{' '} */}
                 </Grid>
                 {hackerInfo.map((item, idx) => (
                   <Grid item xs={item.size} key={idx}>
