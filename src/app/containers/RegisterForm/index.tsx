@@ -370,7 +370,7 @@ const demoInfo: formTypes = [
         margin="none"
         label="Major"
         name="major"
-        required={true}
+        required={false}
         // options={majors}
         // freeSolo
         // getOptionValue={option => option?.major}
