@@ -86,12 +86,22 @@ const data = {
         'If I’m outside of the U.S, can I still attend and/or win a prize/raffle?',
       content: `If you’re residing outside of the U.S, you can still attend! However, due to shipping restrictions and COVID, we won’t be able to send any type of physical prizes,  swag items, or raffle prizes to those residing outside of the U.S. You are still eligible to win a category, however!
         If you currently attend a university within the U.S but reside outside of the U.S, you’ll be able to win a category but will not be eligible to receive a physical prize, swag item, or raffle prize. 
-        If you both attend a university outside of the U.S and also reside outside of the U.S, you will e ineligible to win or receive a prize, but are still encouraged to attend and participate in all festivities!`,
+        If you both attend a university outside of the U.S and also reside outside of the U.S, you will be ineligible to win or receive a prize, but are still encouraged to attend and participate in all festivities!`,
     },
     {
       title: 'Help, my question is not listed!',
       content:
         'Email us at citrushack@gmail.com and we can answer your questions!',
+    },
+    {
+      title: 'If am hacking by myself, will I get four prizes?',
+      content:
+        'No, we send out prizes based on the size of the team. If you’re on a one person team we will only send out one prize.',
+    },
+    {
+      title: 'How can I be eligible for the beginner category?',
+      content:
+        'Your team must have a majority of first-time hackers (first time ever attending a hackathon).',
     },
   ],
 };
