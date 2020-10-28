@@ -456,6 +456,19 @@ export function HomePage() {
               alt="wolfram logo"
             ></img>
           </motion.a>
+          <motion.a
+            whileHover={{
+              scale: 1.1,
+            }}
+            transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+            href="https://www.echoar.xyz/"
+          >
+            <img
+              src="/images/echoAR.png"
+              className="echoAR"
+              alt="echoAR logo"
+            ></img>
+          </motion.a>
         </div>
       </motion.div>
     </>

@@ -24,13 +24,13 @@ export function* register() {
       body,
     });
     // Set the user's credentials
-    console.log(response);
-    console.log(
-      Object.assign(
-        JSON.parse(window.localStorage.getItem('_auth_state') || '{}'),
-        response,
-      ),
-    );
+    // console.log(response);
+    // console.log(
+    //   Object.assign(
+    //     JSON.parse(window.localStorage.getItem('_auth_state') || '{}'),
+    //     response,
+    //   ),
+    // );
 
     signIn({
       token: window.localStorage.getItem('_auth_t'),
@@ -41,7 +41,7 @@ export function* register() {
         response,
       ),
     });
-    console.log(resume);
+    // console.log(resume);
     if (resume) {
       yield call(
         sendResume,
@@ -50,9 +50,9 @@ export function* register() {
         window.localStorage.getItem('_auth_t'),
       );
     }
-    console.log('reachedhere');
+    // console.log('reachedhere');
     yield put(actions.submitSucc());
-    console.log(history);
+    // console.log(history);
     yield call(history, '/account');
   } catch (error) {
     if (JSON.stringify(error) !== '{}') {

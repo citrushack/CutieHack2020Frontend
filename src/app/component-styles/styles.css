@@ -86,11 +86,13 @@ body {
   margin: auto;
 }
 
-.acm, .linode, .xyz, .wolfram, .ieee {
+.acm, .linode, .xyz, .wolfram, .ieee, .echoAR {
   max-width: min(400px, 90vw);
   height: auto;
 }
-
+.wolfram{
+  max-width: min(320px, 90vw);
+}
 
 .fireplaceFlex {
   flex-basis: 0%;
@@ -589,7 +591,8 @@ h2 {
     box-shadow: 0px 8px 0px 0px rgba(0, 0, 0, 0.45);
   }
   .mainCard {
-    padding: 0.5rem;
+    padding: 0.5rem ;
+    padding-bottom: 5rem ;
   }
   .actionFlex {
     margin: 0;

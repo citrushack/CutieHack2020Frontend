@@ -253,6 +253,11 @@ export function Account(props: Props) {
               <br></br>
               Check back another time to see your status, or create a group
               below if you're hacking with a friend.
+              <br></br>
+              Join our <a href="https://discord.gg/Ewxh57G">
+                discord server
+              </a>{' '}
+              for more updates!
             </Typography>
             {/* <Table style={{ marginBottom: '1em' }}>
               <TableBody>
