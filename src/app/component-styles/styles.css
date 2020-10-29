@@ -90,10 +90,10 @@ body {
   max-width: min(400px, 90vw);
   height: auto;
 }
-.wolfram{
+.wolfram, .usaf{
   max-width: min(320px, 90vw);
 }
-
+ 
 .fireplaceFlex {
   flex-basis: 0%;
   flex-grow: 1;

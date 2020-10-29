@@ -469,6 +469,15 @@ export function HomePage() {
               alt="echoAR logo"
             ></img>
           </motion.a>
+          <motion.a
+            whileHover={{
+              scale: 1.1,
+            }}
+            transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+            href="https://www.losangeles.spaceforce.mil/"
+          >
+            <img src="/images/usaf.png" className="usaf" alt="usaf logo"></img>
+          </motion.a>
         </div>
       </motion.div>
     </>
