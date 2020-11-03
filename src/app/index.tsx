@@ -147,6 +147,11 @@ function getNav(loggedIn, location) {
           </Link>
         </li>
       )}
+      <li>
+        <a href="/live">
+          <div className="navLink">Live</div>
+        </a>
+      </li>
     </ul>
   );
 }
